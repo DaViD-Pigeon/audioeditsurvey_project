@@ -1,0 +1,23 @@
+{
+  "inputText": "The morning train leaves at nine, and the evening train leaves at six.",
+  "source": "Controlled synthetic speech; macOS Samantha, 165 words/minute",
+  "sampleRate": 24000,
+  "duration": 3.984375,
+  "secondClauseStart": 2.0839166666666666,
+  "gainChangeAt": 1.8839166666666667,
+  "filters": {
+    "volume-global-plus6.wav": "volume=6dB",
+    "volume-second-minus10.wav": "volume=-10dB:enable='gte(t,1.883917)'"
+  },
+  "checks": {
+    "globalGainDb": 5.9999986057486865,
+    "secondClauseGainDb": -10.000007880535351,
+    "firstClauseBitExact": true,
+    "peakSample": 20675
+  },
+  "sha256": {
+    "volume-input.wav": "27aa4395b8a22a6834224eeb13e899804fb56152d6004913ceadea9f9bf6c490",
+    "volume-global-plus6.wav": "01a0fb8c70e370650cf8e042132a99c282e6c094df15b10bffdd74395e255b77",
+    "volume-second-minus10.wav": "10eb1cfaaeb394c73163e64ca7f24060d19ad9e48cc518b5dc4f96d38980ba04"
+  }
+}

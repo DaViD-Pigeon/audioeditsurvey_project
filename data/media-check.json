@@ -1,0 +1,110 @@
+{
+  "checked": "2026-10-01T04:04:59.474390+00:00",
+  "method": "HTTPS range GET with certificate validation; WAV header or FFprobe MP3 metadata",
+  "resources": [
+    {
+      "id": "auk-lyric-input",
+      "url": "https://auk-project.github.io/assets/audio-norm/vocaledit/vocaledit-en-2-input.wav",
+      "status": 206,
+      "finalUrl": "https://auk-project.github.io/assets/audio-norm/vocaledit/vocaledit-en-2-input.wav",
+      "type": "audio/wav",
+      "range": "bytes 0-4095/667406",
+      "bytesChecked": 4096,
+      "format": "WAV",
+      "duration": 7.566077097505669,
+      "sampleRate": 44100,
+      "channels": 1
+    },
+    {
+      "id": "auk-lyric-output",
+      "url": "https://auk-project.github.io/assets/audio-norm/vocaledit/vocaledit-en-2-output.wav",
+      "status": 206,
+      "finalUrl": "https://auk-project.github.io/assets/audio-norm/vocaledit/vocaledit-en-2-output.wav",
+      "type": "audio/wav",
+      "range": "bytes 0-4095/338958",
+      "bytesChecked": 4096,
+      "format": "WAV",
+      "duration": 7.06,
+      "sampleRate": 24000,
+      "channels": 1
+    },
+    {
+      "id": "omni-instrument-input",
+      "url": "https://zeyuet.github.io/Audio-Omni/samples/transfer/1920/input.mp3",
+      "status": 206,
+      "finalUrl": "https://zeyuet.github.io/Audio-Omni/samples/transfer/1920/input.mp3",
+      "type": "audio/mp3",
+      "range": "bytes 0-4095/102887",
+      "bytesChecked": 4096,
+      "format": "mp3",
+      "duration": 10.03102,
+      "sampleRate": 44100,
+      "channels": 1
+    },
+    {
+      "id": "omni-instrument-output",
+      "url": "https://zeyuet.github.io/Audio-Omni/samples/transfer/1920/result.wav",
+      "status": 206,
+      "finalUrl": "https://zeyuet.github.io/Audio-Omni/samples/transfer/1920/result.wav",
+      "type": "audio/wav",
+      "range": "bytes 0-4095/882044",
+      "bytesChecked": 4096,
+      "format": "WAV",
+      "duration": 10.0,
+      "sampleRate": 44100,
+      "channels": 1
+    },
+    {
+      "id": "omni-add-input",
+      "url": "https://zeyuet.github.io/Audio-Omni/samples/add/22/input.wav",
+      "status": 206,
+      "finalUrl": "https://zeyuet.github.io/Audio-Omni/samples/add/22/input.wav",
+      "type": "audio/wav",
+      "range": "bytes 0-4095/882044",
+      "bytesChecked": 4096,
+      "format": "WAV",
+      "duration": 10.0,
+      "sampleRate": 44100,
+      "channels": 1
+    },
+    {
+      "id": "omni-add-output",
+      "url": "https://zeyuet.github.io/Audio-Omni/samples/add/22/result.wav",
+      "status": 206,
+      "finalUrl": "https://zeyuet.github.io/Audio-Omni/samples/add/22/result.wav",
+      "type": "audio/wav",
+      "range": "bytes 0-4095/882044",
+      "bytesChecked": 4096,
+      "format": "WAV",
+      "duration": 10.0,
+      "sampleRate": 44100,
+      "channels": 1
+    },
+    {
+      "id": "omni-remove-input",
+      "url": "https://zeyuet.github.io/Audio-Omni/samples/remove/1226/input.mp3",
+      "status": 206,
+      "finalUrl": "https://zeyuet.github.io/Audio-Omni/samples/remove/1226/input.mp3",
+      "type": "audio/mp3",
+      "range": "bytes 0-4095/98438",
+      "bytesChecked": 4096,
+      "format": "mp3",
+      "duration": 10.03102,
+      "sampleRate": 44100,
+      "channels": 1
+    },
+    {
+      "id": "omni-remove-output",
+      "url": "https://zeyuet.github.io/Audio-Omni/samples/remove/1226/result.wav",
+      "status": 206,
+      "finalUrl": "https://zeyuet.github.io/Audio-Omni/samples/remove/1226/result.wav",
+      "type": "audio/wav",
+      "range": "bytes 0-4095/882044",
+      "bytesChecked": 4096,
+      "format": "WAV",
+      "duration": 10.0,
+      "sampleRate": 44100,
+      "channels": 1
+    }
+  ]
+}

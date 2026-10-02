@@ -1,0 +1,4580 @@
+{
+  "meta": {
+    "source": "https://github.com/MM-Speech/AudioEditSurvey",
+    "revision": "4dfafecfe2b9392709a456ff39433a80df3f4fbb",
+    "readmeSha256": "cbbae896b67cfa95d468f8da5904270e0f9963a86183e08e7dcc73b176b5eaf5",
+    "updated": "2026-10-01"
+  },
+  "models": [
+    {
+      "id": "audio-omni",
+      "name": "Audio-Omni",
+      "domains": [
+        "Speech",
+        "Music",
+        "Audio"
+      ],
+      "group": "Unified",
+      "editing": "Instance: addition, removal, extraction, source transformation",
+      "categories": [
+        "Instance"
+      ],
+      "architecture": "MLLM + rectified-flow DiT",
+      "architectures": [
+        "Language model",
+        "Flow matching"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2604.10708"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/ZeyueT/Audio-Omni"
+        },
+        {
+          "kind": "Model",
+          "label": "Weights",
+          "url": "https://huggingface.co/HKUSTAudio/Audio-Omni"
+        }
+      ],
+      "paradigm": "Training-based"
+    },
+    {
+      "id": "audiomorphix",
+      "name": "AudioMorphix",
+      "domains": [
+        "Speech",
+        "Music",
+        "Audio"
+      ],
+      "group": "Unified",
+      "editing": "Semantic: pitch / time stretching\nInstance: addition, removal, replacement, time shifting",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "architecture": "Diffusion U-Net (Tango / AudioLDM)",
+      "architectures": [
+        "Diffusion"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2505.16076"
+        },
+        {
+          "kind": "Code",
+          "label": "HuggingFace Code",
+          "url": "https://huggingface.co/spaces/JinhuaL1ANG/AudioMorphix/tree/main"
+        },
+        {
+          "kind": "Model",
+          "label": "Base (Tango 2)",
+          "url": "https://huggingface.co/declare-lab/tango2-full"
+        },
+        {
+          "kind": "Model",
+          "label": "Base (AudioLDM)",
+          "url": "https://huggingface.co/cvssp/audioldm-l-full"
+        }
+      ],
+      "paradigm": "Training-free",
+      "venue": "-"
+    },
+    {
+      "id": "auk-auk-flash",
+      "name": "AuK / AuK-Flash",
+      "domains": [
+        "Speech",
+        "Music"
+      ],
+      "group": "Unified",
+      "editing": "Acoustic: restoration, loudness\nSemantic: words, lyrics, expression\nInstance: timbre, source extraction",
+      "categories": [
+        "Acoustic",
+        "Semantic",
+        "Instance"
+      ],
+      "architecture": "MLLM + rectified-flow DiT",
+      "architectures": [
+        "Language model",
+        "Flow matching"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2609.08936"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/Tencent-Hunyuan/AuK"
+        },
+        {
+          "kind": "Model",
+          "label": "AuK",
+          "url": "https://huggingface.co/tencent/AuK"
+        },
+        {
+          "kind": "Model",
+          "label": "Flash",
+          "url": "https://huggingface.co/tencent/AuK-Flash"
+        }
+      ],
+      "paradigm": "Training-based"
+    },
+    {
+      "id": "vevo2",
+      "name": "Vevo2",
+      "domains": [
+        "Speech",
+        "Music"
+      ],
+      "group": "Unified",
+      "editing": "Semantic: content, lyrics, prosody, style\nInstance: voice / singer conversion",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "architecture": "Codec LM + flow-matching decoder",
+      "architectures": [
+        "Language model",
+        "Codec language model",
+        "Flow matching"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2508.16332"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/open-mmlab/Amphion/tree/main/models/svc/vevo2"
+        },
+        {
+          "kind": "Model",
+          "label": "Weights",
+          "url": "https://huggingface.co/RMSnow/Vevo2"
+        }
+      ],
+      "paradigm": "Training-based"
+    },
+    {
+      "id": "directaudioedit",
+      "name": "DirectAudioEdit",
+      "domains": [
+        "Music",
+        "Audio"
+      ],
+      "group": "Unified",
+      "editing": "Instance: text-guided event replacement / addition / removal",
+      "categories": [
+        "Instance"
+      ],
+      "architecture": "Diffusion U-Net (Tango 2 / AudioLDM2)",
+      "architectures": [
+        "Diffusion"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2606.07356"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/NiuTrans/DirectAudioEdit"
+        },
+        {
+          "kind": "Model",
+          "label": "Base (Tango 2)",
+          "url": "https://huggingface.co/declare-lab/tango2-full"
+        },
+        {
+          "kind": "Model",
+          "label": "Base (audio)",
+          "url": "https://huggingface.co/cvssp/audioldm2"
+        }
+      ],
+      "paradigm": "Training-free",
+      "venue": "-"
+    },
+    {
+      "id": "ddpm-inversion-zeta",
+      "name": "DDPM Inversion (ZETA)",
+      "domains": [
+        "Music",
+        "Audio"
+      ],
+      "group": "Unified",
+      "editing": "Semantic: musical style\nInstance: instrument / sound-event changes",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "architecture": "Diffusion U-Net (AudioLDM2)",
+      "architectures": [
+        "Diffusion"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2402.10009"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/HilaManor/AudioEditingCode"
+        },
+        {
+          "kind": "Model",
+          "label": "Base (audio)",
+          "url": "https://huggingface.co/cvssp/audioldm2"
+        },
+        {
+          "kind": "Model",
+          "label": "Base (music)",
+          "url": "https://huggingface.co/cvssp/audioldm2-music"
+        }
+      ],
+      "paradigm": "Training-free",
+      "venue": "ICML 2024"
+    },
+    {
+      "id": "ming-uniaudio-edit",
+      "name": "Ming-UniAudio-Edit",
+      "domains": [
+        "Speech"
+      ],
+      "group": "Speech",
+      "editing": "Acoustic: denoising, loudness\nSemantic: content, prosody, emotion, dialect",
+      "categories": [
+        "Acoustic",
+        "Semantic"
+      ],
+      "architecture": "Continuous-token LM + diffusion head",
+      "architectures": [
+        "Language model",
+        "Diffusion"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2511.05516"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/inclusionAI/Ming-UniAudio"
+        },
+        {
+          "kind": "Model",
+          "label": "Weights",
+          "url": "https://huggingface.co/inclusionAI/Ming-UniAudio-16B-A3B-Edit"
+        }
+      ],
+      "paradigm": "Training-based"
+    },
+    {
+      "id": "step-audio-editx",
+      "name": "Step-Audio-EditX",
+      "domains": [
+        "Speech"
+      ],
+      "group": "Speech",
+      "editing": "Semantic: emotion, speaking style, paralinguistics, pronunciation",
+      "categories": [
+        "Semantic"
+      ],
+      "architecture": "Codec LM + flow-matching decoder",
+      "architectures": [
+        "Language model",
+        "Codec language model",
+        "Flow matching"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2511.03601"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/stepfun-ai/Step-Audio-EditX"
+        },
+        {
+          "kind": "Model",
+          "label": "Weights",
+          "url": "https://huggingface.co/stepfun-ai/Step-Audio-EditX"
+        }
+      ],
+      "paradigm": "Training-based"
+    },
+    {
+      "id": "cosyedit",
+      "name": "CosyEdit",
+      "domains": [
+        "Speech"
+      ],
+      "group": "Speech",
+      "editing": "Semantic: word insertion, deletion, replacement",
+      "categories": [
+        "Semantic"
+      ],
+      "architecture": "Codec LM + flow-matching decoder",
+      "architectures": [
+        "Language model",
+        "Codec language model",
+        "Flow matching"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2601.05329"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/CJY1018/CosyEdit"
+        },
+        {
+          "kind": "Model",
+          "label": "Weights",
+          "url": "https://huggingface.co/CJY/CosyEdit"
+        }
+      ],
+      "paradigm": "Training-based"
+    },
+    {
+      "id": "voicecraft-x",
+      "name": "VoiceCraft-X",
+      "domains": [
+        "Speech"
+      ],
+      "group": "Speech",
+      "editing": "Semantic: multilingual content editing",
+      "categories": [
+        "Semantic"
+      ],
+      "architecture": "Codec LM (autoregressive infilling)",
+      "architectures": [
+        "Language model",
+        "Codec language model"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2511.12347"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/zszheng147/VoiceCraft-X"
+        },
+        {
+          "kind": "Model",
+          "label": "Weights",
+          "url": "https://huggingface.co/zhisheng01/VoiceCraft-X"
+        }
+      ],
+      "paradigm": "Training-based"
+    },
+    {
+      "id": "voicecraft",
+      "name": "VoiceCraft",
+      "domains": [
+        "Speech"
+      ],
+      "group": "Speech",
+      "editing": "Semantic: word insertion, deletion, replacement",
+      "categories": [
+        "Semantic"
+      ],
+      "architecture": "Codec LM (autoregressive infilling)",
+      "architectures": [
+        "Language model",
+        "Codec language model"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2403.16973"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/jasonppy/VoiceCraft"
+        },
+        {
+          "kind": "Model",
+          "label": "Weights",
+          "url": "https://huggingface.co/pyp1/VoiceCraft"
+        }
+      ],
+      "paradigm": "Training-based"
+    },
+    {
+      "id": "ssr-speech",
+      "name": "SSR-Speech",
+      "domains": [
+        "Speech"
+      ],
+      "group": "Speech",
+      "editing": "Semantic: word insertion, deletion, replacement",
+      "categories": [
+        "Semantic"
+      ],
+      "architecture": "Codec LM (autoregressive infilling)",
+      "architectures": [
+        "Language model",
+        "Codec language model"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2409.07556"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/WangHelin1997/SSR-Speech"
+        },
+        {
+          "kind": "Model",
+          "label": "English",
+          "url": "https://huggingface.co/westbrook/SSR-Speech-English"
+        },
+        {
+          "kind": "Model",
+          "label": "Mandarin",
+          "url": "https://huggingface.co/westbrook/SSR-Speech-Mandarin"
+        }
+      ],
+      "paradigm": "Training-based"
+    },
+    {
+      "id": "f5-tts",
+      "name": "F5-TTS",
+      "domains": [
+        "Speech"
+      ],
+      "group": "Speech",
+      "editing": "Semantic: local content replacement / infilling",
+      "categories": [
+        "Semantic"
+      ],
+      "architecture": "Flow-matching DiT",
+      "architectures": [
+        "Flow matching"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2410.06885"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/SWivid/F5-TTS/blob/main/src/f5_tts/infer/speech_edit.py"
+        },
+        {
+          "kind": "Model",
+          "label": "Weights",
+          "url": "https://huggingface.co/SWivid/F5-TTS"
+        }
+      ],
+      "paradigm": "Training-based"
+    },
+    {
+      "id": "fluentspeech",
+      "name": "FluentSpeech",
+      "domains": [
+        "Speech"
+      ],
+      "group": "Speech",
+      "editing": "Semantic: content editing, disfluency correction",
+      "categories": [
+        "Semantic"
+      ],
+      "architecture": "Diffusion (context-aware denoiser)",
+      "architectures": [
+        "Diffusion"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2305.13612"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/Zain-Jiang/Speech-Editing-Toolkit"
+        },
+        {
+          "kind": "Model",
+          "label": "Weights",
+          "url": "https://drive.google.com/drive/folders/1saqpWc4vrSgUZvRvHkf2QbwWSikMTyoo"
+        }
+      ],
+      "paradigm": "Training-based"
+    },
+    {
+      "id": "editts",
+      "name": "EdiTTS",
+      "domains": [
+        "Speech"
+      ],
+      "group": "Speech",
+      "editing": "Semantic: content / pitch edits in synthesized speech",
+      "categories": [
+        "Semantic"
+      ],
+      "architecture": "Score-based diffusion (Grad-TTS)",
+      "architectures": [
+        "Diffusion"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2110.02584"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/neosapience/editts"
+        },
+        {
+          "kind": "Model",
+          "label": "Base",
+          "url": "https://github.com/neosapience/editts/tree/master/checkpts"
+        }
+      ],
+      "paradigm": "Training-free",
+      "venue": "INTERSPEECH 2022"
+    },
+    {
+      "id": "yingmusic-singer-plus",
+      "name": "YingMusic-Singer-Plus",
+      "domains": [
+        "Music"
+      ],
+      "group": "Music",
+      "editing": "Semantic: lyrics\nInstance: singer timbre replacement",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "architecture": "Flow-matching DiT",
+      "architectures": [
+        "Flow matching"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2603.24589"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/ASLP-lab/YingMusic-Singer-Plus"
+        },
+        {
+          "kind": "Model",
+          "label": "Weights",
+          "url": "https://huggingface.co/ASLP-lab/YingMusic-Singer-Plus"
+        }
+      ],
+      "paradigm": "Training-based"
+    },
+    {
+      "id": "ace-step-1-5",
+      "name": "ACE-Step 1.5",
+      "domains": [
+        "Music"
+      ],
+      "group": "Music",
+      "editing": "Semantic: style / local repainting\nInstance: track extraction / addition (base variant)",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "architecture": "LM + flow-matching DiT",
+      "architectures": [
+        "Language model",
+        "Flow matching"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2602.00744"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/ace-step/ACE-Step-1.5"
+        },
+        {
+          "kind": "Model",
+          "label": "Turbo",
+          "url": "https://huggingface.co/ACE-Step/Ace-Step1.5"
+        },
+        {
+          "kind": "Model",
+          "label": "Base variant",
+          "url": "https://huggingface.co/ACE-Step/acestep-v15-base"
+        }
+      ],
+      "paradigm": "Training-based"
+    },
+    {
+      "id": "instruct-musicgen",
+      "name": "Instruct-MusicGen",
+      "domains": [
+        "Music"
+      ],
+      "group": "Music",
+      "editing": "Instance: stem addition, removal, extraction",
+      "categories": [
+        "Instance"
+      ],
+      "architecture": "Codec LM (MusicGen) + adapters",
+      "architectures": [
+        "Language model",
+        "Codec language model"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2405.18386"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/ldzhangyx/instruct-MusicGen"
+        },
+        {
+          "kind": "Model",
+          "label": "Public-data retraining",
+          "url": "https://huggingface.co/ldzhangyx/instruct-MusicGen"
+        }
+      ],
+      "paradigm": "Training-based"
+    },
+    {
+      "id": "musicgen-stem",
+      "name": "MusicGen-Stem",
+      "domains": [
+        "Music"
+      ],
+      "group": "Music",
+      "editing": "Instance: stem replacement / addition (bass, drums, other)",
+      "categories": [
+        "Instance"
+      ],
+      "architecture": "Multi-stream codec LM",
+      "architectures": [
+        "Language model",
+        "Codec language model"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2501.01757"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/simonrouard/audiocraft/tree/multistem"
+        },
+        {
+          "kind": "Model",
+          "label": "Weights",
+          "url": "https://huggingface.co/facebook/musicgen-stem-6cb"
+        }
+      ],
+      "paradigm": "Training-based"
+    },
+    {
+      "id": "melodyflow",
+      "name": "MelodyFlow",
+      "domains": [
+        "Music"
+      ],
+      "group": "Music",
+      "editing": "Semantic: genre, mood, style\nInstance: instrumentation",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "architecture": "Flow-matching DiT",
+      "architectures": [
+        "Flow matching"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2407.03648"
+        },
+        {
+          "kind": "Code",
+          "label": "HuggingFace Code",
+          "url": "https://huggingface.co/spaces/facebook/MelodyFlow/tree/main"
+        },
+        {
+          "kind": "Model",
+          "label": "Weights",
+          "url": "https://huggingface.co/facebook/melodyflow-t24-30secs"
+        }
+      ],
+      "paradigm": "Training-free",
+      "venue": "NeurIPS 2024\nAudio Imagination Workshop"
+    },
+    {
+      "id": "ap-adapter",
+      "name": "AP-Adapter",
+      "domains": [
+        "Music"
+      ],
+      "group": "Music",
+      "editing": "Semantic: genre / style transfer\nInstance: instrument replacement",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "architecture": "Diffusion U-Net + audio-prompt adapter",
+      "architectures": [
+        "Diffusion"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2407.16564"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/fundwotsai2001/AP-adapter"
+        },
+        {
+          "kind": "Model",
+          "label": "Adapter",
+          "url": "https://drive.google.com/drive/folders/1LkIe3-_4nqvDJQqEgglbyj9AMFkn0TLd"
+        },
+        {
+          "kind": "Model",
+          "label": "Base",
+          "url": "https://huggingface.co/cvssp/audioldm2-large"
+        }
+      ],
+      "paradigm": "Training-based"
+    },
+    {
+      "id": "anchorsteer",
+      "name": "AnchorSteer",
+      "domains": [
+        "Music"
+      ],
+      "group": "Music",
+      "editing": "Semantic: genre / style\nInstance: instrument changes",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "architecture": "Diffusion DiT + structural/concept adapters",
+      "architectures": [
+        "Diffusion"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2605.31053"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/hengtsune1024/AnchorSteer"
+        },
+        {
+          "kind": "Model",
+          "label": "Concept weights",
+          "url": "https://huggingface.co/heng1024/AnchorSteer-weights"
+        },
+        {
+          "kind": "Model",
+          "label": "Structure adapter",
+          "url": "https://drive.google.com/drive/folders/1Q9B333jcq1czA11JKTbM-DHANJ8YqGbP"
+        },
+        {
+          "kind": "Model",
+          "label": "Base (access terms)",
+          "url": "https://huggingface.co/stabilityai/stable-audio-open-1.0"
+        }
+      ],
+      "paradigm": "Training-based"
+    },
+    {
+      "id": "mmedit",
+      "name": "MMEdit",
+      "domains": [
+        "Audio"
+      ],
+      "group": "Audio",
+      "editing": "Acoustic: loudness\nInstance: event addition, removal, replacement, reordering",
+      "categories": [
+        "Acoustic",
+        "Instance"
+      ],
+      "architecture": "ALM + diffusion MMDiT",
+      "architectures": [
+        "Language model",
+        "Diffusion"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2512.20339"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/ty0402/MMEdit"
+        },
+        {
+          "kind": "Model",
+          "label": "Weights",
+          "url": "https://huggingface.co/CocoBro/MMEdit"
+        }
+      ],
+      "paradigm": "Training-based"
+    },
+    {
+      "id": "sao-instruct",
+      "name": "SAO-Instruct",
+      "domains": [
+        "Audio"
+      ],
+      "group": "Audio",
+      "editing": "Acoustic: filtering, denoising, restoration\nSemantic: pitch / rate\nInstance: event manipulation",
+      "categories": [
+        "Acoustic",
+        "Semantic",
+        "Instance"
+      ],
+      "architecture": "Diffusion DiT (Stable Audio Open)",
+      "architectures": [
+        "Diffusion"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2510.22795"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/ETH-DISCO/sao-instruct"
+        },
+        {
+          "kind": "Model",
+          "label": "Weights",
+          "url": "https://huggingface.co/disco-eth/sao-instruct"
+        }
+      ],
+      "paradigm": "Training-based"
+    },
+    {
+      "id": "smartdj-editor",
+      "name": "SmartDJ-Editor",
+      "domains": [
+        "Audio"
+      ],
+      "group": "Audio",
+      "editing": "Acoustic: volume, reverb, spectral coloration\nInstance: event addition, removal, extraction, relocation",
+      "categories": [
+        "Acoustic",
+        "Instance"
+      ],
+      "architecture": "Diffusion Transformer (U-DiT)",
+      "architectures": [
+        "Diffusion"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2509.21625"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/penn-waves-lab/SmartDJ"
+        },
+        {
+          "kind": "Model",
+          "label": "Editor weights",
+          "url": "https://huggingface.co/ztlan/SmartDJ"
+        }
+      ],
+      "paradigm": "Training-based"
+    },
+    {
+      "id": "audioeditor",
+      "name": "AudioEditor",
+      "domains": [
+        "Audio"
+      ],
+      "group": "Audio",
+      "editing": "Instance: event addition, deletion, replacement",
+      "categories": [
+        "Instance"
+      ],
+      "architecture": "Diffusion U-Net (Auffusion)",
+      "architectures": [
+        "Diffusion"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2409.12466"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/NKU-HLT/AudioEditor"
+        },
+        {
+          "kind": "Model",
+          "label": "Base",
+          "url": "https://huggingface.co/auffusion/auffusion-full-no-adapter"
+        }
+      ],
+      "paradigm": "Training-free",
+      "venue": "ICASSP 2025"
+    },
+    {
+      "id": "coherentavedit",
+      "name": "CoherentAVEdit",
+      "domains": [
+        "Audio"
+      ],
+      "group": "Audio",
+      "editing": "Instance: video-conditioned sound-event replacement",
+      "categories": [
+        "Instance"
+      ],
+      "architecture": "Flow-matching Transformer (MMAudio)",
+      "architectures": [
+        "Flow matching"
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2512.07209"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/SonyResearch/CoherentAVEdit"
+        },
+        {
+          "kind": "Model",
+          "label": "Weights",
+          "url": "https://huggingface.co/masato-a-ishii/CoherentAVEdit"
+        }
+      ],
+      "paradigm": "Training-based"
+    }
+  ],
+  "datasets": [
+    {
+      "id": "voicebank-demand-28-spk",
+      "name": "VoiceBank+DEMAND (28-spk)",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "duration": "≈10 h",
+      "hours": 10.0,
+      "paired": true,
+      "pairing": "Noisy/clean",
+      "editing": "Acoustic",
+      "categories": [
+        "Acoustic"
+      ],
+      "annotation": "Transcript; noise/SNR conditions",
+      "annotationTypes": [
+        "Transcript"
+      ],
+      "modalities": "Audio, Text",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "Paper Link",
+          "url": "https://www.pure.ed.ac.uk/ws/portalfiles/portal/26377240/Interspeech2016_Cassia_1.pdf"
+        },
+        {
+          "kind": "Dataset",
+          "label": "DataShare Data",
+          "url": "https://datashare.ed.ac.uk/handle/10283/2791"
+        }
+      ]
+    },
+    {
+      "id": "libritts-r",
+      "name": "LibriTTS-R",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "duration": "≈585 h",
+      "hours": 585.0,
+      "paired": true,
+      "pairing": "Original/restored",
+      "editing": "Acoustic; Semantic†",
+      "categories": [
+        "Acoustic",
+        "Semantic"
+      ],
+      "annotation": "Transcript; speaker labels; model-restored audio",
+      "annotationTypes": [
+        "Transcript",
+        "Label"
+      ],
+      "modalities": "Audio, Text",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2305.18802"
+        },
+        {
+          "kind": "Dataset",
+          "label": "OpenSLR Restored",
+          "url": "https://www.openslr.org/141/"
+        },
+        {
+          "kind": "Dataset",
+          "label": "OpenSLR Original",
+          "url": "https://www.openslr.org/60/"
+        }
+      ]
+    },
+    {
+      "id": "librispeech",
+      "name": "LibriSpeech",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "duration": "≈1,000 h",
+      "hours": 1000.0,
+      "paired": false,
+      "pairing": "",
+      "editing": "Semantic†; Instance†",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "annotation": "Transcript; speaker/chapter labels",
+      "annotationTypes": [
+        "Transcript",
+        "Label"
+      ],
+      "modalities": "Audio, Text",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "Paper Link",
+          "url": "https://www.danielpovey.com/files/2015_icassp_librispeech.pdf"
+        },
+        {
+          "kind": "Dataset",
+          "label": "OpenSLR Data",
+          "url": "https://www.openslr.org/12/"
+        }
+      ]
+    },
+    {
+      "id": "vctk-v0-92",
+      "name": "VCTK v0.92",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "duration": "≈44 h",
+      "hours": 44.0,
+      "paired": false,
+      "pairing": "",
+      "editing": "Instance†; Semantic†",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "annotation": "Transcript; speaker/accent labels",
+      "annotationTypes": [
+        "Transcript",
+        "Label"
+      ],
+      "modalities": "Audio, Text",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "Dataset Record",
+          "url": "https://doi.org/10.7488/ds/2645"
+        },
+        {
+          "kind": "Dataset",
+          "label": "DataShare Data",
+          "url": "https://datashare.ed.ac.uk/handle/10283/3443"
+        }
+      ]
+    },
+    {
+      "id": "aishell-3",
+      "name": "AISHELL-3",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "duration": "≈85 h",
+      "hours": 85.0,
+      "paired": false,
+      "pairing": "",
+      "editing": "Semantic†; Instance†",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "annotation": "Mandarin transcript; phonetic transcription; speaker labels",
+      "annotationTypes": [
+        "Transcript",
+        "Label"
+      ],
+      "modalities": "Audio, Text",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2010.11567"
+        },
+        {
+          "kind": "Dataset",
+          "label": "OpenSLR Data",
+          "url": "https://www.openslr.org/93/"
+        }
+      ]
+    },
+    {
+      "id": "hi-fi-tts",
+      "name": "Hi-Fi TTS",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "duration": "≈292 h",
+      "hours": 292.0,
+      "paired": false,
+      "pairing": "",
+      "editing": "Semantic†; Instance†",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "annotation": "Transcript; speaker labels",
+      "annotationTypes": [
+        "Transcript",
+        "Label"
+      ],
+      "modalities": "Audio, Text",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2104.01497"
+        },
+        {
+          "kind": "Dataset",
+          "label": "OpenSLR Data",
+          "url": "https://www.openslr.org/109/"
+        }
+      ]
+    },
+    {
+      "id": "ljspeech-v1-1",
+      "name": "LJSpeech v1.1",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "duration": "≈24 h",
+      "hours": 24.0,
+      "paired": false,
+      "pairing": "",
+      "editing": "Semantic†",
+      "categories": [
+        "Semantic"
+      ],
+      "annotation": "Transcript; normalized text",
+      "annotationTypes": [
+        "Transcript"
+      ],
+      "modalities": "Audio, Text",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "Dataset Release",
+          "url": "https://keithito.com/LJ-Speech-Dataset/"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Download Data",
+          "url": "https://data.keithito.com/data/speech/LJSpeech-1.1.tar.bz2"
+        }
+      ]
+    },
+    {
+      "id": "ravdess-speech",
+      "name": "RAVDESS (speech)",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "duration": "≈1.7 h",
+      "hours": 1.7,
+      "paired": false,
+      "pairing": "",
+      "editing": "Semantic†",
+      "categories": [
+        "Semantic"
+      ],
+      "annotation": "Label: emotion, intensity, speaker; fixed transcripts",
+      "annotationTypes": [
+        "Transcript",
+        "Label"
+      ],
+      "modalities": "Audio, Text, Video",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "Paper Link",
+          "url": "https://doi.org/10.1371/journal.pone.0196391"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Zenodo Data",
+          "url": "https://zenodo.org/records/1188976"
+        }
+      ]
+    },
+    {
+      "id": "crema-d",
+      "name": "CREMA-D",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "duration": "≈5.3 h",
+      "hours": 5.3,
+      "paired": false,
+      "pairing": "",
+      "editing": "Semantic†",
+      "categories": [
+        "Semantic"
+      ],
+      "annotation": "Label: emotion/intensity; perceptual ratings; fixed transcripts",
+      "annotationTypes": [
+        "Transcript",
+        "Label"
+      ],
+      "modalities": "Audio, Text, Video",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "Paper Link",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4313618/"
+        },
+        {
+          "kind": "Dataset",
+          "label": "GitHub Code",
+          "url": "https://github.com/CheyneyComputerScience/CREMA-D"
+        },
+        {
+          "kind": "Dataset",
+          "label": "GitLab Mirror",
+          "url": "https://gitlab.com/cs-cooper-lab/crema-d-mirror"
+        }
+      ]
+    },
+    {
+      "id": "gtsinger",
+      "name": "GTSinger",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "duration": "≈80.6 h singing\n+16.2 h speech",
+      "hours": 80.6,
+      "paired": true,
+      "pairing": "Controlled/parallel takes",
+      "editing": "Semantic; Instance†",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "annotation": "Label: technique/style; aligned lyrics/phonemes; scores",
+      "annotationTypes": [
+        "Transcript",
+        "Label",
+        "MIDI / score"
+      ],
+      "modalities": "Audio, Text, MusicXML",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2409.13832"
+        },
+        {
+          "kind": "Dataset",
+          "label": "GitHub Code",
+          "url": "https://github.com/AaronZ345/GTSinger"
+        },
+        {
+          "kind": "Dataset",
+          "label": "HuggingFace Dataset",
+          "url": "https://huggingface.co/datasets/AaronZ345/GTSinger"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Google Drive Data",
+          "url": "https://drive.google.com/drive/folders/1xcdvCxNAEEfJElt7sEP-xT8dMKxn1_Lz"
+        }
+      ]
+    },
+    {
+      "id": "slakh2100",
+      "name": "Slakh2100",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "duration": "≈145 h",
+      "hours": 145.0,
+      "paired": true,
+      "pairing": "Mixture/stems",
+      "editing": "Instance",
+      "categories": [
+        "Instance"
+      ],
+      "annotation": "Label: instrument; aligned MIDI; stem metadata",
+      "annotationTypes": [
+        "Label",
+        "MIDI / score"
+      ],
+      "modalities": "Audio, MIDI",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/1909.08494"
+        },
+        {
+          "kind": "Dataset",
+          "label": "GitHub Code",
+          "url": "https://github.com/ethman/slakh-utils"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Zenodo Data",
+          "url": "https://zenodo.org/records/4599666"
+        }
+      ]
+    },
+    {
+      "id": "musdb18-hq",
+      "name": "MUSDB18-HQ",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "duration": "≈10 h",
+      "hours": 10.0,
+      "paired": true,
+      "pairing": "Mixture/stems",
+      "editing": "Instance",
+      "categories": [
+        "Instance"
+      ],
+      "annotation": "Label: vocals, drums, bass, other",
+      "annotationTypes": [
+        "Label"
+      ],
+      "modalities": "Audio",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/1804.06267"
+        },
+        {
+          "kind": "Dataset",
+          "label": "GitHub Code",
+          "url": "https://github.com/sigsep/sigsep-mus-db"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Zenodo Data",
+          "url": "https://zenodo.org/records/3338373"
+        }
+      ]
+    },
+    {
+      "id": "maestro-v3",
+      "name": "MAESTRO v3",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "duration": "≈199 h",
+      "hours": 199.0,
+      "paired": false,
+      "pairing": "",
+      "editing": "Semantic†",
+      "categories": [
+        "Semantic"
+      ],
+      "annotation": "Aligned MIDI: pitch, timing, velocity, pedals; piece metadata",
+      "annotationTypes": [
+        "MIDI / score"
+      ],
+      "modalities": "Audio, MIDI",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/1810.12247"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Project Page",
+          "url": "https://magenta.tensorflow.org/datasets/maestro"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Download Data",
+          "url": "https://storage.googleapis.com/magentadata/datasets/maestro/v3.0.0/maestro-v3.0.0.zip"
+        }
+      ]
+    },
+    {
+      "id": "nsynth",
+      "name": "NSynth",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "duration": "≈340 h",
+      "hours": 340.0,
+      "paired": false,
+      "pairing": "",
+      "editing": "Instance†; Semantic†",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "annotation": "Label: instrument, pitch, velocity, timbral qualities",
+      "annotationTypes": [
+        "Label"
+      ],
+      "modalities": "Audio",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/1704.01279"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Project Page",
+          "url": "https://magenta.tensorflow.org/datasets/nsynth"
+        }
+      ]
+    },
+    {
+      "id": "groove-midi-dataset",
+      "name": "Groove MIDI Dataset",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "duration": "≈13.6 h",
+      "hours": 13.6,
+      "paired": false,
+      "pairing": "",
+      "editing": "Semantic†",
+      "categories": [
+        "Semantic"
+      ],
+      "annotation": "Aligned MIDI; tempo/style labels; performance timing/velocity",
+      "annotationTypes": [
+        "Label",
+        "MIDI / score"
+      ],
+      "modalities": "Audio, MIDI",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/1905.06118"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Project Page",
+          "url": "https://magenta.tensorflow.org/datasets/groove"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Download Data",
+          "url": "https://storage.googleapis.com/magentadata/datasets/groove/groove-v1.0.0.zip"
+        }
+      ]
+    },
+    {
+      "id": "musiccaps",
+      "name": "MusicCaps",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "duration": "≈15.3 h",
+      "hours": 15.3,
+      "paired": false,
+      "pairing": "",
+      "editing": "Semantic†; Instance†",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "annotation": "Caption; musical aspect labels",
+      "annotationTypes": [
+        "Caption",
+        "Label"
+      ],
+      "modalities": "Audio, Text",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2301.11325"
+        },
+        {
+          "kind": "Dataset",
+          "label": "HuggingFace Metadata",
+          "url": "https://huggingface.co/datasets/google/MusicCaps"
+        }
+      ]
+    },
+    {
+      "id": "mtg-jamendo",
+      "name": "MTG-Jamendo",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "duration": "≈3,770 h",
+      "hours": 3770.0,
+      "paired": false,
+      "pairing": "",
+      "editing": "Semantic†; Instance†",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "annotation": "Label: genre, instrument, mood/theme",
+      "annotationTypes": [
+        "Label"
+      ],
+      "modalities": "Audio",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "Publication Record",
+          "url": "https://sites.google.com/view/ml4md2019/program"
+        },
+        {
+          "kind": "Dataset",
+          "label": "GitHub Code",
+          "url": "https://github.com/MTG/mtg-jamendo-dataset"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Download Data",
+          "url": "https://github.com/MTG/mtg-jamendo-dataset#downloading-the-data"
+        }
+      ]
+    },
+    {
+      "id": "fma-large",
+      "name": "FMA (large)",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "duration": "≈888 h",
+      "hours": 888.0,
+      "paired": false,
+      "pairing": "",
+      "editing": "Semantic†",
+      "categories": [
+        "Semantic"
+      ],
+      "annotation": "Label: genre hierarchy; track/artist metadata",
+      "annotationTypes": [
+        "Label"
+      ],
+      "modalities": "Audio",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/1612.01840"
+        },
+        {
+          "kind": "Dataset",
+          "label": "GitHub Code",
+          "url": "https://github.com/mdeff/fma"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Download Data",
+          "url": "https://os.unil.cloud.switch.ch/fma/fma_large.zip"
+        }
+      ]
+    },
+    {
+      "id": "fuss",
+      "name": "FUSS",
+      "group": "Audio",
+      "domains": [
+        "Audio"
+      ],
+      "duration": "≈61 h mixtures",
+      "hours": 61.0,
+      "paired": true,
+      "pairing": "Mixture/sources; dry/reverberant",
+      "editing": "Instance; Acoustic",
+      "categories": [
+        "Acoustic",
+        "Instance"
+      ],
+      "annotation": "Source/time metadata; mixing parameters; no event labels",
+      "annotationTypes": [
+        "Label"
+      ],
+      "modalities": "Audio",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2011.00803"
+        },
+        {
+          "kind": "Dataset",
+          "label": "GitHub Code",
+          "url": "https://github.com/google-research/sound-separation/tree/master/datasets/fuss"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Zenodo Data",
+          "url": "https://zenodo.org/records/3743844"
+        }
+      ]
+    },
+    {
+      "id": "audioset",
+      "name": "AudioSet",
+      "group": "Audio",
+      "domains": [
+        "Audio"
+      ],
+      "duration": "≈5,790 h",
+      "hours": 5790.0,
+      "paired": false,
+      "pairing": "",
+      "editing": "Instance†",
+      "categories": [
+        "Instance"
+      ],
+      "annotation": "Label: sound-event ontology; clip-level multi-labels",
+      "annotationTypes": [
+        "Label"
+      ],
+      "modalities": "Audio, Video (upstream)",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "Paper Link",
+          "url": "https://research.google/pubs/audio-set-an-ontology-and-human-labeled-dataset-for-audio-events/"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Dataset Metadata",
+          "url": "https://research.google.com/audioset/download.html"
+        }
+      ]
+    },
+    {
+      "id": "audiocaps-v1",
+      "name": "AudioCaps v1",
+      "group": "Audio",
+      "domains": [
+        "Audio"
+      ],
+      "duration": "≈143 h",
+      "hours": 143.0,
+      "paired": false,
+      "pairing": "",
+      "editing": "Instance†; Semantic†",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "annotation": "Caption: one or five descriptions per clip",
+      "annotationTypes": [
+        "Caption"
+      ],
+      "modalities": "Audio, Text",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "Paper Link",
+          "url": "https://aclanthology.org/N19-1011/"
+        },
+        {
+          "kind": "Dataset",
+          "label": "GitHub Metadata",
+          "url": "https://github.com/cdjkim/audiocaps/tree/master/dataset"
+        }
+      ]
+    },
+    {
+      "id": "clotho-v2-1",
+      "name": "Clotho v2.1",
+      "group": "Audio",
+      "domains": [
+        "Audio"
+      ],
+      "duration": "≈37 h\n(5,929 labeled clips)",
+      "hours": 37.0,
+      "paired": false,
+      "pairing": "",
+      "editing": "Instance†; Semantic†",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "annotation": "Caption: five per clip; Freesound keywords",
+      "annotationTypes": [
+        "Caption"
+      ],
+      "modalities": "Audio, Text",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/1910.09387"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Zenodo Data",
+          "url": "https://zenodo.org/records/4783391"
+        }
+      ]
+    },
+    {
+      "id": "wavcaps",
+      "name": "WavCaps",
+      "group": "Audio",
+      "domains": [
+        "Audio"
+      ],
+      "duration": "≈7,568 h",
+      "hours": 7568.0,
+      "paired": false,
+      "pairing": "",
+      "editing": "Instance†; Semantic†",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "annotation": "LLM-assisted captions; source descriptions/metadata",
+      "annotationTypes": [
+        "Caption"
+      ],
+      "modalities": "Audio, Text",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2303.17395"
+        },
+        {
+          "kind": "Dataset",
+          "label": "GitHub Code",
+          "url": "https://github.com/XinhaoMei/WavCaps"
+        },
+        {
+          "kind": "Dataset",
+          "label": "HuggingFace Dataset",
+          "url": "https://huggingface.co/datasets/cvssp/WavCaps"
+        }
+      ]
+    },
+    {
+      "id": "fsd50k",
+      "name": "FSD50K",
+      "group": "Audio",
+      "domains": [
+        "Audio"
+      ],
+      "duration": "≈108 h",
+      "hours": 108.0,
+      "paired": false,
+      "pairing": "",
+      "editing": "Instance†",
+      "categories": [
+        "Instance"
+      ],
+      "annotation": "Label: 200 sound-event classes; clip-level multi-labels",
+      "annotationTypes": [
+        "Label"
+      ],
+      "modalities": "Audio",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2010.00475"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Zenodo Data",
+          "url": "https://zenodo.org/records/4060432"
+        }
+      ]
+    },
+    {
+      "id": "esc-50",
+      "name": "ESC-50",
+      "group": "Audio",
+      "domains": [
+        "Audio"
+      ],
+      "duration": "≈2.8 h",
+      "hours": 2.8,
+      "paired": false,
+      "pairing": "",
+      "editing": "Instance†",
+      "categories": [
+        "Instance"
+      ],
+      "annotation": "Label: 50 environmental sound classes",
+      "annotationTypes": [
+        "Label"
+      ],
+      "modalities": "Audio",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "Paper Link",
+          "url": "https://www.karolpiczak.com/papers/Piczak2015-ESC-Dataset.pdf"
+        },
+        {
+          "kind": "Dataset",
+          "label": "GitHub Code",
+          "url": "https://github.com/karolpiczak/ESC-50"
+        }
+      ]
+    },
+    {
+      "id": "urbansound8k",
+      "name": "UrbanSound8K",
+      "group": "Audio",
+      "domains": [
+        "Audio"
+      ],
+      "duration": "≈8.8 h",
+      "hours": 8.8,
+      "paired": false,
+      "pairing": "",
+      "editing": "Instance†",
+      "categories": [
+        "Instance"
+      ],
+      "annotation": "Label: 10 urban sound classes; salience; source timestamps",
+      "annotationTypes": [
+        "Label"
+      ],
+      "modalities": "Audio",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "Paper Link",
+          "url": "https://drive.google.com/file/d/0B2SQvWn0_78BX2wtbWZLVnRhSDg/view?usp=sharing"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Project Page",
+          "url": "https://urbansounddataset.weebly.com/urbansound8k.html"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Zenodo Data",
+          "url": "https://zenodo.org/records/1203745"
+        }
+      ]
+    },
+    {
+      "id": "vggsound",
+      "name": "VGGSound",
+      "group": "Audio",
+      "domains": [
+        "Audio"
+      ],
+      "duration": "≈550 h",
+      "hours": 550.0,
+      "paired": false,
+      "pairing": "",
+      "editing": "Instance†",
+      "categories": [
+        "Instance"
+      ],
+      "annotation": "Label: audio-visual event class; video timestamps",
+      "annotationTypes": [
+        "Label"
+      ],
+      "modalities": "Audio, Video (upstream)",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2004.14368"
+        },
+        {
+          "kind": "Dataset",
+          "label": "GitHub Metadata",
+          "url": "https://github.com/hche11/VGGSound/tree/master/data"
+        }
+      ]
+    },
+    {
+      "id": "audioedit-audio-omni",
+      "name": "AudioEdit (Audio-Omni)",
+      "group": "Unified",
+      "domains": [
+        "Speech",
+        "Music",
+        "Audio"
+      ],
+      "duration": "≈2,686 h\n(966,794 task pairs)",
+      "hours": 2686.0,
+      "paired": true,
+      "pairing": "Source/edited target",
+      "editing": "Instance",
+      "categories": [
+        "Instance"
+      ],
+      "annotation": "Instruct: add, remove, extract, source transformation",
+      "annotationTypes": [
+        "Instruction"
+      ],
+      "modalities": "Audio, Text",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2604.10708"
+        },
+        {
+          "kind": "Dataset",
+          "label": "GitHub Code",
+          "url": "https://github.com/ZeyueT/Audio-Omni"
+        },
+        {
+          "kind": "Dataset",
+          "label": "HuggingFace Dataset",
+          "url": "https://huggingface.co/datasets/HKUSTAudio/AudioEdit"
+        }
+      ]
+    },
+    {
+      "id": "divide-and-remaster-v2",
+      "name": "Divide and Remaster v2",
+      "group": "Unified",
+      "domains": [
+        "Speech",
+        "Music",
+        "Audio"
+      ],
+      "duration": "≈81 h",
+      "hours": 81.0,
+      "paired": true,
+      "pairing": "Mixture/stems",
+      "editing": "Instance",
+      "categories": [
+        "Instance"
+      ],
+      "annotation": "Transcript; music genre; sound labels/timestamps",
+      "annotationTypes": [
+        "Transcript",
+        "Label"
+      ],
+      "modalities": "Audio, Text",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/2110.09958"
+        },
+        {
+          "kind": "Dataset",
+          "label": "GitHub Code",
+          "url": "https://github.com/darius522/dnr-utils"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Zenodo Data",
+          "url": "https://zenodo.org/records/6949108"
+        }
+      ]
+    },
+    {
+      "id": "musan",
+      "name": "MUSAN",
+      "group": "Unified",
+      "domains": [
+        "Speech",
+        "Music",
+        "Audio"
+      ],
+      "duration": "≈109 h",
+      "hours": 109.0,
+      "paired": false,
+      "pairing": "",
+      "editing": "Acoustic†; Instance†",
+      "categories": [
+        "Acoustic",
+        "Instance"
+      ],
+      "annotation": "Label: speech/music/noise; speech and music metadata",
+      "annotationTypes": [
+        "Label"
+      ],
+      "modalities": "Audio",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv Paper",
+          "url": "https://arxiv.org/abs/1510.08484"
+        },
+        {
+          "kind": "Dataset",
+          "label": "OpenSLR Data",
+          "url": "https://www.openslr.org/17/"
+        }
+      ]
+    }
+  ],
+  "tools": [
+    {
+      "id": "qwen3-tts-generation",
+      "name": "Qwen3-TTS",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "purpose": "Generation",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "editing": "Semantic; Instance",
+      "description": "Text-aligned utterances with instruction-controlled delivery or a reference speaker.",
+      "level": "Utterance",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/QwenLM/Qwen3-TTS"
+        },
+        {
+          "kind": "Model",
+          "label": "Hugging Face Base",
+          "url": "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-Base"
+        },
+        {
+          "kind": "Model",
+          "label": "Hugging Face CustomVoice",
+          "url": "https://huggingface.co/Qwen/Qwen3-TTS-12Hz-1.7B-CustomVoice"
+        }
+      ]
+    },
+    {
+      "id": "cosyvoice3-generation",
+      "name": "CosyVoice3",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "purpose": "Generation",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "editing": "Semantic; Instance",
+      "description": "Text-aligned speech with voice cloning and prompted language, emotion or delivery.",
+      "level": "Utterance; pronunciation units",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/QwenAudio/CosyVoice"
+        },
+        {
+          "kind": "Model",
+          "label": "Hugging Face Model",
+          "url": "https://huggingface.co/FunAudioLLM/Fun-CosyVoice3-0.5B-2512"
+        }
+      ]
+    },
+    {
+      "id": "maskgct-generation",
+      "name": "MaskGCT",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "purpose": "Generation",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "editing": "Semantic; Instance",
+      "description": "Text-conditioned speech with a reference voice and configurable total duration.",
+      "level": "Utterance; total duration",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/open-mmlab/Amphion/tree/main/models/tts/maskgct"
+        },
+        {
+          "kind": "Model",
+          "label": "Hugging Face Model",
+          "url": "https://huggingface.co/amphion/MaskGCT"
+        }
+      ]
+    },
+    {
+      "id": "seed-vc-generation",
+      "name": "Seed-VC",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "purpose": "Generation",
+      "categories": [
+        "Instance"
+      ],
+      "editing": "Instance",
+      "description": "Voice-converted recordings paired with their source speech for speaker/timbre replacement.",
+      "level": "Utterance / source recording",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/Plachtaa/seed-vc"
+        },
+        {
+          "kind": "Model",
+          "label": "Hugging Face Model",
+          "url": "https://huggingface.co/Plachta/Seed-VC"
+        }
+      ]
+    },
+    {
+      "id": "auk-generation",
+      "name": "AuK",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "purpose": "Generation",
+      "categories": [
+        "Acoustic",
+        "Semantic",
+        "Instance"
+      ],
+      "editing": "Acoustic; Semantic; Instance",
+      "description": "Instruction-edited speech for content, delivery, voice, enhancement and target-speaker tasks.",
+      "level": "Utterance; text-specified word / phrase",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/Tencent-Hunyuan/AuK"
+        },
+        {
+          "kind": "Model",
+          "label": "Hugging Face Model",
+          "url": "https://huggingface.co/tencent/AuK"
+        }
+      ]
+    },
+    {
+      "id": "musicgen-generation",
+      "name": "MusicGen",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "purpose": "Generation",
+      "categories": [
+        "Semantic"
+      ],
+      "editing": "Semantic",
+      "description": "Text- or melody-conditioned music clips and continuations for style/content-controlled examples.",
+      "level": "Clip; melody sequence",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/facebookresearch/audiocraft"
+        },
+        {
+          "kind": "Model",
+          "label": "Hugging Face Melody",
+          "url": "https://huggingface.co/facebook/musicgen-melody"
+        }
+      ]
+    },
+    {
+      "id": "demucs-generation",
+      "name": "Demucs",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "purpose": "Generation",
+      "categories": [
+        "Instance"
+      ],
+      "editing": "Instance",
+      "description": "Estimated vocal, drum, bass and other stems for extraction, removal and remix pair construction.",
+      "level": "Stem / track",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/facebookresearch/demucs"
+        },
+        {
+          "kind": "Model",
+          "label": "Model Checkpoint",
+          "url": "https://dl.fbaipublicfiles.com/demucs/hybrid_transformer/955717e8-8726e21a.th"
+        }
+      ]
+    },
+    {
+      "id": "spleeter-generation",
+      "name": "Spleeter",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "purpose": "Generation",
+      "categories": [
+        "Instance"
+      ],
+      "editing": "Instance",
+      "description": "Estimated 2-, 4- or 5-stem decompositions for source removal, extraction and remixing.",
+      "level": "Stem / track",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/deezer/spleeter"
+        },
+        {
+          "kind": "Model",
+          "label": "GitHub Checkpoints",
+          "url": "https://github.com/deezer/spleeter/releases/tag/v1.4.0"
+        }
+      ]
+    },
+    {
+      "id": "fluidsynth-generation",
+      "name": "FluidSynth",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "purpose": "Generation",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "editing": "Semantic; Instance",
+      "description": "Audio rendered from MIDI and a SoundFont, aligned with notes, velocities and instrument assignments.",
+      "level": "Note; MIDI control event / track",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/FluidSynth/fluidsynth"
+        }
+      ]
+    },
+    {
+      "id": "audioldm-2-generation",
+      "name": "AudioLDM 2",
+      "group": "Audio",
+      "domains": [
+        "Audio"
+      ],
+      "purpose": "Generation",
+      "categories": [
+        "Instance"
+      ],
+      "editing": "Instance",
+      "description": "Text-conditioned sound clips to use as source assets in insertion or replacement examples.",
+      "level": "Clip",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/haoheliu/AudioLDM2"
+        },
+        {
+          "kind": "Model",
+          "label": "Hugging Face Model",
+          "url": "https://huggingface.co/cvssp/audioldm2"
+        }
+      ]
+    },
+    {
+      "id": "audiosep-generation",
+      "name": "AudioSep",
+      "group": "Audio",
+      "domains": [
+        "Audio"
+      ],
+      "purpose": "Generation",
+      "categories": [
+        "Instance"
+      ],
+      "editing": "Instance",
+      "description": "Text-selected source estimates from mixtures for extraction and removal pair construction.",
+      "level": "Described source / clip",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/Audio-AGI/AudioSep"
+        },
+        {
+          "kind": "Model",
+          "label": "Hugging Face Checkpoints",
+          "url": "https://huggingface.co/spaces/Audio-AGI/AudioSep/tree/main/checkpoint"
+        }
+      ]
+    },
+    {
+      "id": "scaper-generation",
+      "name": "Scaper",
+      "group": "Audio",
+      "domains": [
+        "Audio"
+      ],
+      "purpose": "Generation",
+      "categories": [
+        "Acoustic",
+        "Instance"
+      ],
+      "editing": "Acoustic; Instance",
+      "description": "Synthetic soundscapes with event labels, onset/offset times, SNRs and optional isolated event tracks.",
+      "level": "Event; start time / duration / SNR",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/justinsalamon/scaper"
+        }
+      ]
+    },
+    {
+      "id": "spatialscaper-generation",
+      "name": "SpatialScaper",
+      "group": "Audio",
+      "domains": [
+        "Audio"
+      ],
+      "purpose": "Generation",
+      "categories": [
+        "Acoustic",
+        "Instance"
+      ],
+      "editing": "Acoustic; Instance",
+      "description": "Spatialized soundscapes with event activity, source trajectories and room-response conditions.",
+      "level": "Event / trajectory / scene",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/marl/SpatialScaper"
+        }
+      ]
+    },
+    {
+      "id": "sam-audio-generation",
+      "name": "SAM-Audio",
+      "group": "Unified",
+      "domains": [
+        "Speech",
+        "Music",
+        "Audio"
+      ],
+      "purpose": "Generation",
+      "categories": [
+        "Instance"
+      ],
+      "editing": "Instance",
+      "description": "Prompt-selected target and residual audio for extraction, removal and remix examples.",
+      "level": "Source; temporal-span prompts",
+      "access": "Access request",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/facebookresearch/sam-audio"
+        },
+        {
+          "kind": "Model",
+          "label": "Hugging Face Model",
+          "url": "https://huggingface.co/facebook/sam-audio-large"
+        }
+      ]
+    },
+    {
+      "id": "audiomentations-generation",
+      "name": "Audiomentations",
+      "group": "Unified",
+      "domains": [
+        "Speech",
+        "Music",
+        "Audio"
+      ],
+      "purpose": "Generation",
+      "categories": [
+        "Acoustic",
+        "Semantic"
+      ],
+      "editing": "Acoustic; Semantic",
+      "description": "Augmented audio for clean/degraded and pitch/tempo contrast pairs using noise, gain, filtering and other transforms.",
+      "level": "Clip; selected segment via slicing",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/iver56/audiomentations"
+        }
+      ]
+    },
+    {
+      "id": "pedalboard-generation",
+      "name": "Pedalboard",
+      "group": "Unified",
+      "domains": [
+        "Speech",
+        "Music",
+        "Audio"
+      ],
+      "purpose": "Generation",
+      "categories": [
+        "Acoustic"
+      ],
+      "editing": "Acoustic",
+      "description": "Effect-processed audio for dry/wet or clean/degraded pairs using EQ, gain, compression, distortion and reverb.",
+      "level": "Clip / processing block",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/spotify/pedalboard"
+        }
+      ]
+    },
+    {
+      "id": "pyroomacoustics-generation",
+      "name": "Pyroomacoustics",
+      "group": "Unified",
+      "domains": [
+        "Speech",
+        "Music",
+        "Audio"
+      ],
+      "purpose": "Generation",
+      "categories": [
+        "Acoustic",
+        "Instance"
+      ],
+      "editing": "Acoustic; Instance",
+      "description": "Room impulse responses and microphone mixtures from positioned sources, including dry/reverberant pairs.",
+      "level": "Scene / source position",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/LCAV/pyroomacoustics"
+        }
+      ]
+    },
+    {
+      "id": "montreal-forced-aligner-mfa-annotation",
+      "name": "Montreal Forced Aligner (MFA)",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "purpose": "Annotation",
+      "categories": [
+        "Semantic"
+      ],
+      "editing": "Semantic",
+      "description": "Word and phone boundaries obtained by aligning speech with supplied transcripts and pronunciation dictionaries.",
+      "level": "Word / phoneme",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/MontrealCorpusTools/Montreal-Forced-Aligner"
+        },
+        {
+          "kind": "Model",
+          "label": "Model Acoustic models",
+          "url": "https://mfa-models.readthedocs.io/en/latest/acoustic/index.html"
+        }
+      ]
+    },
+    {
+      "id": "whisperx-annotation",
+      "name": "WhisperX",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "purpose": "Annotation",
+      "categories": [
+        "Semantic"
+      ],
+      "editing": "Semantic",
+      "description": "ASR transcripts with word timestamps from a language-specific alignment model.",
+      "level": "Utterance / word",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/m-bain/whisperX"
+        },
+        {
+          "kind": "Model",
+          "label": "Hugging Face ASR",
+          "url": "https://huggingface.co/Systran/faster-whisper-large-v3"
+        },
+        {
+          "kind": "Model",
+          "label": "Hugging Face EN aligner",
+          "url": "https://huggingface.co/facebook/wav2vec2-large-960h-lv60-self"
+        }
+      ]
+    },
+    {
+      "id": "qwen3-asr-forcedaligner-annotation",
+      "name": "Qwen3-ASR + ForcedAligner",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "purpose": "Annotation",
+      "categories": [
+        "Semantic"
+      ],
+      "editing": "Semantic",
+      "description": "Transcripts, language labels and text-unit timestamps using the released ASR and forced-alignment models.",
+      "level": "Utterance / word",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/QwenLM/Qwen3-ASR"
+        },
+        {
+          "kind": "Model",
+          "label": "Hugging Face ASR",
+          "url": "https://huggingface.co/Qwen/Qwen3-ASR-1.7B"
+        },
+        {
+          "kind": "Model",
+          "label": "Hugging Face Aligner",
+          "url": "https://huggingface.co/Qwen/Qwen3-ForcedAligner-0.6B"
+        }
+      ]
+    },
+    {
+      "id": "pyannote-audio-annotation",
+      "name": "pyannote.audio",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "purpose": "Annotation",
+      "categories": [
+        "Instance"
+      ],
+      "editing": "Instance",
+      "description": "Speaker-labeled speech turns and overlapping-speaker activity.",
+      "level": "Speaker turn / segment",
+      "access": "Accept access terms",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/pyannote/pyannote-audio"
+        },
+        {
+          "kind": "Model",
+          "label": "Hugging Face Community-1",
+          "url": "https://huggingface.co/pyannote/speaker-diarization-community-1"
+        }
+      ]
+    },
+    {
+      "id": "silero-vad-annotation",
+      "name": "Silero VAD",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "purpose": "Annotation",
+      "categories": [
+        "Instance"
+      ],
+      "editing": "Instance",
+      "description": "Speech/non-speech probabilities and detected speech start/end times.",
+      "level": "Frame / speech segment",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/snakers4/silero-vad"
+        },
+        {
+          "kind": "Model",
+          "label": "GitHub Weights",
+          "url": "https://github.com/snakers4/silero-vad/tree/master/src/silero_vad/data"
+        }
+      ]
+    },
+    {
+      "id": "emotion2vec-annotation",
+      "name": "emotion2vec+",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "purpose": "Annotation",
+      "categories": [
+        "Semantic"
+      ],
+      "editing": "Semantic",
+      "description": "Speech-emotion labels and scores, with optional learned emotion representations.",
+      "level": "Utterance (labels); frame (features)",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/ddlBoJack/emotion2vec"
+        },
+        {
+          "kind": "Model",
+          "label": "Hugging Face Large",
+          "url": "https://huggingface.co/emotion2vec/emotion2vec_plus_large"
+        }
+      ]
+    },
+    {
+      "id": "funasr-sensevoicesmall-annotation",
+      "name": "FunASR / SenseVoiceSmall",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "purpose": "Annotation",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "editing": "Semantic; Instance",
+      "description": "Transcripts, language and emotion tags, and audio-event tags such as laughter or applause.",
+      "level": "Utterance / VAD segment",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/modelscope/FunASR"
+        },
+        {
+          "kind": "Model",
+          "label": "Hugging Face SenseVoiceSmall",
+          "url": "https://huggingface.co/FunAudioLLM/SenseVoiceSmall"
+        }
+      ]
+    },
+    {
+      "id": "praat-parselmouth-annotation",
+      "name": "Praat / Parselmouth",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "purpose": "Annotation",
+      "categories": [
+        "Acoustic",
+        "Semantic"
+      ],
+      "editing": "Acoustic; Semantic",
+      "description": "Pitch, formants and intensity tracks; manually defined TextGrid points and intervals in Praat.",
+      "level": "Frame; word / phoneme / interval (manual)",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Praat",
+          "url": "https://github.com/praat/praat.github.io"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub Parselmouth",
+          "url": "https://github.com/YannickJadoul/Parselmouth"
+        }
+      ]
+    },
+    {
+      "id": "rmvpe-annotation",
+      "name": "RMVPE",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "purpose": "Annotation",
+      "categories": [
+        "Semantic"
+      ],
+      "editing": "Semantic",
+      "description": "Vocal F0 trajectories from polyphonic music.",
+      "level": "Frame",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/Dream-High/RMVPE"
+        },
+        {
+          "kind": "Model",
+          "label": "Google Drive ROSVOT bundle",
+          "url": "https://drive.google.com/file/d/1JNtNT37KiLq9uFQqHk7JFs-3trxd3bRh/view"
+        }
+      ]
+    },
+    {
+      "id": "crepe-annotation",
+      "name": "CREPE",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "purpose": "Annotation",
+      "categories": [
+        "Semantic"
+      ],
+      "editing": "Semantic",
+      "description": "Monophonic F0 estimates and confidence values.",
+      "level": "Frame",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/marl/crepe"
+        },
+        {
+          "kind": "Model",
+          "label": "GitHub Weights",
+          "url": "https://github.com/marl/crepe/tree/models"
+        }
+      ]
+    },
+    {
+      "id": "rosvot-annotation",
+      "name": "ROSVOT",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "purpose": "Annotation",
+      "categories": [
+        "Semantic"
+      ],
+      "editing": "Semantic",
+      "description": "Singing-note pitches and onset/offset times, with word boundaries from its RWBD component.",
+      "level": "Note / word",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/RickyL-2000/ROSVOT"
+        },
+        {
+          "kind": "Model",
+          "label": "Google Drive Checkpoints",
+          "url": "https://drive.google.com/file/d/1JNtNT37KiLq9uFQqHk7JFs-3trxd3bRh/view"
+        }
+      ]
+    },
+    {
+      "id": "basic-pitch-annotation",
+      "name": "Basic Pitch",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "purpose": "Annotation",
+      "categories": [
+        "Semantic"
+      ],
+      "editing": "Semantic",
+      "description": "Polyphonic note events and pitch bends exported as MIDI; most effective on one instrument at a time.",
+      "level": "Note; frame-level pitch contour",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/spotify/basic-pitch"
+        },
+        {
+          "kind": "Model",
+          "label": "GitHub Weights",
+          "url": "https://github.com/spotify/basic-pitch/tree/main/basic_pitch/saved_models"
+        }
+      ]
+    },
+    {
+      "id": "all-in-one-music-structure-analyzer-annotation",
+      "name": "All-In-One Music Structure Analyzer",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "purpose": "Annotation",
+      "categories": [
+        "Semantic"
+      ],
+      "editing": "Semantic",
+      "description": "Tempo, beat/downbeat timestamps and labeled sections such as verse, chorus and bridge.",
+      "level": "Beat / downbeat / section",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/mir-aidj/all-in-one"
+        },
+        {
+          "kind": "Model",
+          "label": "Hugging Face Models",
+          "url": "https://huggingface.co/taejunkim/allinone"
+        }
+      ]
+    },
+    {
+      "id": "music-flamingo-annotation",
+      "name": "Music Flamingo",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "purpose": "Annotation",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "editing": "Semantic; Instance",
+      "description": "Music captions and question–answer annotations about instrumentation, harmony, mood, structure and lyrics.",
+      "level": "Clip / full track (free-form text)",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/NVIDIA/audio-flamingo/tree/music_flamingo"
+        },
+        {
+          "kind": "Model",
+          "label": "Hugging Face Model",
+          "url": "https://huggingface.co/nvidia/music-flamingo-hf"
+        }
+      ]
+    },
+    {
+      "id": "panns-annotation",
+      "name": "PANNs",
+      "group": "Audio",
+      "domains": [
+        "Audio"
+      ],
+      "purpose": "Annotation",
+      "categories": [
+        "Instance"
+      ],
+      "editing": "Instance",
+      "description": "Sound-event class scores and frame-wise activity with the released decision-level detection models.",
+      "level": "Clip / frame",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/qiuqiangkong/audioset_tagging_cnn"
+        },
+        {
+          "kind": "Model",
+          "label": "Zenodo Models",
+          "url": "https://zenodo.org/records/3987831"
+        }
+      ]
+    },
+    {
+      "id": "hts-at-annotation",
+      "name": "HTS-AT",
+      "group": "Audio",
+      "domains": [
+        "Audio"
+      ],
+      "purpose": "Annotation",
+      "categories": [
+        "Instance"
+      ],
+      "editing": "Instance",
+      "description": "Sound-event tags and temporal class-activation estimates in localization mode.",
+      "level": "Clip / frame",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/RetroCirce/HTS-Audio-Transformer"
+        },
+        {
+          "kind": "Model",
+          "label": "Google Drive Models",
+          "url": "https://drive.google.com/drive/folders/1f5VYMk0uos_YnuBshgmaTVioXbs7Kmz6?usp=sharing"
+        }
+      ]
+    },
+    {
+      "id": "yamnet-annotation",
+      "name": "YAMNet",
+      "group": "Audio",
+      "domains": [
+        "Audio"
+      ],
+      "purpose": "Annotation",
+      "categories": [
+        "Instance"
+      ],
+      "editing": "Instance",
+      "description": "Scores for 521 sound-event classes from overlapping audio windows.",
+      "level": "0.96 s window; 0.48 s hop",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/tensorflow/models/tree/master/research/audioset/yamnet"
+        },
+        {
+          "kind": "Model",
+          "label": "Model Checkpoint",
+          "url": "https://storage.googleapis.com/audioset/yamnet.h5"
+        }
+      ]
+    },
+    {
+      "id": "qwen3-omni-captioner-annotation",
+      "name": "Qwen3-Omni Captioner",
+      "group": "Unified",
+      "domains": [
+        "Speech",
+        "Music",
+        "Audio"
+      ],
+      "purpose": "Annotation",
+      "categories": [
+        "Acoustic",
+        "Semantic",
+        "Instance"
+      ],
+      "editing": "Acoustic; Semantic; Instance",
+      "description": "Detailed audio captions covering speech, music, sound events and acoustic characteristics.",
+      "level": "Clip / recording (free-form text)",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/QwenLM/Qwen3-Omni"
+        },
+        {
+          "kind": "Model",
+          "label": "Hugging Face Captioner",
+          "url": "https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Captioner"
+        }
+      ]
+    },
+    {
+      "id": "audio-flamingo-3-annotation",
+      "name": "Audio Flamingo 3",
+      "group": "Unified",
+      "domains": [
+        "Speech",
+        "Music",
+        "Audio"
+      ],
+      "purpose": "Annotation",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "editing": "Semantic; Instance",
+      "description": "Prompted transcripts, captions, event descriptions and audio question–answer annotations.",
+      "level": "Clip / recording (free-form text)",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/NVIDIA/audio-flamingo/tree/audio_flamingo_3"
+        },
+        {
+          "kind": "Model",
+          "label": "Hugging Face Model",
+          "url": "https://huggingface.co/nvidia/audio-flamingo-3-hf"
+        }
+      ]
+    },
+    {
+      "id": "label-studio-annotation",
+      "name": "Label Studio",
+      "group": "Unified",
+      "domains": [
+        "Speech",
+        "Music",
+        "Audio"
+      ],
+      "purpose": "Annotation",
+      "categories": [
+        "Acoustic",
+        "Semantic",
+        "Instance"
+      ],
+      "editing": "Acoustic; Semantic; Instance",
+      "description": "Human-authored clip labels, time-region labels and transcriptions using configurable audio templates.",
+      "level": "Clip / manually selected interval",
+      "access": "",
+      "links": [
+        {
+          "kind": "Code",
+          "label": "GitHub Code",
+          "url": "https://github.com/HumanSignal/label-studio"
+        }
+      ]
+    }
+  ],
+  "benchmarks": [
+    {
+      "id": "mmae",
+      "name": "MMAE",
+      "venue": null,
+      "group": "Unified",
+      "domains": [
+        "Speech",
+        "Music",
+        "Audio"
+      ],
+      "description": "Tests instruction following and preservation across speech, music, sound, and their mixtures with 2,000 cases (≈8.0 h), six complexity levels, and 17,741 verification rubrics.",
+      "domainNote": "Speech; Music; Audio.",
+      "editing": "Acoustic; Semantic; Instance; Composite.",
+      "categories": [
+        "Acoustic",
+        "Semantic",
+        "Instance",
+        "Composite"
+      ],
+      "evaluation": "MLLM — Qwen3-Omni judges individual rubrics with majority voting, yielding Instruction Following Rate (IFR), Consistency Rate (CR), and Exact Match Rate (EMR).",
+      "results": [
+        {
+          "label": "Single model",
+          "text": "On the full benchmark in the original comparison, Step-Audio-EditX leads IFR (44.86%) and CR (58.88%), while Ming-UniAudio leads EMR (3.20%); Audio-Omni reaches 4.99% EMR on the separate 801-case, ≤10 s subset. The newer AuK baseline without Prompt Enhancer reports 7.58% EMR on the 1,003-case single-operation subset.",
+          "links": [
+            {
+              "kind": "Source",
+              "label": "original comparison",
+              "url": "https://arxiv.org/pdf/2606.07229"
+            },
+            {
+              "kind": "Source",
+              "label": "AuK baseline without Prompt Enhancer",
+              "url": "https://github.com/Audio-Editing-Challenge/Audio-Editing-Challenge-Baseline#results"
+            }
+          ]
+        },
+        {
+          "label": "Agent / LLM-assisted system",
+          "text": "The challenge agent baseline, combining an LLM router with DSP, SAM-Audio, and AuK, reports 7.45% EMR, 44.06% IFR, and 74.63% CR on all 2,000 cases. Separately, AuK-Flash with Prompt Enhancer reaches 13.85% EMR on MMAE-Speech only; these scopes are not directly comparable.",
+          "links": [
+            {
+              "kind": "Source",
+              "label": "challenge agent baseline",
+              "url": "https://github.com/Audio-Editing-Challenge/Audio-Editing-Challenge-Baseline#results"
+            },
+            {
+              "kind": "Source",
+              "label": "AuK-Flash with Prompt Enhancer",
+              "url": "https://arxiv.org/html/2609.08936v1#A1.T7"
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2606.07229"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub",
+          "url": "https://github.com/ddlBoJack/MMAE"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/datasets/BoJack/MMAE"
+        }
+      ]
+    },
+    {
+      "id": "speecheditbench",
+      "name": "SpeechEditBench",
+      "venue": null,
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "description": "Separates edit success from linguistic-content preservation in bilingual speech editing through 4,700 cases (≈9.4 h) covering seven atomic attributes and multi-attribute instructions.",
+      "domainNote": "Speech.",
+      "editing": "Acoustic; Semantic; Instance; Composite.",
+      "categories": [
+        "Acoustic",
+        "Semantic",
+        "Instance",
+        "Composite"
+      ],
+      "evaluation": "Hybrid — ASR, speaker verification, acoustic/prosodic measurements, and a Gemini audio judge produce target success, content-preservation success, and joint success.",
+      "results": [
+        {
+          "label": "Single model",
+          "text": "By task, GPT-Realtime reaches 96.67% content, 68.67% style, and 47.00% paralinguistic joint success; Gemini-Live reaches 27.79% emotion and 11.00% compositional joint success. The newer AuK comparison reports 71.33% prosody joint success, but covers only five task types.",
+          "links": [
+            {
+              "kind": "Source",
+              "label": "GPT-Realtime",
+              "url": "https://arxiv.org/html/2606.01804v3#S5"
+            },
+            {
+              "kind": "Source",
+              "label": "AuK comparison",
+              "url": "https://arxiv.org/html/2609.08936v1#S7.SS3"
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2606.01804"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub",
+          "url": "https://github.com/daxintan-cuhk/SpeechEditBench"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Hugging Face, v1.1",
+          "url": "https://huggingface.co/datasets/DiscreteSpeech/SpeechEditBench/tree/v1.1"
+        }
+      ]
+    },
+    {
+      "id": "ming-freeform-audio-edit",
+      "name": "Ming-Freeform-Audio-Edit",
+      "venue": null,
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "description": "Evaluates timestamp-free, instruction-guided speech changes with ≈3.3k instruction cases across Basic/Full lexical edits and five attribute-control tasks in Chinese and English.",
+      "domainNote": "Speech.",
+      "editing": "Acoustic; Semantic.",
+      "categories": [
+        "Acoustic",
+        "Semantic"
+      ],
+      "evaluation": "Hybrid — Whisper/Paraformer and WavLM measure transcription and speaker preservation; signal measurements assess speed/volume control, and an audio-capable judge assesses emotion/dialect conversion.",
+      "results": [
+        {
+          "label": "Single model",
+          "text": "AuK reports 3.09% / 3.96% WER and 91.47% / 85.25% edit accuracy on Full Chinese / English, averaged over deletion, insertion, and substitution; these lead the checked lexical-editing comparisons.",
+          "links": [
+            {
+              "kind": "Source",
+              "label": "AuK",
+              "url": "https://arxiv.org/html/2609.08936v1#S7.SS3"
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2511.05516"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub",
+          "url": "https://github.com/inclusionAI/Ming-Freeform-Audio-Edit"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/datasets/inclusionAI/Ming-Freeform-Audio-Edit-Benchmark"
+        },
+        {
+          "kind": "Project Page",
+          "label": "Ming-UniAudio",
+          "url": "https://xqacmer.github.io/Ming-Unitok-Audio.github.io/"
+        }
+      ]
+    },
+    {
+      "id": "step-audio-edit-benchmark",
+      "name": "Step-Audio-Edit-Benchmark",
+      "venue": null,
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "description": "Evaluates expressive and iterative speech editing using 8 speakers and 8,800 text prompts for emotion, speaking style, and paralinguistics, with reference voices released and output duration dependent on synthesis.",
+      "domainNote": "Speech.",
+      "editing": "Semantic.",
+      "categories": [
+        "Semantic"
+      ],
+      "evaluation": "MLLM — Gemini-2.5-Pro measures emotion/style classification accuracy and rates paralinguistic realization on a 1–3 scale.",
+      "results": [
+        {
+          "label": "Single model",
+          "text": "Step-Audio-EditX reports 71.0% emotion accuracy and 66.2% style accuracy after three editing iterations, and 2.89/3 paralinguistic score after one iteration in the published native-input comparison.",
+          "links": [
+            {
+              "kind": "Source",
+              "label": "Step-Audio-EditX",
+              "url": "https://arxiv.org/html/2511.03601v2#S5"
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2511.03601"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub",
+          "url": "https://github.com/stepfun-ai/Step-Audio-Edit-Benchmark"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Prompt texts",
+          "url": "https://github.com/stepfun-ai/Step-Audio-Edit-Benchmark/tree/main/data"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Reference audio",
+          "url": "https://github.com/stepfun-ai/Step-Audio-Edit-Benchmark/tree/main/prompt_audios"
+        },
+        {
+          "kind": "Project Page",
+          "label": "Step-Audio-EditX",
+          "url": "https://stepaudiollm.github.io/step-audio-editx/"
+        }
+      ]
+    },
+    {
+      "id": "lyriceditbench",
+      "name": "LyricEditBench",
+      "venue": "INTERSPEECH 2026",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "description": "Tests melody-preserving lyric modification with 7,200 bilingual cases, each using a ≤15 s melody reference, across six lyric-editing scenarios and both self-timbre and cross-timbre settings.",
+      "domainNote": "Music.",
+      "editing": "Semantic; Instance; Composite (lyric changes together with singer-identity transfer in the cross-timbre setting).",
+      "categories": [
+        "Semantic",
+        "Instance",
+        "Composite"
+      ],
+      "evaluation": "Expert models — singing ASR for Phoneme Error Rate (PER), WavLM for speaker similarity, RMVPE for F0 correlation, and VocalVerse2 for vocal quality, supplemented by human listening tests.",
+      "results": [
+        {
+          "label": "Single model",
+          "text": "YingMusic-Singer outperforms Vevo2 on lyric intelligibility, melody adherence, and vocal quality in the published comparison; for Chinese partial substitution, self-timbre, it achieves 2.14% PER and 0.9615 F0 correlation. Vevo2 retains an advantage in speaker similarity on this setting.",
+          "links": [
+            {
+              "kind": "Source",
+              "label": "YingMusic-Singer",
+              "url": "https://arxiv.org/html/2603.24589v3#S4"
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2603.24589"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub",
+          "url": "https://github.com/ASLP-lab/YingMusic-Singer-Plus"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/datasets/ASLP-lab/LyricEditBench"
+        },
+        {
+          "kind": "Project Page",
+          "label": "YingMusic-Singer-Plus",
+          "url": "https://aslp-lab.github.io/YingMusic-Singer-Plus-Demo/"
+        }
+      ]
+    },
+    {
+      "id": "zome-bench",
+      "name": "ZoME-Bench",
+      "venue": "ACM MM 2025",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "description": "Provides 1,100 music-editing cases (10 s each; ≈3.1 h counted per case) across instrument, genre, mood, rhythm, melody, and background changes, with captions and instructions supporting both prompt-based and instruction-based evaluation.",
+      "domainNote": "Music.",
+      "editing": "Semantic; Instance.",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "evaluation": "Expert models — audio–text alignment and perceptual/structural measures such as CLAP, LPAPS, and chroma similarity, supplemented by human ratings.",
+      "results": [
+        {
+          "label": "Single model / non-agent editor",
+          "text": "In the later AnchorSteer instrument-editing comparison, its conditioned variant achieves the highest CLAP (0.395) and GAP (0.279) among the compared methods, while its unconditioned variant preserves more structure (chroma similarity 0.470, versus 0.238 for the conditioned variant).",
+          "links": [
+            {
+              "kind": "Source",
+              "label": "AnchorSteer instrument-editing comparison",
+              "url": "https://brianchen1120.github.io/project/anchorsteer/"
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "MEDIC",
+          "url": "https://arxiv.org/abs/2407.13220"
+        },
+        {
+          "kind": "Code",
+          "label": "MEDIC repository",
+          "url": "https://github.com/liuhuadai/MEDIC",
+          "note": "implementation not released"
+        },
+        {
+          "kind": "Code",
+          "label": "later evaluation code",
+          "url": "https://github.com/hengtsune1024/AnchorSteer/tree/master/eval"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Hugging Face metadata",
+          "url": "https://huggingface.co/datasets/liuhuadai/ZoME-Bench",
+          "note": "source audio retrieved separately from MusicCaps/YouTube"
+        },
+        {
+          "kind": "Project Page",
+          "label": "MEDIC",
+          "url": "https://medic-edit.github.io/"
+        }
+      ]
+    },
+    {
+      "id": "melodiaedit",
+      "name": "MelodiaEdit",
+      "venue": "AAAI 2026",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "description": "Evaluates instrument, genre, and mood changes while preserving musical structure through 2,015 editing pairs drawn from 180 released source clips (≈0.86 h unique audio), combining synthesized and real music.",
+      "domainNote": "Music.",
+      "editing": "Semantic; Instance.",
+      "categories": [
+        "Semantic",
+        "Instance"
+      ],
+      "evaluation": "Expert models — CLAP, LPAPS, chroma similarity, FAD, and combined adherence/preservation scores, supplemented by human listening tests.",
+      "results": [
+        {
+          "label": "Single model",
+          "text": "In the published comparison, Melodia has the highest CLAP (0.39) and lowest LPAPS (3.11) on MelodiaEdit; MusicMagus instead leads chroma similarity (0.73) and FAD (0.57), illustrating the alignment–preservation trade-off.",
+          "links": [
+            {
+              "kind": "Source",
+              "label": "published comparison",
+              "url": "https://ojs.aaai.org/index.php/AAAI/article/download/37204/41166"
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "AAAI proceedings",
+          "url": "https://ojs.aaai.org/index.php/AAAI/article/view/37204"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub",
+          "url": "https://github.com/YiYang-SCUT/Melodia",
+          "note": "data release; evaluation implementation not released"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Audio and prompts",
+          "url": "https://github.com/YiYang-SCUT/Melodia/tree/main/MelodiaEdit/MelodiaEdit"
+        },
+        {
+          "kind": "Project Page",
+          "label": "Melodia",
+          "url": "https://melodia-edit.github.io/"
+        }
+      ]
+    },
+    {
+      "id": "aved-bench",
+      "name": "AvED-Bench",
+      "venue": "WACV 2026",
+      "group": "Audio",
+      "domains": [
+        "Audio"
+      ],
+      "description": "Tests synchronized sound-event and visual-entity replacement using 110 audio-video clips (10 s each; ≈18.3 min) curated from VGGSound with source/target descriptions.",
+      "domainNote": "Audio (with video input).",
+      "editing": "Instance; editing the video alongside the sound does not by itself constitute Composite audio editing.",
+      "categories": [
+        "Instance"
+      ],
+      "evaluation": "Expert models — embedding-based audio–text/audio–video alignment and perceptual preservation metrics, supplemented by human judgments.",
+      "results": [
+        {
+          "label": "Single model / non-agent system",
+          "text": "The later CoherentAVEdit comparison reports the strongest listening-test results for VACE → CoherentAVEdit: 3.7/5 audio–text fidelity, 3.8/5 audio–visual alignment, and 3.9/5 structure preservation on a six-video subjective subset; this is a sequential, non-agent pipeline, not a single joint model or a full-set aggregate ranking.",
+          "links": [
+            {
+              "kind": "Source",
+              "label": "CoherentAVEdit comparison",
+              "url": "https://arxiv.org/html/2512.07209v2#S4"
+            }
+          ]
+        }
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2503.20782"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub",
+          "url": "https://github.com/GenjiB/AVED"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Benchmark CSV",
+          "url": "https://genjib.github.io/project_page/AVED/assets/avedit_dataset_v3.csv",
+          "note": "source clips retrieved separately from VGGSound/YouTube"
+        },
+        {
+          "kind": "Project Page",
+          "label": "AvED",
+          "url": "https://genjib.github.io/project_page/AVED/index.html"
+        }
+      ]
+    },
+    {
+      "id": "ave-compass",
+      "name": "AVE-Compass",
+      "venue": null,
+      "group": "Unified",
+      "domains": [
+        "Speech",
+        "Music",
+        "Audio"
+      ],
+      "description": "Diagnoses instruction following and preservation in free-form audio-video editing through 145 source videos (up to 10 s), 196 instructions, and 2,688 checklist items covering 28 editing operations.",
+      "domainNote": "Speech; Music; Audio (with video input).",
+      "editing": "Acoustic; Semantic; Instance; Composite (when the audio request itself crosses categories).",
+      "categories": [
+        "Acoustic",
+        "Semantic",
+        "Instance",
+        "Composite"
+      ],
+      "evaluation": "Hybrid — checklist-based MLLM judging combines with expert models for audio quality, audio–video/lip synchronization, and visual preservation.",
+      "results": [
+        {
+          "label": "Single model",
+          "text": "On the official leaderboard, Wan2.7 leads overall Editing Intent at 42.4/100 (audio: 24.8); LTX2 has the highest audio-only Editing Intent among the listed single models (26.4/100).",
+          "links": [
+            {
+              "kind": "Source",
+              "label": "official leaderboard",
+              "url": "https://github.com/NJU-LINK/AVE-Compass#leaderboard"
+            }
+          ]
+        },
+        {
+          "label": "Agent",
+          "text": "AVE-Agent (Wan) leads with 59.8/100 overall Editing Intent and 50.2/100 audio Editing Intent on the same leaderboard.",
+          "links": []
+        }
+      ],
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2607.24821"
+        },
+        {
+          "kind": "Code",
+          "label": "GitHub",
+          "url": "https://github.com/NJU-LINK/AVE-Compass"
+        },
+        {
+          "kind": "Dataset",
+          "label": "Hugging Face",
+          "url": "https://huggingface.co/datasets/NJU-LINK/AVE-Compass"
+        },
+        {
+          "kind": "Project Page",
+          "label": "AVE-Compass",
+          "url": "https://ave-compass.github.io/"
+        }
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "id": "wer-cer",
+      "name": "WER / CER ↓",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "domainNote": "Speech",
+      "dimension": "Instruction Adherence",
+      "description": "ASR transcription errors relative to the requested words or characters.",
+      "inputs": "Target transcript; ASR transcript of the edited output.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2212.04356"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "JiWER",
+          "url": "https://github.com/jitsi/jiwer"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "ASR",
+          "url": "https://github.com/openai/whisper"
+        }
+      ]
+    },
+    {
+      "id": "emotion-classification-accuracy",
+      "name": "Emotion classification accuracy ↑",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "domainNote": "Speech",
+      "dimension": "Instruction Adherence",
+      "description": "Agreement between the predicted emotion and the requested emotion label.",
+      "inputs": "Target emotion label; an emotion classifier with a matching label set.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2312.15185"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "emotion2vec",
+          "url": "https://github.com/ddlBoJack/emotion2vec"
+        }
+      ]
+    },
+    {
+      "id": "clap-audio-text-similarity",
+      "name": "CLAP audio–text similarity ↑",
+      "group": "Unified",
+      "domains": [
+        "Music",
+        "Audio"
+      ],
+      "domainNote": "Music; Audio",
+      "dimension": "Instruction Adherence",
+      "description": "Cosine similarity between output audio and the desired audio description.",
+      "inputs": "Caption describing the desired result; a specified CLAP checkpoint.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2211.06687"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "CLAP",
+          "url": "https://github.com/LAION-AI/CLAP"
+        }
+      ]
+    },
+    {
+      "id": "event-occurrence-score-eos",
+      "name": "Event Occurrence Score (EOS) ↑",
+      "group": "Audio",
+      "domains": [
+        "Audio"
+      ],
+      "domainNote": "Audio",
+      "dimension": "Instruction Adherence",
+      "description": "Minimum event-level CLAP similarity after text-guided source separation; checks coverage of requested events.",
+      "inputs": "Desired event descriptions; event decomposition and separated event tracks.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "Paper",
+          "url": "https://aclanthology.org/2025.acl-long.1147/"
+        }
+      ]
+    },
+    {
+      "id": "speaker-embedding-cosine-similarity",
+      "name": "Speaker embedding cosine similarity ↑",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "domainNote": "Speech",
+      "dimension": "Preservation and Locality",
+      "description": "Retention of speaker identity in the edited speech.",
+      "inputs": "Source speaker audio; the same speaker-verification encoder for both recordings.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2005.07143"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "HF Model",
+          "url": "https://huggingface.co/speechbrain/spkrec-ecapa-voxceleb"
+        }
+      ]
+    },
+    {
+      "id": "multi-resolution-stft-distance",
+      "name": "Multi-resolution STFT distance ↓",
+      "group": "Unified",
+      "domains": [
+        "Speech",
+        "Music",
+        "Audio"
+      ],
+      "domainNote": "Speech; Music; Audio",
+      "dimension": "Preservation and Locality",
+      "description": "Spectral convergence and log-magnitude differences across several time–frequency resolutions.",
+      "inputs": "Aligned source/output audio from the non-edited regions.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/1910.11480"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "auraloss",
+          "url": "https://github.com/csteinmetz1/auraloss"
+        }
+      ]
+    },
+    {
+      "id": "clap-audio-audio-similarity",
+      "name": "CLAP audio–audio similarity ↑",
+      "group": "Unified",
+      "domains": [
+        "Music",
+        "Audio"
+      ],
+      "domainNote": "Music; Audio",
+      "dimension": "Preservation and Locality",
+      "description": "Semantic similarity between source and edited audio embeddings; a broad preservation proxy.",
+      "inputs": "Source audio; matching non-target regions or stems for local comparison.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2507.11096"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "CLAP",
+          "url": "https://github.com/LAION-AI/CLAP"
+        }
+      ]
+    },
+    {
+      "id": "lpaps-distance",
+      "name": "LPAPS distance ↓",
+      "group": "Unified",
+      "domains": [
+        "Music",
+        "Audio"
+      ],
+      "domainNote": "Music; Audio",
+      "dimension": "Preservation and Locality",
+      "description": "Perceptual distance between audio representations from a pretrained feature network.",
+      "inputs": "Source audio; aligned non-edited regions for local comparison.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2402.10009"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "LPAPS",
+          "url": "https://github.com/HilaManor/AudioEditingCode#evaluation"
+        }
+      ]
+    },
+    {
+      "id": "boundary-error",
+      "name": "Boundary error ↓",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "domainNote": "Speech",
+      "dimension": "Temporal and Structural Consistency",
+      "description": "Mean or median absolute timing error of predicted speech-segment boundaries.",
+      "inputs": "Manual boundary annotations and predicted boundaries, in the same time unit.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "Paper",
+          "url": "https://eprints.whiterose.ac.uk/id/eprint/210215/"
+        }
+      ]
+    },
+    {
+      "id": "word-level-dynamic-time-warping-wdtw",
+      "name": "Word-level Dynamic Time Warping (WDTW) ↓",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "domainNote": "Speech",
+      "dimension": "Temporal and Structural Consistency",
+      "description": "Length-normalized DTW distance over matched word segments in source and edited speech.",
+      "inputs": "Source and edited speech; both transcripts and word-level forced alignments.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2604.16056"
+        }
+      ]
+    },
+    {
+      "id": "melody-accuracy",
+      "name": "Melody accuracy ↑",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "domainNote": "Music",
+      "dimension": "Temporal and Structural Consistency",
+      "description": "Frame-wise agreement of the dominant pitch class between reference and edited music.",
+      "inputs": "Reference melody/audio; aligned pitch-class sequences.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2507.11096"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "EditGen",
+          "url": "https://github.com/billsioros/EditGen/tree/master/notebooks/evaluation"
+        }
+      ]
+    },
+    {
+      "id": "f0-pearson-correlation",
+      "name": "F0 Pearson correlation ↑",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "domainNote": "Music (vocals)",
+      "dimension": "Temporal and Structural Consistency",
+      "description": "Correlation between reference and output vocal-pitch contours.",
+      "inputs": "Reference vocal audio; aligned F0 contours extracted with the same model.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2603.24589"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "Pitch extractor",
+          "url": "https://github.com/Dream-High/RMVPE"
+        }
+      ]
+    },
+    {
+      "id": "chroma-similarity-chroma-dtw-similarity",
+      "name": "Chroma similarity / Chroma DTW similarity ↑",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "domainNote": "Music",
+      "dimension": "Temporal and Structural Consistency",
+      "description": "Pitch-class distribution similarity, or frame-wise similarity after DTW alignment.",
+      "inputs": "Source/reference music; consistently extracted chromagrams.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2512.14629"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "MuseCPEval",
+          "url": "https://github.com/Yashvishe13/MuseCPEval/blob/main/musecpeval/metrics/harmony_tonality.py"
+        }
+      ]
+    },
+    {
+      "id": "beat-f1",
+      "name": "Beat F1 ↑",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "domainNote": "Music",
+      "dimension": "Temporal and Structural Consistency",
+      "description": "Precision–recall balance of matching beat timestamps within a 70 ms tolerance.",
+      "inputs": "Reference and output beat timestamps.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2512.14629"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "MuseCPEval",
+          "url": "https://github.com/Yashvishe13/MuseCPEval/blob/main/musecpeval/metrics/rhythm_meter.py"
+        }
+      ]
+    },
+    {
+      "id": "dynamics-correlation",
+      "name": "Dynamics correlation ↑",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "domainNote": "Music",
+      "dimension": "Temporal and Structural Consistency",
+      "description": "Frame-wise Pearson correlation of reference and output loudness trajectories.",
+      "inputs": "Reference dynamics/audio; aligned loudness trajectories.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2507.11096"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "EditGen",
+          "url": "https://github.com/billsioros/EditGen/tree/master/notebooks/evaluation"
+        }
+      ]
+    },
+    {
+      "id": "structural-pairwise-f-measure-ari",
+      "name": "Structural pairwise F-measure / ARI ↑",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "domainNote": "Music",
+      "dimension": "Temporal and Structural Consistency",
+      "description": "Agreement of musical section assignments, with ARI correcting for chance agreement.",
+      "inputs": "Source/reference and output segmentations in a shared time frame.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2512.14629"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "MuseCPEval",
+          "url": "https://github.com/Yashvishe13/MuseCPEval/blob/main/musecpeval/metrics/structural_form.py"
+        }
+      ]
+    },
+    {
+      "id": "event-sequence-score-ess",
+      "name": "Event Sequence Score (ESS) ↑",
+      "group": "Audio",
+      "domains": [
+        "Audio"
+      ],
+      "domainNote": "Audio",
+      "dimension": "Temporal and Structural Consistency",
+      "description": "Kendall-style rank agreement between the described and detected event order.",
+      "inputs": "Desired event ordering; onset estimates from separated event tracks.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "Paper",
+          "url": "https://aclanthology.org/2025.acl-long.1147/"
+        }
+      ]
+    },
+    {
+      "id": "mos-cmos",
+      "name": "MOS / CMOS ↑",
+      "group": "Unified",
+      "domains": [
+        "Speech",
+        "Music",
+        "Audio"
+      ],
+      "domainNote": "Speech; Music; Audio",
+      "dimension": "Audio Quality and Naturalness",
+      "description": "Human ratings of output quality or comparative quality against another recording.",
+      "inputs": "Listeners and a task-specific rating protocol; comparison audio for CMOS.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "Standard",
+          "url": "https://www.itu.int/rec/T-REC-P.800/en"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "Speech listening tests",
+          "url": "https://github.com/microsoft/P.808"
+        }
+      ]
+    },
+    {
+      "id": "mosnet-predicted-mos",
+      "name": "MOSNet predicted MOS ↑",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "domainNote": "Speech",
+      "dimension": "Audio Quality and Naturalness",
+      "description": "Automatic prediction of speech naturalness ratings, developed for voice conversion.",
+      "inputs": "Edited speech.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/1904.08352"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "MOSNet",
+          "url": "https://github.com/lochenchou/MOSNet"
+        }
+      ]
+    },
+    {
+      "id": "utmosv2-predicted-mos",
+      "name": "UTMOSv2 predicted MOS ↑",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "domainNote": "Speech",
+      "dimension": "Audio Quality and Naturalness",
+      "description": "Predicted naturalness MOS, developed for high-quality synthetic speech.",
+      "inputs": "Edited speech.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2409.09305"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "GitHub",
+          "url": "https://github.com/sarulab-speech/UTMOSv2"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "HF Model",
+          "url": "https://huggingface.co/sarulab-speech/UTMOSv2"
+        }
+      ]
+    },
+    {
+      "id": "speechjudge-grm-pairwise",
+      "name": "SpeechJudge-GRM (pairwise)",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "domainNote": "Speech",
+      "dimension": "Audio Quality and Naturalness",
+      "description": "Paired naturalness ratings and preference, accompanied by a generated explanation.",
+      "inputs": "Target transcript and two candidate speech recordings for the same text.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2511.07931"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "GitHub",
+          "url": "https://github.com/AmphionTeam/SpeechJudge"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "HF Model",
+          "url": "https://huggingface.co/RMSnow/SpeechJudge-GRM"
+        }
+      ]
+    },
+    {
+      "id": "dnsmos-p-835",
+      "name": "DNSMOS P.835 ↑",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "domainNote": "Speech",
+      "dimension": "Audio Quality and Naturalness",
+      "description": "Predicted speech-signal, background-noise and overall quality scores.",
+      "inputs": "Edited speech.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2110.01763"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "DNSMOS",
+          "url": "https://github.com/microsoft/DNS-Challenge/tree/master/DNSMOS"
+        }
+      ]
+    },
+    {
+      "id": "nisqa",
+      "name": "NISQA ↑",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "domainNote": "Speech",
+      "dimension": "Audio Quality and Naturalness",
+      "description": "Predicted overall speech quality and degradation dimensions; NISQA-TTS targets synthetic-speech naturalness.",
+      "inputs": "Edited speech; the appropriate NISQA checkpoint.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2104.09494"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "NISQA",
+          "url": "https://github.com/gabrielmittag/NISQA"
+        }
+      ]
+    },
+    {
+      "id": "pam",
+      "name": "PAM ↑",
+      "group": "Unified",
+      "domains": [
+        "Speech",
+        "Music",
+        "Audio"
+      ],
+      "domainNote": "Speech; Music; Audio",
+      "dimension": "Audio Quality and Naturalness",
+      "description": "No-reference audio quality from an audio–language model using contrasting positive and negative quality prompts.",
+      "inputs": "Edited audio; fixed quality prompts and the PAM implementation's MS-CLAP backbone.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2402.00282"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "GitHub",
+          "url": "https://github.com/soham97/PAM"
+        }
+      ]
+    },
+    {
+      "id": "pesq",
+      "name": "PESQ ↑",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "domainNote": "Speech",
+      "dimension": "Audio Quality and Naturalness",
+      "description": "Reference-based perceptual speech quality after degradation or restoration.",
+      "inputs": "Corresponding clean target speech; 8 kHz narrowband or 16 kHz wideband mode.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "Standard",
+          "url": "https://www.itu.int/rec/T-REC-P.862/en"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "PESQ",
+          "url": "https://github.com/ludlows/PESQ"
+        }
+      ]
+    },
+    {
+      "id": "stoi",
+      "name": "STOI ↑",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "domainNote": "Speech",
+      "dimension": "Audio Quality and Naturalness",
+      "description": "Estimated intelligibility of degraded or enhanced speech.",
+      "inputs": "Time-aligned clean target speech.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "Paper",
+          "url": "https://sps.ewi.tudelft.nl/pubs/Taal2010.pdf"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "pystoi",
+          "url": "https://github.com/mpariente/pystoi"
+        }
+      ]
+    },
+    {
+      "id": "si-sdr",
+      "name": "SI-SDR ↑",
+      "group": "Unified",
+      "domains": [
+        "Speech",
+        "Music",
+        "Audio"
+      ],
+      "domainNote": "Speech; Music; Audio",
+      "dimension": "Audio Quality and Naturalness",
+      "description": "Target-signal reconstruction fidelity after compensating for a global scale difference.",
+      "inputs": "Time-aligned target waveform or isolated target source.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/1811.02508"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "TorchMetrics",
+          "url": "https://github.com/Lightning-AI/torchmetrics/blob/master/src/torchmetrics/functional/audio/sdr.py"
+        }
+      ]
+    },
+    {
+      "id": "nomad-distance",
+      "name": "NOMAD distance ↓",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "domainNote": "Speech",
+      "dimension": "Audio Quality and Naturalness",
+      "description": "Perceptual speech degradation measured in a learned embedding space.",
+      "inputs": "Clean speech references; matching linguistic content is not required.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2309.16284"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "NOMAD",
+          "url": "https://github.com/alessandroragano/nomad"
+        }
+      ]
+    },
+    {
+      "id": "speechbertscore",
+      "name": "SpeechBERTScore ↑",
+      "group": "Speech",
+      "domains": [
+        "Speech"
+      ],
+      "domainNote": "Speech",
+      "dimension": "Audio Quality and Naturalness",
+      "description": "Reference-aware speech quality proxy using greedy matching of self-supervised speech features.",
+      "inputs": "Natural reference speech; a fixed encoder, layer and precision/recall/F1 variant.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2401.16812"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "GitHub",
+          "url": "https://github.com/Takaaki-Saeki/DiscreteSpeechMetrics"
+        }
+      ]
+    },
+    {
+      "id": "fr-chet-audio-distance-fad",
+      "name": "Fréchet Audio Distance (FAD) ↓",
+      "group": "Unified",
+      "domains": [
+        "Music",
+        "Audio"
+      ],
+      "domainNote": "Music; Audio",
+      "dimension": "Audio Quality and Naturalness",
+      "description": "Distance between output and reference audio-embedding distributions.",
+      "inputs": "Reference audio collection; the same embedding backbone and preprocessing.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/1812.08466"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "FADtk",
+          "url": "https://github.com/microsoft/fadtk"
+        }
+      ]
+    },
+    {
+      "id": "auditeval-ssl-llm",
+      "name": "AuditEval (SSL / LLM)",
+      "group": "Audio",
+      "domains": [
+        "Audio"
+      ],
+      "domainNote": "Audio",
+      "dimension": "Multi-dimensional Evaluators",
+      "description": "Quality, editing relevance and faithfulness to the source.",
+      "inputs": "Source and edited audio; original and target descriptions.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2508.11966"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "GitHub",
+          "url": "https://github.com/NKU-HLT/AuditEval"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "ModelScope",
+          "url": "https://modelscope.cn/models/YuhangJia/AuditEval/summary"
+        }
+      ]
+    },
+    {
+      "id": "musecpeval",
+      "name": "MuseCPEval",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "domainNote": "Music",
+      "dimension": "Multi-dimensional Evaluators",
+      "description": "Harmony, rhythm, structure and melody preservation, with additional timbre metrics in the toolkit.",
+      "inputs": "Source and edited music; selected musical attributes to preserve.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2512.14629"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "GitHub",
+          "url": "https://github.com/Yashvishe13/MuseCPEval"
+        }
+      ]
+    },
+    {
+      "id": "mmae-rubric-evaluator-qwen3-omni",
+      "name": "MMAE rubric evaluator (Qwen3-Omni)",
+      "group": "Unified",
+      "domains": [
+        "Speech",
+        "Music",
+        "Audio"
+      ],
+      "domainNote": "Speech; Music; Audio",
+      "dimension": "Multi-dimensional Evaluators",
+      "description": "Instruction Following Rate (IFR), Consistency Rate (CR) and Exact Match Rate (EMR).",
+      "inputs": "Source/output audio, editing instructions and sample-specific MMAE rubrics.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2606.07229"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "GitHub",
+          "url": "https://github.com/ddlBoJack/MMAE/tree/main/eval"
+        }
+      ]
+    },
+    {
+      "id": "audiobox-aesthetics",
+      "name": "Audiobox Aesthetics",
+      "group": "Unified",
+      "domains": [
+        "Speech",
+        "Music",
+        "Audio"
+      ],
+      "domainNote": "Speech; Music; Audio",
+      "dimension": "Multi-dimensional Evaluators",
+      "description": "Content Enjoyment (CE), Content Usefulness (CU), Production Complexity (PC) and Production Quality (PQ).",
+      "inputs": "Edited audio only.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2502.05139"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "GitHub",
+          "url": "https://github.com/facebookresearch/audiobox-aesthetics"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "HF Model",
+          "url": "https://huggingface.co/facebook/audiobox-aesthetics"
+        }
+      ]
+    },
+    {
+      "id": "songeval-scoring-model",
+      "name": "SongEval scoring model",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "domainNote": "Music (songs)",
+      "dimension": "Multi-dimensional Evaluators",
+      "description": "Overall coherence, memorability, vocal breathing/phrasing naturalness, structural clarity and overall musicality.",
+      "inputs": "Full-length song audio with vocals and accompaniment.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2505.10793"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "GitHub",
+          "url": "https://github.com/ASLP-lab/SongEval"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "Weights",
+          "url": "https://github.com/ASLP-lab/SongEval/tree/main/ckpt"
+        }
+      ]
+    },
+    {
+      "id": "musecritic",
+      "name": "MuseCritic",
+      "group": "Music",
+      "domains": [
+        "Music"
+      ],
+      "domainNote": "Music (songs)",
+      "dimension": "Multi-dimensional Evaluators",
+      "description": "Coherence, musicality, memorability, structural clarity and vocal naturalness; returns scores and a natural-language critique.",
+      "inputs": "Full-length song audio; the released aesthetic rubric.",
+      "links": [
+        {
+          "kind": "Paper",
+          "label": "arXiv",
+          "url": "https://arxiv.org/abs/2608.11755"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "GitHub",
+          "url": "https://github.com/WuqnEl/MuseCritic"
+        },
+        {
+          "kind": "Code / Model",
+          "label": "HF Model",
+          "url": "https://huggingface.co/WuqnEl/MuseCritic"
+        }
+      ]
+    }
+  ],
+  "citation": "@article{pan2026audio,\n  title={Audio Editing in the Era of Foundation Models: A Survey},\n  author={Pan, Changhao and Fan, Yifei and Zhuo, Fan and Chen, Yifu and Guo, Wenxiang and Zhang, Yu and Li, Ruiqi and Zhu, Zhiyuan and Yang, Rui and Ji, Shengpeng and others},\n  journal={arXiv preprint arXiv:2606.23139},\n  year={2026}\n}"
+}

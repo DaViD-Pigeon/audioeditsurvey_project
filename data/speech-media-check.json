@@ -1,0 +1,84 @@
+{
+  "checked": "2026-10-01",
+  "method": "HTTPS Range GET; WAV header validation; full duration from RIFF metadata",
+  "resources": [
+    {
+      "id": "auk-input",
+      "url": "https://auk-project.github.io/assets/audio-norm/content-edit/ce-en-2-input.wav",
+      "status": 206,
+      "finalUrl": "https://auk-project.github.io/assets/audio-norm/content-edit/ce-en-2-input.wav",
+      "type": "audio/wav",
+      "range": "bytes 0-65535/2116924",
+      "bytesChecked": 65536,
+      "wav": true,
+      "duration": 12.0,
+      "sampleRate": 44100,
+      "channels": 2
+    },
+    {
+      "id": "auk-output",
+      "url": "https://auk-project.github.io/assets/audio-norm/content-edit/ce-en-2-change.wav",
+      "status": 206,
+      "finalUrl": "https://auk-project.github.io/assets/audio-norm/content-edit/ce-en-2-change.wav",
+      "type": "audio/wav",
+      "range": "bytes 0-65535/576078",
+      "bytesChecked": 65536,
+      "wav": true,
+      "duration": 12.0,
+      "sampleRate": 24000,
+      "channels": 1
+    },
+    {
+      "id": "step-input",
+      "url": "https://stepaudiollm.github.io/step-audio-editx/audio/style/en_whisper_prompt.wav",
+      "status": 206,
+      "finalUrl": "https://stepaudiollm.github.io/step-audio-editx/audio/style/en_whisper_prompt.wav",
+      "type": "audio/wav",
+      "range": "bytes 0-65535/213164",
+      "bytesChecked": 65536,
+      "wav": true,
+      "duration": 4.44,
+      "sampleRate": 24000,
+      "channels": 1
+    },
+    {
+      "id": "step-output",
+      "url": "https://stepaudiollm.github.io/step-audio-editx/audio/style/en_whisper_iter1.wav",
+      "status": 206,
+      "finalUrl": "https://stepaudiollm.github.io/step-audio-editx/audio/style/en_whisper_iter1.wav",
+      "type": "audio/wav",
+      "range": "bytes 0-65535/224684",
+      "bytesChecked": 65536,
+      "wav": true,
+      "duration": 4.68,
+      "sampleRate": 24000,
+      "channels": 1
+    },
+    {
+      "id": "omni-input",
+      "url": "https://zeyuet.github.io/Audio-Omni/samples/speechedit/1/source.wav",
+      "status": 206,
+      "finalUrl": "https://zeyuet.github.io/Audio-Omni/samples/speechedit/1/source.wav",
+      "type": "audio/wav",
+      "range": "bytes 0-65535/882044",
+      "bytesChecked": 65536,
+      "wav": true,
+      "duration": 10.0,
+      "sampleRate": 44100,
+      "channels": 1
+    },
+    {
+      "id": "omni-output",
+      "url": "https://zeyuet.github.io/Audio-Omni/samples/speechedit/1/edit.wav",
+      "status": 206,
+      "finalUrl": "https://zeyuet.github.io/Audio-Omni/samples/speechedit/1/edit.wav",
+      "type": "audio/wav",
+      "range": "bytes 0-65535/882044",
+      "bytesChecked": 65536,
+      "wav": true,
+      "duration": 10.0,
+      "sampleRate": 44100,
+      "channels": 1
+    }
+  ]
+}

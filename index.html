@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<!-- Adapted directly from 3DGS.zip's project-page/index_template.html,
+     which uses Academic Project Page Template. Upstream CSS and DataTables
+     are vendored unchanged; see THIRD_PARTY_NOTICES.md and vendor/sources.json. -->
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Audio Editing in the Era of Foundation Models: A Survey</title>
+  <meta name="description" content="AACL-IJCNLP 2026 survey of foundation-model-based audio editing across speech, music, and general audio: task taxonomy, methods, and public resources.">
+  <link rel="canonical" href="https://david-pigeon.github.io/audioeditsurvey_project/">
+  <meta property="og:title" content="Audio Editing in the Era of Foundation Models: A Survey">
+  <meta property="og:description" content="AACL-IJCNLP 2026 · Task taxonomy, model architectures, training methods, and public resources.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://david-pigeon.github.io/audioeditsurvey_project/">
+  <meta property="og:image" content="https://david-pigeon.github.io/audioeditsurvey_project/assets/taxonomy_overview.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="citation_title" content="Audio Editing in the Era of Foundation Models: A Survey">
+  <meta name="citation_author" content="Changhao Pan">
+  <meta name="citation_author" content="Yifei Fan">
+  <meta name="citation_author" content="Fan Zhuo">
+  <meta name="citation_publication_date" content="2026">
+  <meta name="citation_conference_title" content="AACL-IJCNLP 2026">
+  <meta name="citation_pdf_url" content="https://arxiv.org/pdf/2606.23139">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="vendor/3dgs/css/bulma_purged.min.css">
+  <link rel="stylesheet" href="vendor/3dgs/css/index.css">
+  <link rel="stylesheet" href="vendor/3dgs/css/style.css">
+  <link rel="stylesheet" href="vendor/3dgs/css/datatables.min.css">
+  <link rel="stylesheet" href="assets/site.css">
+  <link rel="stylesheet" href="assets/examples.css">
+  <script defer src="vendor/3dgs/js/fontawesome.all.min.js"></script>
+  <script defer src="vendor/3dgs/js/datatables.min.js"></script>
+  <script type="module" src="assets/app.js"></script>
+  <script type="module" src="assets/examples.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <main id="main-content">
+    <section class="hero" id="top">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">Audio Editing in the Era of<br class="desktop-break"> Foundation Models: A Survey</h1>
+              <h2 class="title publication-conference">AACL-IJCNLP 2026</h2>
+              <div class="is-size-5 publication-authors author-list">
+                <span class="author-block">Changhao Pan<sup>1,*</sup>,</span>
+                <span class="author-block">Yifei Fan<sup>1,*</sup>,</span>
+                <span class="author-block">Fan Zhuo<sup>1,*</sup>,</span>
+                <span class="author-block">Yifu Chen<sup>1</sup>,</span>
+                <span class="author-block">Wenxiang Guo<sup>1</sup>,</span>
+                <span class="author-block">Yu Zhang<sup>2</sup>,</span>
+                <span class="author-block">Ruiqi Li<sup>2</sup>,</span>
+                <span class="author-block">Zhiyuan Zhu<sup>1</sup>,</span>
+                <span class="author-block">Rui Yang<sup>1</sup>,</span>
+                <span class="author-block">Shengpeng Ji<sup>3</sup>,</span>
+                <span class="author-block">Chenyuhao Wen<sup>1</sup>,</span>
+                <span class="author-block">Jiayang Xu<sup>1</sup>,</span>
+                <span class="author-block">Ke Lei<sup>1</sup>,</span>
+                <span class="author-block">Xiaoda Yang<sup>1</sup>,</span>
+                <span class="author-block">Jingyu Lu<sup>1</sup>,</span>
+                <span class="author-block">Zhou Zhao<sup>1,†</sup></span>
+              </div>
+              <div class="is-size-5 publication-authors affiliations">
+                <span class="author-block"><sup>1</sup> Zhejiang University<br><sup>2</sup> ByteDance<br><sup>3</sup> Hunyuan Team, Tencent</span>
+              </div>
+              <p class="eql-cntrb"><sup>*</sup> Equal contribution &nbsp; <sup>†</sup> Corresponding author</p>
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <span class="link-block"><a href="https://github.com/MM-Speech/AudioEditSurvey" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fab fa-github" aria-hidden="true"></i></span><span>Star us on GitHub</span></a></span>
+                  <span class="link-block"><a href="https://arxiv.org/pdf/2606.23139" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fas fa-file-pdf" aria-hidden="true"></i></span><span>Paper</span></a></span>
+                  <span class="link-block"><a href="https://arxiv.org/abs/2606.23139" target="_blank" rel="noopener noreferrer" class="external-link button is-normal is-rounded is-dark"><span>arXiv</span></a></span>
+                  <span class="link-block"><a href="#citation" class="external-link button is-normal is-rounded is-dark"><span class="icon"><i class="fas fa-quote-right" aria-hidden="true"></i></span><span>BibTeX</span></a></span>
+                </div>
+                <p class="survey-introduction">We present a survey of foundation-model-based audio editing across speech, music, and general audio. We connect editing goals with model architectures, training methods, and publicly available resources, with a unified view of what an edit changes and what it should preserve.</p>
+                <div class="content has-text-justified contributions">
+                  <ul>
+                    <li><b>Task taxonomy.</b> We organize audio editing into acoustic, semantic, and instance editing, clarifying the targets and preservation requirements of each task.</li>
+                    <li><b>Model architectures.</b> We review codec language models, diffusion models, and flow-matching models, linking their representations and generation mechanisms to editing capabilities.</li>
+                    <li><b>Training methods.</b> We distinguish methods that learn editing from data from training-free methods that steer pretrained generators without parameter updates.</li>
+                    <li><b>Public resources.</b> We curate released editing models, datasets, generation and annotation tools, benchmarks, and metrics to support research and implementation.</li>
+                  </ul>
+                </div>
+                <nav class="section-links" aria-label="Page sections"><a href="#taxonomy">Taxonomy</a> · <a href="#audio-examples">Audio Examples</a> · <a href="#methods">Methods</a> · <a href="#resources">Resources</a> · <a href="#challenges">Challenges</a> · <a href="#citation">Citation</a></nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section hero is-light" id="taxonomy" aria-labelledby="taxonomy-title">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered" id="taxonomy-title">Explore Audio Editing</h2>
+        <div class="content has-text-justified"><p>Our taxonomy distinguishes changes to acoustic attributes, interpretable content or expression, and individual sound sources. The same categories apply across speech, music, and general audio.</p></div>
+        <figure class="paper-figure"><button type="button" class="figure-button" data-figure="assets/taxonomy_overview.png" data-caption="Taxonomy of audio editing tasks" aria-label="Enlarge taxonomy overview"><img src="assets/taxonomy_overview.png" width="4028" height="1892" alt="Taxonomy of acoustic, semantic, and instance audio editing, with representative operations." loading="lazy"></button><figcaption><b>Figure 1.</b> Taxonomy of audio editing tasks. Select the figure to enlarge it.</figcaption></figure>
+        <div class="tab-buttons domain-buttons" role="group" aria-label="Taxonomy audio domain"><button type="button" class="active" data-tax-domain="Speech" aria-pressed="true">Speech</button><button type="button" data-tax-domain="Music" aria-pressed="false">Music</button><button type="button" data-tax-domain="Audio" aria-pressed="false">General audio</button></div>
+        <div id="taxonomy-list" class="content" aria-live="polite"></div>
+        <p class="has-text-centered small-note">Select an operation to listen to its audio editing samples.</p>
+      </div>
+    </section>
+
+    <section class="section hero" id="audio-examples" aria-labelledby="examples-title">
+      <div class="examples-container">
+        <div class="examples-intro">
+          <h2 class="title is-3" id="examples-title">Audio Examples</h2>
+          <p>Choose an audio domain and compare each input with the editing instruction and output.</p>
+        </div>
+        <div class="tab-buttons" id="example-domain-tabs" role="tablist" aria-label="Example audio domain"></div>
+        <div id="example-domain-panel" role="tabpanel" tabindex="0">
+          <p class="examples-description" id="example-domain-description"></p>
+          <div class="example-category-filters" id="example-category-filters" role="group" aria-label="Example editing category"></div>
+          <div id="example-results"><p>Loading audio examples…</p></div>
+        </div>
+        <p class="examples-note">Official model demonstrations are credited to their authors; speech transcripts and lyric edits follow the published examples. The two volume examples use the same synthetic source and are processed with FFmpeg.</p>
+        <noscript><p>Enable JavaScript to load the audio examples.</p></noscript>
+      </div>
+    </section>
+
+    <section class="section hero" id="methods" aria-labelledby="methods-title">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered" id="methods-title">Methods at a Glance</h2>
+        <div class="content has-text-justified" id="architectures">
+          <h3>Model architectures</h3>
+          <ul>
+            <li><b>Codec language models</b> represent audio as discrete tokens and edit through conditional prediction, infilling, or selective regeneration. <button type="button" class="inline-link" data-architecture="Codec language model">Browse models</button>.</li>
+            <li><b>Diffusion models</b> iteratively denoise audio representations, using conditioning, inversion, attention control, or masks to guide the edit. <button type="button" class="inline-link" data-architecture="Diffusion">Browse models</button>.</li>
+            <li><b>Flow-matching models</b> learn continuous transport toward audio; conditioning or trajectory manipulation supports reconstruction and editing. <button type="button" class="inline-link" data-architecture="Flow matching">Browse models</button>.</li>
+          </ul>
+          <p>These architectures can be combined, for example by using a language model to condition a diffusion or flow-matching decoder.</p>
+        </div>
+        <div class="tab-buttons method-buttons" role="group" aria-label="Editing paradigm"><button type="button" class="method-tab active" data-method="based" aria-pressed="true">Training-based</button><button type="button" class="method-tab" data-method="free" aria-pressed="false">Training-free</button></div>
+        <div id="method-panel" class="content has-text-justified"></div>
+      </div>
+    </section>
+
+    <section class="section hero" id="resources" aria-labelledby="resources-title">
+      <div class="container is-max-desktop has-text-centered">
+        <h2 class="title is-3" id="resources-title">Resource Explorer</h2>
+        <p>Browse the public resources curated in <a href="https://github.com/MM-Speech/AudioEditSurvey">MM-Speech/AudioEditSurvey</a>. Select a resource type, filter its entries, and click a column heading to sort the table.</p>
+      </div>
+      <div class="resource-container" id="explorer">
+        <div class="tab-buttons resource-tabs" role="tablist" aria-label="Resource type" id="resource-tabs"></div>
+        <div id="resource-panel" role="tabpanel" tabindex="0">
+          <p id="resource-description" class="resource-description"></p>
+          <form id="filter-form" class="selection-container resource-filters" role="search" aria-label="Filter resources">
+            <div class="selection" id="filter-fields"></div>
+            <div class="search-row"><label for="resource-search">Search:</label><input id="resource-search" type="search" aria-label="Search resources" autocomplete="off" placeholder="Search resources"><button type="button" id="clear-filters" class="inline-link">Reset filters</button></div>
+          </form>
+          <div class="results-toolbar"><p id="results-count" role="status" aria-live="polite">Loading resources…</p><button type="button" class="inline-link" id="export-results">Export JSON</button></div>
+          <div id="operation-context"></div>
+          <div id="resource-results"></div>
+        </div>
+        <p class="catalog-source has-text-centered">Catalog snapshot: <time datetime="2026-10-01">1 October 2026</time> · <a href="data/resources.json" download>Download all resources</a></p>
+        <noscript><p>The interactive table requires JavaScript. <a href="https://github.com/MM-Speech/AudioEditSurvey">Browse all resources on GitHub.</a></p></noscript>
+      </div>
+    </section>
+
+    <section class="section hero is-light" id="challenges" aria-labelledby="challenges-title">
+      <div class="container is-max-desktop">
+        <h2 class="title is-3 has-text-centered" id="challenges-title">Open Challenges and Future Directions</h2>
+        <div class="content has-text-justified">
+          <p>Foundation-model-based audio editing still faces several system-level challenges:</p>
+          <ol>
+            <li><b>Complex editing.</b> Real-world audio entangles semantic events, speaker identity, acoustic attributes, background ambience, rhythm, spatial cues, and reverberation. Future systems should support precise source/event localization, attribute-level modification, and reliable preservation of non-target content across speech, music, and general audio.</li>
+            <li><b>Robustness in open-domain settings.</b> Editing models should remain reliable under noise, reverberation, overlapping sources, long-form context, and ambiguous instructions. Better instruction grounding, long-context modeling, iterative refinement, and self-verification are important directions toward robust real-world editing.</li>
+            <li><b>Faithful and editing-specific evaluation.</b> Existing evaluation often mixes generation quality with editing quality. Future benchmarks should explicitly annotate edit targets, operations, preservation regions, and relevant control signals, allowing edit success and non-target preservation to be evaluated separately.</li>
+            <li><b>Safety, copyright, and misuse prevention.</b> Modern editing systems can realistically modify speech content, speaker identity, emotion, environmental sounds, and music. Practical deployment therefore requires complementary mechanisms for provenance, watermarking, manipulated-audio detection, and responsible data licensing.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="citation">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered has-text-centered"><div class="column"><h2 class="title is-3">BibTeX</h2><p>If you find this survey or repository useful, please cite our paper:</p></div></div>
+        <div class="citation-tools"><button type="button" id="copy-citation" class="inline-link">Copy citation</button><span id="copy-status" role="status" aria-live="polite"></span></div>
+        <pre><code id="bibtex-code">@article{pan2026audio,
+  title={Audio Editing in the Era of Foundation Models: A Survey},
+  author={Pan, Changhao and Fan, Yifei and Zhuo, Fan and Chen, Yifu and Guo, Wenxiang and Zhang, Yu and Li, Ruiqi and Zhu, Zhiyuan and Yang, Rui and Ji, Shengpeng and others},
+  journal={arXiv preprint arXiv:2606.23139},
+  year={2026}
+}</code></pre>
+        <div class="content has-text-centered contributing"><h3>Contributing</h3><p>This repository is meant to keep growing. If an audio editing model, dataset, tool, benchmark, or metric is missing, please open an <a href="https://github.com/MM-Speech/AudioEditSurvey/issues">issue</a> or a <a href="https://github.com/MM-Speech/AudioEditSurvey/pulls">pull request</a>.</p></div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer"><div class="container is-max-desktop"><div class="columns is-centered"><div class="column content">
+    <p>This page is adapted from <a href="https://github.com/w-m/3dgs-compression-survey">3DGS.zip</a> and the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template">Academic Project Page Template</a>, originally based on <a href="https://nerfies.github.io/">Nerfies</a>. <a href="https://github.com/DaViD-Pigeon/audioeditsurvey_project">Page source</a>.</p>
+    <p>Page layout: <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Survey figures: <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a>. Third-party resources retain their original licenses.</p>
+  </div></div></div></footer>
+  <dialog id="figure-dialog" aria-labelledby="figure-dialog-title"><div class="dialog-header"><h2 id="figure-dialog-title">Survey figure</h2><button type="button" id="close-figure" aria-label="Close figure">×</button></div><div class="dialog-image"><img id="dialog-image" alt=""></div></dialog>
+</body>
+</html>

@@ -1,0 +1,125 @@
+/* AudioEditSurvey additions to the unmodified 3DGS.zip / Academic template.
+   Preserve the upstream white page, sans-serif typography, centered publication
+   block, dark publication links, plain sections, and DataTables presentation.
+   Replace 3DGS's whole-body scale(.75) with equivalent visible desktop sizing,
+   so native scrolling, dialogs, text selection, and mobile layouts work normally. */
+html { height: auto; overflow-x: hidden; overflow-y: auto; }
+body { position: static; height: auto; width: auto; transform: none; margin: 0; font-size: 14px; }
+.container, .container.is-max-desktop { width: 100%; max-width: 900px; font-size: 14px; }
+.hero-body { padding: 36px 24px; }
+.section { padding: 40px 24px; }
+.publication-title.title.is-1 { font-size: 36px; line-height: 1.125; margin-bottom: 30px; }
+.publication-conference { font-size: 18px; margin-bottom: 22px !important; }
+.publication-authors.is-size-5 { font-size: 15px !important; line-height: 1.6; }
+.author-list { color: hsl(204, 86%, 53%); }
+.author-list sup { color: #4a4a4a; }
+sup { font-size: .68em; }
+.affiliations { margin-top: 7px; }
+.eql-cntrb { margin: 6px 0; font-size: 12px; }
+.publication-links .button { font-size: 13px; height: 31px; }
+.survey-introduction { margin-top: 34px; }
+.contributions { margin: 20px 0; }
+.content ul, .content ol { margin-left: 1.4em; }
+.content li + li { margin-top: .7em; }
+.content h3 { font-size: 20px; font-weight: 600; line-height: 1.25; margin: 1.3em 0 .65em; }
+.title.is-3 { font-size: 26px; line-height: 1.2; }
+.section-links { margin-top: 22px; line-height: 2; }
+.section-links a { margin: 0 7px; }
+.hero.is-light { background: #f5f5f5; }
+section[id] { scroll-margin-top: 16px; }
+.paper-figure { margin: 24px 0; text-align: center; }
+.figure-button { display: block; width: 100%; padding: 0; border: 0; background: #fff; cursor: zoom-in; }
+.figure-button img { display: block; width: 100%; height: auto; }
+figcaption { font-size: 12px; margin-top: 10px; }
+button, input, select { font: inherit; }
+button { cursor: pointer; }
+button:disabled { cursor: default; opacity: .5; }
+button:focus-visible, a:focus-visible, select:focus-visible, input:focus-visible, [tabindex]:focus-visible { outline: 2px solid #3273dc; outline-offset: 3px; }
+.inline-link { display: inline; background: none; border: 0; padding: 0; color: #3273dc; text-align: inherit; }
+.inline-link:hover { color: #363636; text-decoration: underline; }
+.tab-buttons { max-width: 650px; margin: 24px auto 18px; }
+.tab-buttons button { font-size: 14px; padding: 9px 12px; }
+.tab-buttons button.active { font-weight: 600; }
+.taxonomy-entry { margin: 24px 0; }
+.taxonomy-entry h3 { margin-top: 0; }
+.operation-links { line-height: 1.8; }
+.operation-links .inline-link + .inline-link::before { content: ' · '; color: #555; padding: 0 5px; display: inline-block; }
+.small-note, .resource-meta, .link-note { font-size: 12px; color: #666; }
+#method-panel { margin-top: 24px; }
+.representatives { margin-top: 22px; line-height: 1.9; }
+.representatives button { margin-right: 12px; }
+.resource-container { max-width: 1280px; width: 100%; margin: 24px auto 0; }
+.resource-tabs { max-width: 780px; }
+.tab-count { font-size: .85em; font-weight: 400; margin-left: 5px; color: #666; }
+.resource-description { max-width: 1000px; text-align: center; margin: 0 auto 20px; }
+.resource-description small { display: block; margin-top: 8px; font-size: 12px; }
+.selection-container.resource-filters { max-width: 1080px; width: 100%; margin: 20px auto; padding: 16px 20px; }
+.resource-filters .selection { gap: 12px 22px; align-items: flex-end; }
+.resource-filters .selection label { margin: 0; display: flex; flex-direction: column; align-items: flex-start; gap: 4px; font-size: 12px; }
+.resource-filters select { max-width: 240px; background: white; border: 1px solid #bbb; border-radius: 3px; padding: 5px 24px 5px 7px; color: #4a4a4a; }
+.search-row { display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; margin-top: 18px; }
+.search-row input { background: white; border: 1px solid #bbb; border-radius: 3px; padding: 6px 9px; width: 350px; max-width: 100%; }
+.results-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin: 20px 0 10px; font-size: 12px; }
+.tablecontainer { margin-top: 0; }
+.table-scroll { overflow-x: auto; width: 100%; }
+table.resource-table { width: 100%; font-size: 12px; }
+table.resource-table th, table.resource-table td { vertical-align: top; }
+table.resource-table thead th { font-weight: 600; white-space: nowrap; }
+table.resource-table td { line-height: 1.5; min-width: 90px; }
+table.resource-table td:first-child { min-width: 150px; }
+table.resource-table td:nth-child(3) { min-width: 150px; }
+table.resource-table .capabilities { min-width: 200px; max-width: 340px; }
+.domain-copy, .resource-meta { display: block; margin-top: 3px; }
+.domain-copy { color: #4a4a4a; font-size: 12px; }
+.resource-name { font-weight: 500; }
+.resource-links { display: flex; flex-direction: column; gap: 5px; }
+.link-wrap { display: inline; }
+.link-note { display: block; font-size: 11px; }
+.operation-context { background: #f5f5f5; padding: 10px; margin: 12px 0; }
+.operation-context button { margin-left: 12px; }
+.benchmark-list { max-width: 1000px; margin: auto; }
+.benchmark-entry { padding: 24px 0; border-bottom: 1px solid #ddd; }
+.benchmark-entry h3 { margin-top: 0; font-size: 20px; }
+.benchmark-entry .resource-links { flex-direction: row; flex-wrap: wrap; gap: 16px; }
+.benchmark-entry ul { margin-top: 14px; }
+.benchmark-results { margin-top: 15px; padding-left: 20px; border-left: 2px solid #ddd; }
+.benchmark-results section + section { margin-top: 18px; }
+.catalog-source { font-size: 12px; margin-top: 24px; }
+.empty-state { padding: 40px 12px; text-align: center; }
+.empty-state h3 { font-size: 18px; margin: 0 0 10px; }
+.empty-state button { margin-top: 10px; }
+.citation-tools { display: flex; justify-content: flex-end; gap: 12px; margin: 14px 0 8px; font-size: 12px; }
+#citation pre { font-size: 12px; white-space: pre; overflow-x: auto; }
+.contributing { margin-top: 35px; }
+.footer { padding: 32px 24px; font-size: 12px; }
+.footer .container { font-size: 12px; }
+.skip-link, .visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); }
+.skip-link:focus { width: auto; height: auto; padding: 12px; clip-path: none; background: white; z-index: 10; }
+dialog { border: 1px solid #bbb; border-radius: 4px; padding: 18px; width: min(1400px, 95vw); max-width: 95vw; max-height: 92vh; }
+dialog::backdrop { background: #0009; }
+.dialog-header { display: flex; justify-content: space-between; align-items: center; gap: 20px; margin-bottom: 12px; }
+.dialog-header h2 { font-weight: 600; font-size: 18px; }
+.dialog-header button { font-size: 24px; border: 0; background: none; }
+.dialog-image { overflow: auto; max-height: 76vh; }
+.dialog-image img { max-width: none; width: max(100%, 1100px); background: white; display: block; }
+[hidden] { display: none !important; }
+@media (max-width: 767px) {
+  .hero-body, .section { padding: 30px 20px; }
+  .container, .container.is-max-desktop { max-width: 100%; }
+  .publication-title.title.is-1 { font-size: 30px; line-height: 1.18; margin-bottom: 22px; }
+  .desktop-break { display: none; }
+  .publication-authors.is-size-5 { font-size: 14px !important; }
+  .survey-introduction { margin-top: 24px; }
+  .title.is-3 { font-size: 24px; }
+  .content.has-text-justified { text-align: left !important; }
+  .resource-tabs { overflow-x: auto; justify-content: flex-start; }
+  .resource-tabs button { flex: 0 0 auto; }
+  .resource-filters .selection { justify-content: flex-start; gap: 12px; }
+  .resource-filters .selection label { flex: 1 1 130px; min-width: 0; }
+  .resource-filters select { width: 100%; max-width: 100%; }
+  .search-row { justify-content: flex-start; }
+  .search-row input { width: 100%; }
+  .selection-container.resource-filters { padding: 14px; }
+  .tab-buttons button { font-size: 13px; padding: 9px; }
+  .section-links a { margin: 0 3px; }
+}

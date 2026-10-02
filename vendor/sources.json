@@ -1,0 +1,37 @@
+{
+  "repository": "https://github.com/w-m/3dgs-compression-survey",
+  "revision": "e6b656447f385b60eab80e0a66449c1e14ba80e9",
+  "pageTemplate": "project-page/index_template.html",
+  "assets": [
+    {
+      "path": "vendor/3dgs/css/bulma_purged.min.css",
+      "upstream": "project-page/static/css/bulma_purged.min.css",
+      "sha256": "e8c4dbf9236923ddcc173297a553e3c0e104d62ed1a3a2f01c561daf227424c9"
+    },
+    {
+      "path": "vendor/3dgs/css/index.css",
+      "upstream": "project-page/static/css/index.css",
+      "sha256": "d7034a9a374de054268afb897e5068067ce4fc1937c8eb84cb840c43a9983bdf"
+    },
+    {
+      "path": "vendor/3dgs/css/style.css",
+      "upstream": "project-page/static/css/style.css",
+      "sha256": "e68b700e38197b5e1002165b60fac214ad6bbbeb13fc4584479748f77c47c829"
+    },
+    {
+      "path": "vendor/3dgs/css/datatables.min.css",
+      "upstream": "project-page/static/css/datatables.min.css",
+      "sha256": "be43268e221e18945dd553d9041c3e145ef879c43423efd2ea91fc2101e476d7"
+    },
+    {
+      "path": "vendor/3dgs/js/datatables.min.js",
+      "upstream": "project-page/static/js/datatables.min.js",
+      "sha256": "6d6d7a183904a1817a6c8e65ec1e809e548eb28c54b784305b22b2bb9b2bbf63"
+    },
+    {
+      "path": "vendor/3dgs/js/fontawesome.all.min.js",
+      "upstream": "project-page/static/js/fontawesome.all.min.js",
+      "sha256": "20a3ef6979bbe5e4de1afaecc703e1d34cbc5e3ceab36d378539506327692d72"
+    }
+  ]
+}

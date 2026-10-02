@@ -1,0 +1,99 @@
+{
+  "updated": "2026-10-01",
+  "examples": [
+    {
+      "id": "auk-lyric",
+      "domain": "Music",
+      "title": "Lyric replacement",
+      "category": "Semantic",
+      "operation": "Lyrics",
+      "model": "AuK",
+      "instruction": "Replace “can't be tamed” with “are the same” in the lyrics.",
+      "preservation": "The melody, singing voice, and accompaniment.",
+      "inputAudio": "https://auk-project.github.io/assets/audio-norm/vocaledit/vocaledit-en-2-input.wav",
+      "outputAudio": "https://auk-project.github.io/assets/audio-norm/vocaledit/vocaledit-en-2-output.wav",
+      "sourceLabel": "AuK official demo · Vocal Edit · English",
+      "sourceUrl": "https://auk-project.github.io/#demos",
+      "outputLabel": "AuK result",
+      "origin": "Official Vocal Edit sample vocaledit-en-2, input/output pair under AuK.",
+      "instructionBasis": "Official instruction and replacement markers. Only the changed lyric fragment is reproduced.",
+      "taxonomyBasis": "Changing sung words is Semantic editing under the survey taxonomy.",
+      "inputDuration": 7.566077097505669,
+      "outputDuration": 7.06,
+      "operationIds": [
+        "music-lyrics"
+      ]
+    },
+    {
+      "id": "omni-instrument",
+      "domain": "Music",
+      "title": "Instrument replacement",
+      "category": "Instance",
+      "operation": "Source replacement",
+      "model": "Audio-Omni",
+      "instruction": "Replace the French horn with a clarinet.",
+      "preservation": "The musical phrase and sounds outside the target instrument.",
+      "inputAudio": "https://zeyuet.github.io/Audio-Omni/samples/transfer/1920/input.mp3",
+      "outputAudio": "https://zeyuet.github.io/Audio-Omni/samples/transfer/1920/result.wav",
+      "sourceLabel": "Audio-Omni official demo · Style Transfer · Example 3",
+      "sourceUrl": "https://zeyuet.github.io/Audio-Omni/#Editing",
+      "outputLabel": "Audio-Omni result",
+      "origin": "Official Style Transfer sample 1920. result.wav is the model output; gt.wav is not used.",
+      "instructionBasis": "Paraphrase of the official request to change playing French horn to playing clarinet.",
+      "taxonomyBasis": "Changing the instrument/source is Instance editing, although the source page calls the task Style Transfer.",
+      "inputDuration": 10.03102,
+      "outputDuration": 10.0,
+      "operationIds": [
+        "music-instruments"
+      ]
+    },
+    {
+      "id": "omni-add",
+      "domain": "Audio",
+      "title": "Sound addition",
+      "category": "Instance",
+      "operation": "Addition",
+      "model": "Audio-Omni",
+      "instruction": "Add skateboarding sounds to the recording.",
+      "preservation": "The sounds already present in the recording.",
+      "inputAudio": "https://zeyuet.github.io/Audio-Omni/samples/add/22/input.wav",
+      "outputAudio": "https://zeyuet.github.io/Audio-Omni/samples/add/22/result.wav",
+      "sourceLabel": "Audio-Omni official demo · Adding · Example 1",
+      "sourceUrl": "https://zeyuet.github.io/Audio-Omni/#Editing",
+      "outputLabel": "Audio-Omni result",
+      "origin": "Official Adding sample 22. result.wav is the model output; gt.mp3 is not used.",
+      "instructionBasis": "Paraphrase of the official skateboarding addition prompt.",
+      "taxonomyBasis": "Adding an identifiable sound event is Instance editing.",
+      "inputDuration": 10.0,
+      "outputDuration": 10.0,
+      "operationIds": [
+        "audio-events"
+      ]
+    },
+    {
+      "id": "omni-remove",
+      "domain": "Audio",
+      "title": "Sound removal",
+      "category": "Instance",
+      "operation": "Removal",
+      "model": "Audio-Omni",
+      "instruction": "Remove the running electric fan.",
+      "preservation": "All sounds other than the target fan.",
+      "inputAudio": "https://zeyuet.github.io/Audio-Omni/samples/remove/1226/input.mp3",
+      "outputAudio": "https://zeyuet.github.io/Audio-Omni/samples/remove/1226/result.wav",
+      "sourceLabel": "Audio-Omni official demo · Removing · Example 1",
+      "sourceUrl": "https://zeyuet.github.io/Audio-Omni/#Editing",
+      "outputLabel": "Audio-Omni result",
+      "origin": "Official Removing sample 1226. result.wav is the model output; gt.wav is not used.",
+      "instructionBasis": "Paraphrase of the official running-electric-fan removal prompt.",
+      "taxonomyBasis": "Removing an identifiable sound source is Instance editing.",
+      "inputDuration": 10.03102,
+      "outputDuration": 10.0,
+      "operationIds": [
+        "audio-events"
+      ]
+    }
+  ],
+  "preservationNote": "Preservation fields describe the goal of each edit, not a measured claim of perfect preservation.",
+  "mediaPolicy": "Official recordings stream from their authors' project pages, with source attribution. No official recordings are redistributed locally."
+}

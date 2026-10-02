@@ -1,0 +1,133 @@
+{
+  "updated": "2026-10-01",
+  "domain": "Speech",
+  "categories": [
+    "Acoustic",
+    "Semantic"
+  ],
+  "examples": [
+    {
+      "id": "volume-global",
+      "title": "Global volume increase",
+      "category": "Acoustic",
+      "model": "FFmpeg",
+      "inputText": "The morning train leaves at nine, and the evening train leaves at six.",
+      "outputText": "The morning train leaves at nine, and the evening train leaves at six.",
+      "inputHighlight": "",
+      "outputHighlight": "",
+      "instruction": "Increase the volume of the entire utterance by 6 dB.",
+      "inputAudio": "assets/audio/volume-input.wav",
+      "outputAudio": "assets/audio/volume-global-plus6.wav",
+      "sourceLabel": "Survey acoustic demonstration",
+      "sourceUrl": "assets/audio/volume-generation.json",
+      "outputLabel": "FFmpeg result",
+      "origin": "Controlled synthetic speech rendered with macOS Samantha; volume processing with FFmpeg.",
+      "transcriptBasis": "Known synthesis text, unchanged by gain processing.",
+      "preservation": "Words, timing, and voice remain unchanged.",
+      "secondClauseStart": null,
+      "inputDuration": 3.984375,
+      "outputDuration": 3.984375,
+      "operationIds": [
+        "speech-loudness"
+      ]
+    },
+    {
+      "id": "volume-local",
+      "title": "Lower the second clause",
+      "category": "Acoustic",
+      "model": "FFmpeg",
+      "inputText": "The morning train leaves at nine, and the evening train leaves at six.",
+      "outputText": "The morning train leaves at nine, and the evening train leaves at six.",
+      "inputHighlight": "and the evening train leaves at six",
+      "outputHighlight": "and the evening train leaves at six",
+      "instruction": "Lower only “and the evening train leaves at six” by 10 dB. Keep the first clause unchanged.",
+      "inputAudio": "assets/audio/volume-input.wav",
+      "outputAudio": "assets/audio/volume-second-minus10.wav",
+      "sourceLabel": "Survey acoustic demonstration",
+      "sourceUrl": "assets/audio/volume-generation.json",
+      "outputLabel": "FFmpeg result",
+      "origin": "Controlled synthetic speech rendered with macOS Samantha; volume processing with FFmpeg.",
+      "transcriptBasis": "Known synthesis text, unchanged by gain processing.",
+      "preservation": "Words, timing, and voice remain unchanged.",
+      "secondClauseStart": 2.0839166666666666,
+      "inputDuration": 3.984375,
+      "outputDuration": 3.984375,
+      "operationIds": [
+        "speech-loudness"
+      ]
+    },
+    {
+      "id": "auk-content",
+      "title": "Phrase replacement",
+      "category": "Semantic",
+      "model": "AuK",
+      "inputText": "Do you think the biggest victory is not fighting for what we want, but accepting what we cannot have? In some ways, like I was better equipped to answer that question when I was in my twenty s. Change is going to be a constant. That's such a great question.",
+      "outputText": "Do you think the biggest victory is not fighting for what we want, and living well with dreams unmet? In some ways, like I was better equipped to answer that question when I was in my twenty s. Change is going to be a constant. That's such a great question.",
+      "inputHighlight": "but accepting what we cannot have",
+      "outputHighlight": "and living well with dreams unmet",
+      "instruction": "Replace “but accepting what we cannot have” with “and living well with dreams unmet”.",
+      "inputAudio": "https://auk-project.github.io/assets/audio-norm/content-edit/ce-en-2-input.wav",
+      "outputAudio": "https://auk-project.github.io/assets/audio-norm/content-edit/ce-en-2-change.wav",
+      "sourceLabel": "AuK official demo · Content Editing · English",
+      "sourceUrl": "https://auk-project.github.io/#demos",
+      "outputLabel": "AuK result",
+      "origin": "Official Content Editing sample ce-en-2, Replace variant.",
+      "transcriptBasis": "Official transcript and replacement markers in the project-page sample manifest.",
+      "preservation": "The requested words change; the speaker and surrounding words are intended to remain consistent.",
+      "inputDuration": 12.0,
+      "outputDuration": 12.0,
+      "operationIds": [
+        "speech-words"
+      ]
+    },
+    {
+      "id": "step-whisper",
+      "title": "Whisper style",
+      "category": "Semantic",
+      "model": "Step-Audio-EditX",
+      "inputText": "I'm right here with you... you're safe... everything is okay...",
+      "outputText": "I'm right here with you... you're safe... everything is okay...",
+      "inputHighlight": "",
+      "outputHighlight": "",
+      "instruction": "Change the speaking style to a whisper.",
+      "inputAudio": "https://stepaudiollm.github.io/step-audio-editx/audio/style/en_whisper_prompt.wav",
+      "outputAudio": "https://stepaudiollm.github.io/step-audio-editx/audio/style/en_whisper_iter1.wav",
+      "sourceLabel": "Step-Audio-EditX official demo · Whisper · Edit 1st",
+      "sourceUrl": "https://stepaudiollm.github.io/step-audio-editx/#Speaking%20Style%20Editing",
+      "outputLabel": "Step-Audio-EditX · Edit 1st",
+      "origin": "Official English Whisper row, first editing iteration.",
+      "transcriptBasis": "Official shared text for the input and style-edited outputs. Instruction is a description of the official Whisper tag.",
+      "preservation": "The spoken words are retained while vocal delivery changes.",
+      "inputDuration": 4.44,
+      "outputDuration": 4.68,
+      "operationIds": [
+        "speech-expression"
+      ]
+    },
+    {
+      "id": "omni-word",
+      "title": "Word replacement",
+      "category": "Semantic",
+      "model": "Audio-Omni",
+      "inputText": "Television can make you dumb, but it can also be good education.",
+      "outputText": "Television can make you dumb, but it can also be bad education.",
+      "inputHighlight": "good",
+      "outputHighlight": "bad",
+      "instruction": "Replace “good” with “bad”.",
+      "inputAudio": "https://zeyuet.github.io/Audio-Omni/samples/speechedit/1/source.wav",
+      "outputAudio": "https://zeyuet.github.io/Audio-Omni/samples/speechedit/1/edit.wav",
+      "sourceLabel": "Audio-Omni official demo · Speech Editing (Zero-shot) · Example 1",
+      "sourceUrl": "https://zeyuet.github.io/Audio-Omni/#Editing",
+      "outputLabel": "Audio-Omni result",
+      "origin": "Official speech editing sample 1; edit.wav is the generated result.",
+      "transcriptBasis": "Official Original Prompt and Edit Prompt. Instruction describes the word replacement.",
+      "preservation": "Only the specified word is targeted; the surrounding sentence is retained.",
+      "inputDuration": 10.0,
+      "outputDuration": 10.0,
+      "operationIds": [
+        "speech-words"
+      ]
+    }
+  ],
+  "mediaPolicy": "Official demonstration audio is streamed from the original project pages; only the controlled FFmpeg demonstrations are stored locally. No blanket audio redistribution license is asserted."
+}

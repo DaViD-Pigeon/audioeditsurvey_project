@@ -1,0 +1,9 @@
+{
+  "name": "audioeditsurvey-project",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "preview": "python3 scripts/serve.py --port 8000"
+  }
+}
