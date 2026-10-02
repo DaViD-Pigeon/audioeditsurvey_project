@@ -36,7 +36,7 @@ function player(example, side) {
 
 function row(example, headers) {
   const input = `<strong class="example-title">${escapeHTML(example.title)}</strong>${player(example, 'input')}`;
-  const output = `<span class="example-model">${escapeHTML(example.outputLabel)}</span>${player(example, 'output')}`;
+  const output = player(example, 'output');
   const category = `<span class="example-category">${escapeHTML(example.category)}${example.operation ? ` · ${escapeHTML(example.operation)}` : ''}</span>`;
   const instruction = `${category}<p>${escapeHTML(example.instruction)}</p>`;
   const cells = example.domain === 'Speech'

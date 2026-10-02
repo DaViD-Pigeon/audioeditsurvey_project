@@ -15,7 +15,7 @@
 .editing-examples-table tbody:nth-of-type(odd) { background: #f8f8f8; }
 .editing-examples-table tbody { border-bottom: 1px solid #ddd; }
 .editing-examples-table audio { width: 100%; height: 38px; display: block; margin-top: 10px; }
-.example-title, .example-model { display: block; min-height: 21px; font-weight: 500; }
+.example-title { display: block; min-height: 21px; font-weight: 500; }
 .example-category { display: block; font-size: 11px; color: #666; margin-bottom: 6px; }
 .example-preservation { margin-top: 12px; color: #666; font-size: 12px; }
 .editing-examples-table .example-attribution td { padding: 0 10px 14px; font-size: 11px; color: #666; }
