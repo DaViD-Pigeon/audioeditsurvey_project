@@ -1,0 +1,107 @@
+{
+  "generatedAt": "2026-10-03T11:15:45.374602+00:00",
+  "method": "FFmpeg additive mixing without automatic normalization",
+  "noise": {
+    "file": "musan-background-noise.wav",
+    "sha256": "d46d07a6dae132bdc5fdbeb445f961cee49937395a43e17351afa5a77309a945",
+    "provenance": "assets/audio/musan-noise-source.json"
+  },
+  "examples": [
+    {
+      "domain": "Speech",
+      "sourceExampleId": "volume-global",
+      "source": {
+        "url": "assets/audio/volume-input.wav",
+        "sha256": "27aa4395b8a22a6834224eeb13e899804fb56152d6004913ceadea9f9bf6c490"
+      },
+      "input": "speech-noisy-input.wav",
+      "output": "assets/audio/volume-input.wav",
+      "duration": 3.984375,
+      "sampleRate": 24000,
+      "channels": 1,
+      "noiseGain": 0.24632925887525958,
+      "snrDb": 6.0,
+      "snrDefinition": "Full-clip mean signal power divided by added-noise power, including source silences.",
+      "noiseFilter": "aresample=24000,atrim=end_sample=95625,asetpts=PTS-STARTPTS,afade=t=in:st=0:d=0.02,afade=t=out:st=3.964375:d=0.02",
+      "mixFilter": "[0:a]aformat=sample_fmts=dbl:sample_rates=24000:channel_layouts=mono[clean];[1:a]aresample=24000,atrim=end_sample=95625,asetpts=PTS-STARTPTS,afade=t=in:st=0:d=0.02,afade=t=out:st=3.964375:d=0.02,volume=0.24632925887525958:precision=double[noise];[clean][noise]amix=inputs=2:normalize=0:duration=first[mixed]",
+      "construction": "MUSAN background noise is added to the existing recording for the input. The output is the unmodified original, not a denoising-model prediction; existing ambience in the source is retained.",
+      "checks": {
+        "sourceUnchanged": true,
+        "outputIsOriginalInput": true,
+        "sameSampleCountAndRate": true,
+        "floatMixMaxError": 0.0,
+        "pcmMixMaxError": 1.5257789843976105e-05,
+        "measuredSnrDb": 6.000006752981833,
+        "noisyFloatPeak": 0.3558529784344656,
+        "noClipping": true
+      },
+      "sha256": {
+        "speech-noisy-input.wav": "5c0b62d438f408aec02bb82e802c5124e88f777f9589783f306cfa069edf948d"
+      }
+    },
+    {
+      "domain": "Music",
+      "sourceExampleId": "auk-lyric",
+      "source": {
+        "url": "https://auk-project.github.io/assets/audio-norm/vocaledit/vocaledit-en-2-input.wav",
+        "sha256": "86b17d8cb34ca40c5feb8e2ff61fe793887f779c72a7742c8cac662243341275"
+      },
+      "input": "music-noisy-input.wav",
+      "output": "https://auk-project.github.io/assets/audio-norm/vocaledit/vocaledit-en-2-input.wav",
+      "duration": 7.566077097505669,
+      "sampleRate": 44100,
+      "channels": 1,
+      "noiseGain": 0.31965189365546814,
+      "snrDb": 6.0,
+      "snrDefinition": "Full-clip mean signal power divided by added-noise power, including source silences.",
+      "noiseFilter": "aresample=44100,atrim=end_sample=333664,asetpts=PTS-STARTPTS,afade=t=in:st=0:d=0.02,afade=t=out:st=7.54607709751:d=0.02",
+      "mixFilter": "[0:a]aformat=sample_fmts=dbl:sample_rates=44100:channel_layouts=mono[clean];[1:a]aresample=44100,atrim=end_sample=333664,asetpts=PTS-STARTPTS,afade=t=in:st=0:d=0.02,afade=t=out:st=7.54607709751:d=0.02,volume=0.31965189365546814:precision=double[noise];[clean][noise]amix=inputs=2:normalize=0:duration=first[mixed]",
+      "construction": "MUSAN background noise is added to the existing recording for the input. The output is the unmodified original, not a denoising-model prediction; existing ambience in the source is retained.",
+      "checks": {
+        "sourceUnchanged": true,
+        "outputIsOriginalInput": true,
+        "sameSampleCountAndRate": true,
+        "floatMixMaxError": 0.0,
+        "pcmMixMaxError": 1.525873284797391e-05,
+        "measuredSnrDb": 5.999996984382464,
+        "noisyFloatPeak": 0.5342166840679352,
+        "noClipping": true
+      },
+      "sha256": {
+        "music-noisy-input.wav": "0669c9add66d2f36a644d40c1e19ce818e753c114b8d54ff16cd4e2d23b61dce"
+      }
+    },
+    {
+      "domain": "Audio",
+      "sourceExampleId": "omni-add",
+      "source": {
+        "url": "https://zeyuet.github.io/Audio-Omni/samples/add/22/input.wav",
+        "sha256": "48e43e07fd21b7a0afc10611ae523527c922f00a5e314a27ecf09e84f04cabe9"
+      },
+      "input": "audio-noisy-input.wav",
+      "output": "https://zeyuet.github.io/Audio-Omni/samples/add/22/input.wav",
+      "duration": 10.0,
+      "sampleRate": 44100,
+      "channels": 1,
+      "noiseGain": 0.2494610446831609,
+      "snrDb": 6.0,
+      "snrDefinition": "Full-clip mean signal power divided by added-noise power, including source silences.",
+      "noiseFilter": "aresample=44100,atrim=end_sample=441000,asetpts=PTS-STARTPTS,afade=t=in:st=0:d=0.02,afade=t=out:st=9.98:d=0.02",
+      "mixFilter": "[0:a]aformat=sample_fmts=dbl:sample_rates=44100:channel_layouts=mono[clean];[1:a]aresample=44100,atrim=end_sample=441000,asetpts=PTS-STARTPTS,afade=t=in:st=0:d=0.02,afade=t=out:st=9.98:d=0.02,volume=0.24946104468316091:precision=double[noise];[clean][noise]amix=inputs=2:normalize=0:duration=first[mixed]",
+      "construction": "MUSAN background noise is added to the existing recording for the input. The output is the unmodified original, not a denoising-model prediction; existing ambience in the source is retained.",
+      "checks": {
+        "sourceUnchanged": true,
+        "outputIsOriginalInput": true,
+        "sameSampleCountAndRate": true,
+        "floatMixMaxError": 0.0,
+        "pcmMixMaxError": 1.5258766298556492e-05,
+        "measuredSnrDb": 6.000000869168186,
+        "noisyFloatPeak": 0.6246575022338103,
+        "noClipping": true
+      },
+      "sha256": {
+        "audio-noisy-input.wav": "13424d248176837b4fec7684eff83364bf43fbd52ae87b8c58b9fa0ad3664628"
+      }
+    }
+  ]
+}

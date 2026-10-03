@@ -21,10 +21,23 @@ test('taxonomy links resolve to samples and preserve independent resource filter
 test('available operations select the matching recordings, including speech expression versus words', () => {
   const expected = {
     'speech-loudness': ['volume-global', 'volume-local'],
+    'speech-reverb': ['speech-dereverb'],
+    'speech-eq': ['speech-eq-bright'],
+    'speech-restoration': ['speech-denoise'],
     'speech-words': ['auk-content', 'omni-word'],
     'speech-expression': ['step-whisper'],
+    'speech-prosody': ['seed-prosody'],
+    'speech-identity': ['seed-identity'],
+    'music-loudness': ['music-volume-global', 'music-volume-local'],
+    'music-reverb': ['music-dereverb'],
+    'music-eq': ['music-eq-bright'],
+    'music-restoration': ['music-denoise'],
     'music-lyrics': ['auk-lyric'],
     'music-instruments': ['omni-instrument'],
+    'audio-loudness': ['audio-volume-global', 'audio-volume-local'],
+    'audio-reverb': ['audio-dereverb'],
+    'audio-eq': ['audio-eq-bright'],
+    'audio-restore': ['audio-denoise'],
     'audio-events': ['omni-add', 'omni-remove'],
   };
   for (const operation of operations) {

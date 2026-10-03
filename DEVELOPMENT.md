@@ -43,9 +43,9 @@ All asset paths are relative and `.nojekyll` is included. Once the site is appro
 
 `data/speech-examples.json` maintains the five-field speech demonstrations; `data/media-examples.json` maintains Music and Audio cases with input, instruction, output, editing category, and preservation goal. `assets/examples.js` renders domain tabs and category filters and ensures only one clip plays at a time, including when changing domains. The music instrument replacement is Instance editing under our taxonomy, although its source page calls the task Style Transfer.
 
-Official samples stream from their project pages with `preload="none"`; they are not rehosted. Their source captions, transcript/instruction provenance, and checked durations are recorded in the manifests. HTTP range / WAV header checks are saved in `data/speech-media-check.json`; the Music / Audio checks, including FFprobe metadata for MP3 inputs, are in `data/media-check.json`. Recheck these URLs when updating a case, and use the model output rather than a ground-truth comparison file.
+Official model samples stream from their project pages with `preload="none"`. The local Music / Audio volume, reverb, and EQ recordings are FFmpeg derivatives of the same inputs used in the lyric-replacement and sound-addition examples; their original recordings continue to stream from the source pages. Source links, transcript/instruction provenance, and checked durations remain in the manifests; source captions are not displayed in the audio examples. HTTP range / WAV header checks are saved in `data/speech-media-check.json`; the Music / Audio checks, including FFprobe metadata for MP3 inputs, are in `data/media-check.json`. Recheck these URLs when updating a case, and use the model output rather than a ground-truth comparison file.
 
-Rebuild the two controlled acoustic examples on macOS with FFmpeg installed:
+Rebuild the two controlled speech acoustic examples on macOS with FFmpeg installed:
 
 ```sh
 python3 scripts/build_volume_examples.py
@@ -54,3 +54,46 @@ python3 scripts/build_volume_examples.py
 The script uses a known two-clause synthetic utterance, adds a 400 ms gap, reserves peak headroom, and makes a +6 dB whole-utterance version and a −10 dB second-clause version. The gain switch occurs within the silent gap. It checks duration equality, unchanged first-clause PCM, gain ratios and clipping, and records the exact filters and checksums in `assets/audio/volume-generation.json`.
 
 Run `node --test tests/speech.test.mjs` to validate the stored WAV files, +6 dB / −10 dB gains, unchanged first-clause samples, and clipping headroom. For browser review, check Speech’s five fields, Music / Audio’s three fields, domain/category and keyboard switching, playback of each input/output, one-at-a-time playback, and the stacked layout at 390 px. Speech defaults to Acoustic; Music and Audio initially show all their cases. Filter choices are retained when returning to a domain. Taxonomy sample links use `?sample=<operation-id>#audio-examples`, restore on reload/back/forward, and keep resource filters independent. Domain/category controls clear the operation-specific sample filter.
+
+Rebuild the four Music / Audio percentage-volume outputs with FFmpeg:
+
+```sh
+python3 scripts/build_media_volume_examples.py
+```
+
+The script verifies the original input checksums, applies a linear gain of 1.25 to the full clip, and produces a second version with a gain of 0.50 starting at exactly 3.000 seconds. It checks every output sample against the requested gain, preserves the first 3 seconds of the local edit bit for bit, and verifies sample count and clipping headroom. Filters, source links, and output checksums are recorded in `assets/audio/media-volume-generation.json`. The input recordings are downloaded to a temporary cache and are not added to the repository.
+
+### SeedAudio speech examples
+
+The speaking-rate example reuses `assets/audio/volume-input.wav` as its TA2A reference and keeps the exact transcript. A faster-delivery prompt and the API's `speech_rate=40` control produce the faster output. The voice-identity example uses T2A with the same transcript and a deep, warm male-voice description; it does not send the source audio to the model. Both are survey-generated illustrations. Their prompts, parameters, output checksums, returned subtitles, and duration checks are in `assets/audio/seed-speech-generation.json`.
+
+Regenerate in an environment with the local ScriptSpeech checkout and its `model_clients` dependencies:
+
+```sh
+python3 scripts/build_seed_speech_examples.py \
+  --scriptspeech ../ScriptSpeech \
+  --input assets/audio/volume-input.wav \
+  --output /tmp/audioedit-seed-speech
+```
+
+Use `SEED_AUDIO_API_KEY`, or set `SEED_AUDIO_APP_ID` and `SEED_AUDIO_ACCESS_TOKEN` for the documented legacy authentication. If the credential variable is unset, the script prompts without echoing the credential. Credentials are never embedded in the page or output metadata. Existing output files are skipped to avoid repeat generation. Review regenerated audio and subtitles before replacing the selected files and refreshing the manifest metadata.
+
+### Speech reverberation and equalization
+
+Run `python3 scripts/build_speech_acoustic_examples.py` with NumPy and FFmpeg installed to rebuild these two acoustic illustrations from the existing `assets/audio/volume-input.wav`. FFmpeg `afir` convolves that recording with a reproducible synthetic room impulse response containing early reflections and a damped diffuse tail. The dereverberation pair displays this wet recording as input and the untouched original dry recording as output. It is a constructed wet/dry example; the output is not a dereverberation-model prediction.
+
+The EQ example uses a −9 dB low shelf at 350 Hz and a +7 dB high shelf at 2.2 kHz. The script checks the convolution, original-source checksum, reverb tail, unchanged EQ sample count, low/high band energy changes, and clipping. Settings and checksums are recorded in `assets/audio/speech-acoustic-generation.json`. The Speech taxonomy now includes all four acoustic task groups; the two new sample links have no model mappings until matching foundation-model releases are curated.
+
+### Music / Audio reverberation and equalization
+
+Run `python3 scripts/build_media_acoustic_examples.py` with NumPy and FFmpeg installed to rebuild the four examples. The script uses the same AuK lyric-editing and Audio-Omni sound-addition inputs as the volume examples, verifies their checksums, and keeps downloaded originals in a temporary cache. Both recordings keep their original 44.1 kHz sample rate.
+
+Each reverberation example uses FFmpeg `afir` with a generated room impulse response and retains the full 1.5-second tail. The processed recording is the input; the unmodified original is the output. Any ambience already present in the original is retained. Floating-point peaks are checked before PCM encoding, and a constant headroom gain is applied to the wet recording only if necessary. The EQ examples use the same −9 dB low shelf at 350 Hz and +7 dB high shelf at 2.2 kHz as Speech, with unchanged sample counts.
+
+`assets/audio/media-acoustic-generation.json` records the source URLs, hashes, filters, headroom gain, convolution checks, and measured low/high band changes. Explore Audio Editing has separate reverb and EQ links for Music and Audio. Each points to its corresponding example; source and method labels remain absent from the player rows.
+
+### MUSAN denoising examples
+
+Run `python3 scripts/build_denoising_examples.py` with NumPy and FFmpeg installed to rebuild the Speech, Music, and Audio examples. A 10-second excerpt (2–12 s) of MUSAN's `noise/free-sound/noise-free-sound-0232.wav`, listed under background noises in its official annotations, is bundled as `assets/audio/musan-background-noise.wav`. Its original checksum, excerpt boundaries, annotation, and license statement are in `assets/audio/musan-noise-source.json`.
+
+The builder resamples and trims the excerpt to each existing recording, fades the noise over 20 ms at both ends, and adds it at 6 dB SNR without automatic normalization or changes to the source amplitude. SNR uses full-clip mean signal power, including source silences. The input is the noisy mixture; the output is the unchanged original recording. These are constructed noisy/original pairs, not model predictions; existing ambience in the originals remains. The script checks additive mixing, measured SNR, unchanged sources and duration, and clipping before PCM encoding. Filters and checksums are recorded in `assets/audio/denoising-generation.json`.

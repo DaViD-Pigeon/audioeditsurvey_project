@@ -47,10 +47,10 @@ test('tool purposes and evaluation dimensions remain distinct',()=>{
   assert.equal(filterRecords(data,{...defaults,q:'does not exist'}).length,0);
   assert.ok(data.benchmarks.find(r=>r.name==='ZoME-Bench').links.some(l=>l.note?.includes('source audio')));
 });
-test('taxonomy operations point to existing models with the matching domain and category',()=>{
+test('linked taxonomy models match their operation domain and category',()=>{
   for(const op of operations){
     const matches=filterRecords(data,{...defaults,domain:op.domain,type:op.category},op.models);
     assert.equal(matches.length,op.models.length,op.id);
-    assert.ok(matches.length>0,op.id);
+    // A task can have a prepared sample without a linked foundation model.
   }
 });

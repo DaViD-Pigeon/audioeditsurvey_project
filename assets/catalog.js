@@ -33,18 +33,22 @@ export const taxonomy = {
   Instance: {symbol:'⊞', subtitle:'CHANGE THE SOURCES', definition:'Manipulate identifiable sources or events while preserving the rest of the audio scene.', preserve:'Non-target sources and their relationships.'}
 };
 
-// Operation links are curated against capabilities in the English README.
-// A domain link may include a Unified model supporting that domain.
+// Operations follow the survey taxonomy. Model mappings are optional and
+// use capabilities in the English README, including suitable Unified models.
 export const operations = [
   {id:'speech-loudness',domain:'Speech',category:'Acoustic',label:'Loudness',models:['ming-uniaudio-edit','auk-auk-flash']},
   {id:'speech-restoration',domain:'Speech',category:'Acoustic',label:'Denoising & restoration',models:['ming-uniaudio-edit','auk-auk-flash']},
+  {id:'speech-reverb',domain:'Speech',category:'Acoustic',label:'Reverberation editing',models:[]},
+  {id:'speech-eq',domain:'Speech',category:'Acoustic',label:'Audio equalization (EQ)',models:[]},
   {id:'speech-words',domain:'Speech',category:'Semantic',label:'Linguistic editing',models:['ming-uniaudio-edit','cosyedit','voicecraft-x','voicecraft','ssr-speech','f5-tts','fluentspeech','editts','auk-auk-flash','vevo2']},
   {id:'speech-expression',domain:'Speech',category:'Semantic',label:'Emotion & delivery',models:['step-audio-editx','ming-uniaudio-edit','auk-auk-flash','vevo2']},
   {id:'speech-prosody',domain:'Speech',category:'Semantic',label:'Pitch & prosody',models:['ming-uniaudio-edit','vevo2','editts','audiomorphix']},
   {id:'speech-identity',domain:'Speech',category:'Instance',label:'Voice identity',models:['auk-auk-flash','vevo2']},
   {id:'speech-extraction',domain:'Speech',category:'Instance',label:'Source extraction',models:['auk-auk-flash','audio-omni']},
   {id:'music-loudness',domain:'Music',category:'Acoustic',label:'Loudness',models:['auk-auk-flash']},
-  {id:'music-restoration',domain:'Music',category:'Acoustic',label:'Restoration',models:['auk-auk-flash']},
+  {id:'music-restoration',domain:'Music',category:'Acoustic',label:'Denoising & restoration',models:['auk-auk-flash']},
+  {id:'music-reverb',domain:'Music',category:'Acoustic',label:'Reverberation editing',models:[]},
+  {id:'music-eq',domain:'Music',category:'Acoustic',label:'Audio equalization (EQ)',models:[]},
   {id:'music-style',domain:'Music',category:'Semantic',label:'Genre & style',models:['melodyflow','ap-adapter','anchorsteer','ace-step-1-5','ddpm-inversion-zeta','vevo2']},
   {id:'music-lyrics',domain:'Music',category:'Semantic',label:'Lyric editing',models:['yingmusic-singer-plus','auk-auk-flash','vevo2']},
   {id:'music-pitch',domain:'Music',category:'Semantic',label:'Pitch & tempo',models:['audiomorphix']},
@@ -52,8 +56,9 @@ export const operations = [
   {id:'music-instruments',domain:'Music',category:'Instance',label:'Instrument replacement',models:['melodyflow','ap-adapter','anchorsteer','ddpm-inversion-zeta','musicgen-stem']},
   {id:'music-singer',domain:'Music',category:'Instance',label:'Singer identity',models:['yingmusic-singer-plus','vevo2','auk-auk-flash']},
   {id:'audio-loudness',domain:'Audio',category:'Acoustic',label:'Volume & mixing',models:['mmedit','smartdj-editor']},
-  {id:'audio-reverb',domain:'Audio',category:'Acoustic',label:'Reverb & coloration',models:['smartdj-editor']},
-  {id:'audio-restore',domain:'Audio',category:'Acoustic',label:'Filtering & restoration',models:['sao-instruct']},
+  {id:'audio-reverb',domain:'Audio',category:'Acoustic',label:'Reverberation editing',models:['smartdj-editor']},
+  {id:'audio-eq',domain:'Audio',category:'Acoustic',label:'Audio equalization (EQ)',models:[]},
+  {id:'audio-restore',domain:'Audio',category:'Acoustic',label:'Denoising & restoration',models:['sao-instruct']},
   {id:'audio-pitch',domain:'Audio',category:'Semantic',label:'Pitch & rate',models:['sao-instruct','audiomorphix']},
   {id:'audio-events',domain:'Audio',category:'Instance',label:'Add, remove & replace',models:['audio-omni','audiomorphix','directaudioedit','audioeditor','mmedit','sao-instruct','smartdj-editor']},
   {id:'audio-order',domain:'Audio',category:'Instance',label:'Event timing',models:['audiomorphix','mmedit','smartdj-editor']},

@@ -1,9 +1,10 @@
 {
-  "updated": "2026-10-01",
+  "updated": "2026-10-03",
   "domain": "Speech",
   "categories": [
     "Acoustic",
-    "Semantic"
+    "Semantic",
+    "Instance"
   ],
   "examples": [
     {
@@ -55,6 +56,79 @@
       "operationIds": [
         "speech-loudness"
       ]
+    },
+    {
+      "id": "speech-dereverb",
+      "title": "Remove room reverberation",
+      "category": "Acoustic",
+      "operation": "Reverberation",
+      "model": "FFmpeg",
+      "inputText": "The morning train leaves at nine, and the evening train leaves at six.",
+      "outputText": "The morning train leaves at nine, and the evening train leaves at six.",
+      "inputHighlight": "",
+      "outputHighlight": "",
+      "instruction": "Remove the room reverberation so the speech sounds dry and clear. Keep the words and voice unchanged.",
+      "inputAudio": "assets/audio/speech-reverb-input.wav",
+      "outputAudio": "assets/audio/volume-input.wav",
+      "generationMetadata": "assets/audio/speech-acoustic-generation.json",
+      "origin": "The wet input is synthesized from the original dry recording. The displayed output is that original dry recording, not a dereverberation-model prediction.",
+      "transcriptBasis": "Known synthetic source text; signal processing does not change the words.",
+      "preservation": "Spoken words and source voice; only room reverberation changes.",
+      "inputDuration": 5.484333333333334,
+      "outputDuration": 3.984375,
+      "operationIds": [
+        "speech-reverb"
+      ]
+    },
+    {
+      "id": "speech-eq-bright",
+      "title": "Brighter voice (EQ)",
+      "category": "Acoustic",
+      "operation": "Equalization",
+      "model": "FFmpeg",
+      "inputText": "The morning train leaves at nine, and the evening train leaves at six.",
+      "outputText": "The morning train leaves at nine, and the evening train leaves at six.",
+      "inputHighlight": "",
+      "outputHighlight": "",
+      "instruction": "Make the voice brighter by reducing low frequencies and boosting high frequencies. Keep the words and timing unchanged.",
+      "inputAudio": "assets/audio/volume-input.wav",
+      "outputAudio": "assets/audio/speech-eq-bright.wav",
+      "generationMetadata": "assets/audio/speech-acoustic-generation.json",
+      "origin": "Controlled illustration made from the existing synthetic speech with FFmpeg low- and high-shelf filters.",
+      "transcriptBasis": "Known synthetic source text; signal processing does not change the words.",
+      "preservation": "Spoken words and timing; only the spectral balance changes.",
+      "inputDuration": 3.984375,
+      "outputDuration": 3.984375,
+      "operationIds": [
+        "speech-eq"
+      ]
+    },
+    {
+      "id": "speech-denoise",
+      "title": "Remove background noise",
+      "category": "Acoustic",
+      "operation": "Denoising",
+      "model": "FFmpeg",
+      "instruction": "Remove the background noise while preserving the words, voice, and timing.",
+      "inputAudio": "assets/audio/speech-noisy-input.wav",
+      "outputAudio": "assets/audio/volume-input.wav",
+      "inputDuration": 3.984375,
+      "outputDuration": 3.984375,
+      "preservation": "Spoken words, speaker identity, pitch, and timing.",
+      "sourceExampleId": "volume-global",
+      "generationMetadata": "assets/audio/denoising-generation.json",
+      "noiseMetadata": "assets/audio/musan-noise-source.json",
+      "origin": "MUSAN background noise is added to the existing recording for the input. The output is the unmodified original, not a denoising-model prediction; existing ambience in the source is retained.",
+      "instructionBasis": "Constructed noisy/original pair using a MUSAN background-noise excerpt.",
+      "taxonomyBasis": "Removing added background-noise contamination while retaining the target content is Acoustic editing.",
+      "operationIds": [
+        "speech-restoration"
+      ],
+      "inputText": "The morning train leaves at nine, and the evening train leaves at six.",
+      "outputText": "The morning train leaves at nine, and the evening train leaves at six.",
+      "inputHighlight": "",
+      "outputHighlight": "",
+      "transcriptBasis": "Known synthetic source text; added noise does not change the words."
     },
     {
       "id": "auk-content",
@@ -127,7 +201,57 @@
       "operationIds": [
         "speech-words"
       ]
+    },
+    {
+      "id": "seed-prosody",
+      "title": "Faster speaking rate",
+      "category": "Semantic",
+      "operation": "Speaking rate",
+      "model": "SeedAudio 1.0",
+      "inputText": "The morning train leaves at nine, and the evening train leaves at six.",
+      "outputText": "The morning train leaves at nine, and the evening train leaves at six.",
+      "inputHighlight": "",
+      "outputHighlight": "",
+      "instruction": "Say the same sentence faster, keeping the same voice and words.",
+      "inputAudio": "assets/audio/volume-input.wav",
+      "outputAudio": "assets/audio/seed-speech-faster.wav",
+      "sourceLabel": "Survey-generated speech · Generation details",
+      "sourceUrl": "assets/audio/seed-speech-generation.json",
+      "generationMetadata": "assets/audio/seed-speech-generation.json",
+      "origin": "Reference-conditioned resynthesis with a faster-delivery prompt and SeedAudio speech_rate=40. Input: the existing macOS Samantha synthetic train announcement.",
+      "transcriptBasis": "Known synthesis text; the SeedAudio returned subtitle matches the input word for word.",
+      "preservation": "Preserve the words and reference speaker identity while increasing speaking rate.",
+      "inputDuration": 3.984375,
+      "outputDuration": 3.195458,
+      "operationIds": [
+        "speech-prosody"
+      ]
+    },
+    {
+      "id": "seed-identity",
+      "title": "Speaker identity change",
+      "category": "Instance",
+      "operation": "Voice identity",
+      "model": "SeedAudio 1.0",
+      "inputText": "The morning train leaves at nine, and the evening train leaves at six.",
+      "outputText": "The morning train leaves at nine, and the evening train leaves at six.",
+      "inputHighlight": "",
+      "outputHighlight": "",
+      "instruction": "Change the voice to a deep, warm male voice, keeping the same words.",
+      "inputAudio": "assets/audio/volume-input.wav",
+      "outputAudio": "assets/audio/seed-speech-new-voice.wav",
+      "sourceLabel": "Survey-generated speech · Generation details",
+      "sourceUrl": "assets/audio/seed-speech-generation.json",
+      "generationMetadata": "assets/audio/seed-speech-generation.json",
+      "origin": "Text-only voice design with the same transcript; the source audio is not passed to the model. Input: the existing macOS Samantha synthetic train announcement.",
+      "transcriptBasis": "Known synthesis text; the SeedAudio returned subtitle matches the input word for word.",
+      "preservation": "Preserve the words while changing the speaker timbre.",
+      "inputDuration": 3.984375,
+      "outputDuration": 4.802708,
+      "operationIds": [
+        "speech-identity"
+      ]
     }
   ],
-  "mediaPolicy": "Official demonstration audio is streamed from the original project pages; only the controlled FFmpeg demonstrations are stored locally. No blanket audio redistribution license is asserted."
+  "mediaPolicy": "Official demonstration audio is streamed from the original project pages. Controlled synthetic speech, its FFmpeg acoustic edits, and the two survey-generated SeedAudio speech outputs are stored locally with generation provenance. No blanket audio redistribution license is asserted. Denoising pairs use local MUSAN-noise mixtures as inputs and the unmodified originals as outputs; provenance is recorded in assets/audio/denoising-generation.json."
 }

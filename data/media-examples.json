@@ -1,6 +1,130 @@
 {
-  "updated": "2026-10-01",
+  "updated": "2026-10-03",
   "examples": [
+    {
+      "id": "music-volume-global",
+      "domain": "Music",
+      "title": "Global volume increase",
+      "category": "Acoustic",
+      "operation": "Volume",
+      "model": "FFmpeg",
+      "instruction": "Increase the volume of the entire recording by 25%.",
+      "preservation": "The musical content, pitch, tempo, and timing.",
+      "inputAudio": "https://auk-project.github.io/assets/audio-norm/vocaledit/vocaledit-en-2-input.wav",
+      "outputAudio": "assets/audio/music-volume-plus25.wav",
+      "sourceLabel": "AuK official demo · Vocal Edit · English · Input recording",
+      "sourceUrl": "https://auk-project.github.io/#demos",
+      "sourceExampleId": "auk-lyric",
+      "origin": "FFmpeg volume edit prepared for this survey from the same input as auk-lyric.",
+      "instructionBasis": "Specified percentage-volume operation; the original input is unchanged.",
+      "taxonomyBasis": "Changing volume without changing content or sources is Acoustic editing.",
+      "inputDuration": 7.566077097505669,
+      "outputDuration": 7.566077097505669,
+      "gainMultiplier": 1.25,
+      "gainStartSeconds": 0,
+      "generationMetadata": "assets/audio/media-volume-generation.json",
+      "operationIds": [
+        "music-loudness"
+      ]
+    },
+    {
+      "id": "music-volume-local",
+      "domain": "Music",
+      "title": "Lower volume from 3 seconds",
+      "category": "Acoustic",
+      "operation": "Volume",
+      "model": "FFmpeg",
+      "instruction": "From 3 seconds onward, reduce the volume to 50% of its original level. Keep the first 3 seconds unchanged.",
+      "preservation": "The musical content, pitch, tempo, and timing.",
+      "inputAudio": "https://auk-project.github.io/assets/audio-norm/vocaledit/vocaledit-en-2-input.wav",
+      "outputAudio": "assets/audio/music-volume-from3s-50.wav",
+      "sourceLabel": "AuK official demo · Vocal Edit · English · Input recording",
+      "sourceUrl": "https://auk-project.github.io/#demos",
+      "sourceExampleId": "auk-lyric",
+      "origin": "FFmpeg volume edit prepared for this survey from the same input as auk-lyric.",
+      "instructionBasis": "Specified percentage-volume operation; the original input is unchanged.",
+      "taxonomyBasis": "Changing volume without changing content or sources is Acoustic editing.",
+      "inputDuration": 7.566077097505669,
+      "outputDuration": 7.566077097505669,
+      "gainMultiplier": 0.5,
+      "gainStartSeconds": 3,
+      "generationMetadata": "assets/audio/media-volume-generation.json",
+      "operationIds": [
+        "music-loudness"
+      ]
+    },
+    {
+      "domain": "Music",
+      "category": "Acoustic",
+      "model": "FFmpeg",
+      "sourceLabel": "AuK official demo · Vocal Edit · English · Input recording",
+      "sourceUrl": "https://auk-project.github.io/#demos",
+      "sourceExampleId": "auk-lyric",
+      "generationMetadata": "assets/audio/media-acoustic-generation.json",
+      "id": "music-dereverb",
+      "title": "Remove room reverberation",
+      "operation": "Reverberation",
+      "instruction": "Reduce the room reverberation so the music sounds clearer and more direct. Keep the lyrics, melody, and tempo unchanged.",
+      "preservation": "The lyrics, melody, instruments, pitch, and timing.",
+      "inputAudio": "assets/audio/music-reverb-input.wav",
+      "outputAudio": "https://auk-project.github.io/assets/audio-norm/vocaledit/vocaledit-en-2-input.wav",
+      "inputDuration": 9.066054421768708,
+      "outputDuration": 7.566077097505669,
+      "origin": "Room reverberation is added to the existing recording for the input. The displayed output is the unmodified original, not a dereverberation-model prediction. Any ambience already present in the original is retained.",
+      "instructionBasis": "A constructed pair: added reverberation in the input, unmodified original recording as output.",
+      "taxonomyBasis": "Changing room reverberation while retaining content and sources is Acoustic editing.",
+      "operationIds": [
+        "music-reverb"
+      ]
+    },
+    {
+      "domain": "Music",
+      "category": "Acoustic",
+      "model": "FFmpeg",
+      "sourceLabel": "AuK official demo · Vocal Edit · English · Input recording",
+      "sourceUrl": "https://auk-project.github.io/#demos",
+      "sourceExampleId": "auk-lyric",
+      "generationMetadata": "assets/audio/media-acoustic-generation.json",
+      "id": "music-eq-bright",
+      "title": "Brighter music (EQ)",
+      "operation": "Equalization",
+      "instruction": "Make the music brighter by reducing low frequencies and boosting high frequencies. Keep the lyrics, melody, and tempo unchanged.",
+      "preservation": "The lyrics, melody, instruments, pitch, and timing.",
+      "inputAudio": "https://auk-project.github.io/assets/audio-norm/vocaledit/vocaledit-en-2-input.wav",
+      "outputAudio": "assets/audio/music-eq-bright.wav",
+      "inputDuration": 7.566077097505669,
+      "outputDuration": 7.566077097505669,
+      "origin": "An FFmpeg low- and high-shelf edit of the same input used by auk-lyric.",
+      "instructionBasis": "Specified spectral-balance change: lower bass and stronger treble.",
+      "taxonomyBasis": "Changing spectral balance without replacing sources or content is Acoustic editing.",
+      "operationIds": [
+        "music-eq"
+      ]
+    },
+    {
+      "id": "music-denoise",
+      "title": "Remove background noise",
+      "category": "Acoustic",
+      "operation": "Denoising",
+      "model": "FFmpeg",
+      "instruction": "Remove the background noise while preserving the vocals, instruments, melody, and timing.",
+      "inputAudio": "assets/audio/music-noisy-input.wav",
+      "outputAudio": "https://auk-project.github.io/assets/audio-norm/vocaledit/vocaledit-en-2-input.wav",
+      "inputDuration": 7.566077097505669,
+      "outputDuration": 7.566077097505669,
+      "preservation": "The lyrics, vocals, instruments, melody, and timing.",
+      "sourceExampleId": "auk-lyric",
+      "generationMetadata": "assets/audio/denoising-generation.json",
+      "noiseMetadata": "assets/audio/musan-noise-source.json",
+      "origin": "MUSAN background noise is added to the existing recording for the input. The output is the unmodified original, not a denoising-model prediction; existing ambience in the source is retained.",
+      "instructionBasis": "Constructed noisy/original pair using a MUSAN background-noise excerpt.",
+      "taxonomyBasis": "Removing added background-noise contamination while retaining the target content is Acoustic editing.",
+      "operationIds": [
+        "music-restoration"
+      ],
+      "domain": "Music",
+      "sourceUrl": "https://auk-project.github.io/#demos"
+    },
     {
       "id": "auk-lyric",
       "domain": "Music",
@@ -46,6 +170,130 @@
       "operationIds": [
         "music-instruments"
       ]
+    },
+    {
+      "id": "audio-volume-global",
+      "domain": "Audio",
+      "title": "Global volume increase",
+      "category": "Acoustic",
+      "operation": "Volume",
+      "model": "FFmpeg",
+      "instruction": "Increase the volume of the entire recording by 25%.",
+      "preservation": "All sound events and their timing.",
+      "inputAudio": "https://zeyuet.github.io/Audio-Omni/samples/add/22/input.wav",
+      "outputAudio": "assets/audio/audio-volume-plus25.wav",
+      "sourceLabel": "Audio-Omni official demo · Adding · Example 1 · Input recording",
+      "sourceUrl": "https://zeyuet.github.io/Audio-Omni/#Editing",
+      "sourceExampleId": "omni-add",
+      "origin": "FFmpeg volume edit prepared for this survey from the same input as omni-add.",
+      "instructionBasis": "Specified percentage-volume operation; the original input is unchanged.",
+      "taxonomyBasis": "Changing volume without changing content or sources is Acoustic editing.",
+      "inputDuration": 10.0,
+      "outputDuration": 10.0,
+      "gainMultiplier": 1.25,
+      "gainStartSeconds": 0,
+      "generationMetadata": "assets/audio/media-volume-generation.json",
+      "operationIds": [
+        "audio-loudness"
+      ]
+    },
+    {
+      "id": "audio-volume-local",
+      "domain": "Audio",
+      "title": "Lower volume from 3 seconds",
+      "category": "Acoustic",
+      "operation": "Volume",
+      "model": "FFmpeg",
+      "instruction": "From 3 seconds onward, reduce the volume to 50% of its original level. Keep the first 3 seconds unchanged.",
+      "preservation": "All sound events and their timing.",
+      "inputAudio": "https://zeyuet.github.io/Audio-Omni/samples/add/22/input.wav",
+      "outputAudio": "assets/audio/audio-volume-from3s-50.wav",
+      "sourceLabel": "Audio-Omni official demo · Adding · Example 1 · Input recording",
+      "sourceUrl": "https://zeyuet.github.io/Audio-Omni/#Editing",
+      "sourceExampleId": "omni-add",
+      "origin": "FFmpeg volume edit prepared for this survey from the same input as omni-add.",
+      "instructionBasis": "Specified percentage-volume operation; the original input is unchanged.",
+      "taxonomyBasis": "Changing volume without changing content or sources is Acoustic editing.",
+      "inputDuration": 10.0,
+      "outputDuration": 10.0,
+      "gainMultiplier": 0.5,
+      "gainStartSeconds": 3,
+      "generationMetadata": "assets/audio/media-volume-generation.json",
+      "operationIds": [
+        "audio-loudness"
+      ]
+    },
+    {
+      "domain": "Audio",
+      "category": "Acoustic",
+      "model": "FFmpeg",
+      "sourceLabel": "Audio-Omni official demo · Adding · Example 1 · Input recording",
+      "sourceUrl": "https://zeyuet.github.io/Audio-Omni/#Editing",
+      "sourceExampleId": "omni-add",
+      "generationMetadata": "assets/audio/media-acoustic-generation.json",
+      "id": "audio-dereverb",
+      "title": "Remove room reverberation",
+      "operation": "Reverberation",
+      "instruction": "Remove the room reverberation while keeping all sound events and their timing unchanged.",
+      "preservation": "All sound events, source identities, and their timing.",
+      "inputAudio": "assets/audio/audio-reverb-input.wav",
+      "outputAudio": "https://zeyuet.github.io/Audio-Omni/samples/add/22/input.wav",
+      "inputDuration": 11.499977324263039,
+      "outputDuration": 10.0,
+      "origin": "Room reverberation is added to the existing recording for the input. The displayed output is the unmodified original, not a dereverberation-model prediction. Any ambience already present in the original is retained.",
+      "instructionBasis": "A constructed pair: added reverberation in the input, unmodified original recording as output.",
+      "taxonomyBasis": "Changing room reverberation while retaining content and sources is Acoustic editing.",
+      "operationIds": [
+        "audio-reverb"
+      ]
+    },
+    {
+      "domain": "Audio",
+      "category": "Acoustic",
+      "model": "FFmpeg",
+      "sourceLabel": "Audio-Omni official demo · Adding · Example 1 · Input recording",
+      "sourceUrl": "https://zeyuet.github.io/Audio-Omni/#Editing",
+      "sourceExampleId": "omni-add",
+      "generationMetadata": "assets/audio/media-acoustic-generation.json",
+      "id": "audio-eq-bright",
+      "title": "Brighter sound (EQ)",
+      "operation": "Equalization",
+      "instruction": "Make the recording brighter by reducing low frequencies and boosting high frequencies. Keep all sound events and their timing unchanged.",
+      "preservation": "All sound events, source identities, and their timing.",
+      "inputAudio": "https://zeyuet.github.io/Audio-Omni/samples/add/22/input.wav",
+      "outputAudio": "assets/audio/audio-eq-bright.wav",
+      "inputDuration": 10.0,
+      "outputDuration": 10.0,
+      "origin": "An FFmpeg low- and high-shelf edit of the same input used by omni-add.",
+      "instructionBasis": "Specified spectral-balance change: lower bass and stronger treble.",
+      "taxonomyBasis": "Changing spectral balance without replacing sources or content is Acoustic editing.",
+      "operationIds": [
+        "audio-eq"
+      ]
+    },
+    {
+      "id": "audio-denoise",
+      "title": "Remove background noise",
+      "category": "Acoustic",
+      "operation": "Denoising",
+      "model": "FFmpeg",
+      "instruction": "Remove the background noise while preserving the original sound events and their timing.",
+      "inputAudio": "assets/audio/audio-noisy-input.wav",
+      "outputAudio": "https://zeyuet.github.io/Audio-Omni/samples/add/22/input.wav",
+      "inputDuration": 10.0,
+      "outputDuration": 10.0,
+      "preservation": "All original sound events, source identities, and their timing.",
+      "sourceExampleId": "omni-add",
+      "generationMetadata": "assets/audio/denoising-generation.json",
+      "noiseMetadata": "assets/audio/musan-noise-source.json",
+      "origin": "MUSAN background noise is added to the existing recording for the input. The output is the unmodified original, not a denoising-model prediction; existing ambience in the source is retained.",
+      "instructionBasis": "Constructed noisy/original pair using a MUSAN background-noise excerpt.",
+      "taxonomyBasis": "Removing added background-noise contamination while retaining the target content is Acoustic editing.",
+      "operationIds": [
+        "audio-restore"
+      ],
+      "domain": "Audio",
+      "sourceUrl": "https://zeyuet.github.io/Audio-Omni/#Editing"
     },
     {
       "id": "omni-add",
@@ -95,5 +343,5 @@
     }
   ],
   "preservationNote": "Preservation fields describe the goal of each edit, not a measured claim of perfect preservation.",
-  "mediaPolicy": "Official recordings stream from their authors' project pages, with source attribution. No official recordings are redistributed locally."
+  "mediaPolicy": "Official model recordings stream from their authors' project pages. Local volume, reverberation, and equalization recordings are FFmpeg derivatives of selected demo inputs, with provenance in assets/audio/media-volume-generation.json and assets/audio/media-acoustic-generation.json. Reverberation examples display a processed input and the unmodified original as output. The source recordings retain their original terms. Denoising pairs use local MUSAN-noise mixtures as inputs and the unmodified originals as outputs; provenance is recorded in assets/audio/denoising-generation.json."
 }

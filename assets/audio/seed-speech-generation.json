@@ -1,0 +1,386 @@
+{
+  "generatedAt": "2026-10-03T09:11:31.157044+00:00",
+  "inputSource": {
+    "file": "assets/audio/volume-input.wav",
+    "provenance": "assets/audio/volume-generation.json",
+    "description": "The existing controlled synthetic train announcement, rendered with macOS Samantha."
+  },
+  "examples": [
+    {
+      "generatedAt": "2026-10-03T05:51:26.382829+00:00",
+      "model": "seed-audio-1.0",
+      "mode": "TA2A",
+      "apiDocumentation": "https://docs.volcengine.com/docs/DoubaoVoice/audio-generation-http?lang=zh",
+      "generationPrompt": "请用@音频1中同一位说话人的音色和英语口音，急促、快速地说下面这句话。语速明显快于参考录音，紧凑连贯地快速读完，缩短停顿，但每个单词都要清楚。只朗读引号中的英文，逐字一致，不要增加解释、背景音或音乐：“The morning train leaves at nine, and the evening train leaves at six.”",
+      "editingInstruction": "Say the same sentence faster, keeping the same voice and words.",
+      "inputText": "The morning train leaves at nine, and the evening train leaves at six.",
+      "outputText": "The morning train leaves at nine, and the evening train leaves at six.",
+      "input": {
+        "file": "volume-input.wav",
+        "sha256": "27aa4395b8a22a6834224eeb13e899804fb56152d6004913ceadea9f9bf6c490",
+        "duration": 3.984375,
+        "codec_name": "pcm_s16le",
+        "sample_rate": "24000",
+        "channels": 1
+      },
+      "referenceInputUsed": true,
+      "output": {
+        "file": "seed-speech-faster.wav",
+        "sha256": "3f608bfff3b8f244d85459aa716e44630ea8448d3a05aea60532374ffdbb962a",
+        "duration": 3.195458,
+        "codec_name": "pcm_s16le",
+        "sample_rate": "24000",
+        "channels": 2
+      },
+      "audioConfig": {
+        "format": "wav",
+        "sample_rate": 24000,
+        "enable_subtitle": true,
+        "speech_rate": 40
+      },
+      "responseDuration": 3.19545,
+      "originalDuration": 4.4908,
+      "subtitle": {
+        "sentences": [
+          {
+            "end_time": 2920,
+            "start_time": 0,
+            "text": "The morning train leaves at nine, and the evening train leaves at six.",
+            "words": [
+              {
+                "end_time": 200,
+                "start_time": 0,
+                "text": "The"
+              },
+              {
+                "end_time": 200,
+                "start_time": 200,
+                "text": " "
+              },
+              {
+                "end_time": 400,
+                "start_time": 200,
+                "text": "morning"
+              },
+              {
+                "end_time": 400,
+                "start_time": 400,
+                "text": " "
+              },
+              {
+                "end_time": 600,
+                "start_time": 560,
+                "text": "train"
+              },
+              {
+                "end_time": 600,
+                "start_time": 600,
+                "text": " "
+              },
+              {
+                "end_time": 1080,
+                "start_time": 880,
+                "text": "leaves"
+              },
+              {
+                "end_time": 1080,
+                "start_time": 1080,
+                "text": " "
+              },
+              {
+                "end_time": 1240,
+                "start_time": 1160,
+                "text": "at"
+              },
+              {
+                "end_time": 1240,
+                "start_time": 1240,
+                "text": " "
+              },
+              {
+                "end_time": 1400,
+                "start_time": 1280,
+                "text": "nine"
+              },
+              {
+                "end_time": 1400,
+                "start_time": 1400,
+                "text": ","
+              },
+              {
+                "end_time": 1400,
+                "start_time": 1400,
+                "text": " "
+              },
+              {
+                "end_time": 1760,
+                "start_time": 1600,
+                "text": "and"
+              },
+              {
+                "end_time": 1760,
+                "start_time": 1760,
+                "text": " "
+              },
+              {
+                "end_time": 1840,
+                "start_time": 1760,
+                "text": "the"
+              },
+              {
+                "end_time": 1840,
+                "start_time": 1840,
+                "text": " "
+              },
+              {
+                "end_time": 2120,
+                "start_time": 1880,
+                "text": "evening"
+              },
+              {
+                "end_time": 2120,
+                "start_time": 2120,
+                "text": " "
+              },
+              {
+                "end_time": 2400,
+                "start_time": 2200,
+                "text": "train"
+              },
+              {
+                "end_time": 2400,
+                "start_time": 2400,
+                "text": " "
+              },
+              {
+                "end_time": 2640,
+                "start_time": 2480,
+                "text": "leaves"
+              },
+              {
+                "end_time": 2640,
+                "start_time": 2640,
+                "text": " "
+              },
+              {
+                "end_time": 2760,
+                "start_time": 2680,
+                "text": "at"
+              },
+              {
+                "end_time": 2760,
+                "start_time": 2760,
+                "text": " "
+              },
+              {
+                "end_time": 2920,
+                "start_time": 2800,
+                "text": "six"
+              },
+              {
+                "end_time": 2920,
+                "start_time": 2920,
+                "text": "."
+              }
+            ]
+          }
+        ],
+        "text": "The morning train leaves at nine, and the evening train leaves at six."
+      },
+      "verification": {
+        "returnedSubtitleMatchesInputText": true,
+        "wavDecoded": true,
+        "durationSeconds": 3.1954583333333333,
+        "durationRatioToInput": 0.8019973019607843
+      },
+      "generationMethod": "Reference-conditioned resynthesis with a faster-delivery prompt and SeedAudio speech_rate=40."
+    },
+    {
+      "generatedAt": "2026-10-03T05:49:23.666332+00:00",
+      "model": "seed-audio-1.0",
+      "mode": "T2A",
+      "apiDocumentation": "https://docs.volcengine.com/docs/DoubaoVoice/audio-generation-http?lang=zh",
+      "generationPrompt": "一位成年男性，用低沉、浑厚、温暖、略带颗粒感的男中音，以自然平稳的语气、正常语速和标准美式英语说下面这句话。只朗读引号中的英文，逐字一致，不要增加解释、背景音或音乐：“The morning train leaves at nine, and the evening train leaves at six.”",
+      "editingInstruction": "Change the voice to a deep, warm male voice, keeping the same words.",
+      "inputText": "The morning train leaves at nine, and the evening train leaves at six.",
+      "outputText": "The morning train leaves at nine, and the evening train leaves at six.",
+      "input": {
+        "file": "volume-input.wav",
+        "sha256": "27aa4395b8a22a6834224eeb13e899804fb56152d6004913ceadea9f9bf6c490",
+        "duration": 3.984375,
+        "codec_name": "pcm_s16le",
+        "sample_rate": "24000",
+        "channels": 1
+      },
+      "referenceInputUsed": false,
+      "output": {
+        "file": "seed-speech-new-voice.wav",
+        "sha256": "b86cd74cbf0593cfae079253a5ac67ba918af2528407f8c7a5efa31bc5b943d5",
+        "duration": 4.802708,
+        "codec_name": "pcm_s16le",
+        "sample_rate": "24000",
+        "channels": 2
+      },
+      "audioConfig": {
+        "format": "wav",
+        "sample_rate": 24000,
+        "enable_subtitle": true
+      },
+      "responseDuration": 4.8027,
+      "originalDuration": 4.8027,
+      "subtitle": {
+        "sentences": [
+          {
+            "end_time": 4280,
+            "start_time": 0,
+            "text": "The morning train leaves at nine, and the evening train leaves at six.",
+            "words": [
+              {
+                "end_time": 320,
+                "start_time": 0,
+                "text": "The"
+              },
+              {
+                "end_time": 320,
+                "start_time": 320,
+                "text": " "
+              },
+              {
+                "end_time": 560,
+                "start_time": 320,
+                "text": "morning"
+              },
+              {
+                "end_time": 560,
+                "start_time": 560,
+                "text": " "
+              },
+              {
+                "end_time": 840,
+                "start_time": 720,
+                "text": "train"
+              },
+              {
+                "end_time": 840,
+                "start_time": 840,
+                "text": " "
+              },
+              {
+                "end_time": 1480,
+                "start_time": 1240,
+                "text": "leaves"
+              },
+              {
+                "end_time": 1480,
+                "start_time": 1480,
+                "text": " "
+              },
+              {
+                "end_time": 1720,
+                "start_time": 1560,
+                "text": "at"
+              },
+              {
+                "end_time": 1720,
+                "start_time": 1720,
+                "text": " "
+              },
+              {
+                "end_time": 2000,
+                "start_time": 1760,
+                "text": "nine"
+              },
+              {
+                "end_time": 2000,
+                "start_time": 2000,
+                "text": ","
+              },
+              {
+                "end_time": 2000,
+                "start_time": 2000,
+                "text": " "
+              },
+              {
+                "end_time": 2480,
+                "start_time": 2280,
+                "text": "and"
+              },
+              {
+                "end_time": 2480,
+                "start_time": 2480,
+                "text": " "
+              },
+              {
+                "end_time": 2600,
+                "start_time": 2480,
+                "text": "the"
+              },
+              {
+                "end_time": 2600,
+                "start_time": 2600,
+                "text": " "
+              },
+              {
+                "end_time": 2960,
+                "start_time": 2640,
+                "text": "evening"
+              },
+              {
+                "end_time": 2960,
+                "start_time": 2960,
+                "text": " "
+              },
+              {
+                "end_time": 3200,
+                "start_time": 3080,
+                "text": "train"
+              },
+              {
+                "end_time": 3200,
+                "start_time": 3200,
+                "text": " "
+              },
+              {
+                "end_time": 3800,
+                "start_time": 3560,
+                "text": "leaves"
+              },
+              {
+                "end_time": 3800,
+                "start_time": 3800,
+                "text": " "
+              },
+              {
+                "end_time": 4040,
+                "start_time": 3880,
+                "text": "at"
+              },
+              {
+                "end_time": 4040,
+                "start_time": 4040,
+                "text": " "
+              },
+              {
+                "end_time": 4280,
+                "start_time": 4080,
+                "text": "six"
+              },
+              {
+                "end_time": 4280,
+                "start_time": 4280,
+                "text": "."
+              }
+            ]
+          }
+        ],
+        "text": "The morning train leaves at nine, and the evening train leaves at six."
+      },
+      "verification": {
+        "returnedSubtitleMatchesInputText": true,
+        "wavDecoded": true,
+        "durationSeconds": 4.802708333333333
+      },
+      "generationMethod": "Text-only voice design with the same transcript; the source audio is not passed to the model."
+    }
+  ]
+}

@@ -18,16 +18,13 @@
 .example-title { display: block; min-height: 21px; font-weight: 500; }
 .example-category { display: block; font-size: 11px; color: #666; margin-bottom: 6px; }
 .example-preservation { margin-top: 12px; color: #666; font-size: 12px; }
-.editing-examples-table .example-attribution td { padding: 0 10px 14px; font-size: 11px; color: #666; }
 .editing-examples-table mark { background: #fff0b5; color: inherit; padding: 1px 2px; }
 .audio-error { font-size: 12px; margin-top: 8px; }
-.examples-note { font-size: 12px; color: #666; margin-top: 18px; text-align: center; }
 @media (max-width: 900px) {
   .editing-examples-table, .editing-examples-table tbody, .editing-examples-table tr, .editing-examples-table td { display: block; width: 100%; }
   .editing-examples-table thead, .editing-examples-table colgroup { display: none; }
   .editing-examples-table tbody { padding: 10px 6px; margin-bottom: 20px; }
   .editing-examples-table td { padding: 10px; }
   .editing-examples-table td[data-label]::before { content: attr(data-label); display: block; font-size: 12px; color: #666; font-weight: 600; margin-bottom: 6px; }
-  .editing-examples-table .example-attribution td { padding: 10px; }
   .editing-examples-table audio { max-width: 360px; }
 }

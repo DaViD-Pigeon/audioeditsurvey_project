@@ -9,8 +9,8 @@ const domains = ['Speech', 'Music', 'Audio'];
 const categoryOrder = ['Acoustic', 'Semantic', 'Instance'];
 const descriptions = {
   Speech: 'Read the input and output transcripts alongside the edit. Highlighted text marks the target words or region.',
-  Music: 'Compare lyric and instrument changes, listening for preservation of the surrounding music.',
-  Audio: 'Compare changes to individual sounds, listening for preservation of the surrounding scene.',
+  Music: 'Compare acoustic, lyric, and instrument edits, listening for preservation of the surrounding music.',
+  Audio: 'Compare acoustic and sound-event edits, listening for preservation of the surrounding scene.',
 };
 const selectedCategories = {Speech: 'Acoustic', Music: 'All', Audio: 'All'};
 let examples = [];
@@ -31,7 +31,7 @@ function pausePlayers() {
 function player(example, side) {
   const url = side === 'input' ? example.inputAudio : example.outputAudio;
   const label = `${example.title} — ${side} audio`;
-  return `<audio controls preload="none" src="${escapeHTML(url)}" aria-label="${escapeHTML(label)}" data-example="${escapeHTML(example.id)}" data-side="${side}"></audio><p class="audio-error" hidden>Audio unavailable. <a href="${escapeHTML(example.sourceUrl || url)}" target="_blank" rel="noopener noreferrer">Open source</a>.</p>`;
+  return `<audio controls preload="none" src="${escapeHTML(url)}" aria-label="${escapeHTML(label)}" data-example="${escapeHTML(example.id)}" data-side="${side}"></audio><p class="audio-error" hidden>Audio unavailable. <a href="${escapeHTML(url)}" target="_blank" rel="noopener noreferrer">Open audio</a>.</p>`;
 }
 
 function row(example, headers) {
@@ -42,10 +42,7 @@ function row(example, headers) {
   const cells = example.domain === 'Speech'
     ? [input, `<p>${textWithHighlight(example.inputText, example.inputHighlight)}</p>`, instruction, output, `<p>${textWithHighlight(example.outputText, example.outputHighlight)}</p>`]
     : [input, `${instruction}<p class="example-preservation"><strong>Preserve:</strong> ${escapeHTML(example.preservation)}</p>`, output];
-  const attribution = example.model === 'FFmpeg'
-    ? 'Controlled synthetic speech · FFmpeg volume processing'
-    : `<a href="${escapeHTML(example.sourceUrl)}" target="_blank" rel="noopener noreferrer">${escapeHTML(example.sourceLabel)}</a>`;
-  return `<tbody data-edit-example="${escapeHTML(example.id)}"><tr>${cells.map((cell, i) => `<td data-label="${headers[i]}">${cell}</td>`).join('')}</tr><tr class="example-attribution"><td colspan="${headers.length}">Source: ${attribution}</td></tr></tbody>`;
+  return `<tbody data-edit-example="${escapeHTML(example.id)}"><tr>${cells.map((cell, i) => `<td data-label="${headers[i]}">${cell}</td>`).join('')}</tr></tbody>`;
 }
 
 function renderCategory(category) {

@@ -1,0 +1,23 @@
+{
+  "dataset": "MUSAN",
+  "datasetUrl": "https://www.openslr.org/17/",
+  "paper": "https://arxiv.org/abs/1510.08484",
+  "authors": [
+    "David Snyder",
+    "Guoguo Chen",
+    "Daniel Povey"
+  ],
+  "sourceFile": "noise/free-sound/noise-free-sound-0232.wav",
+  "sourceSha256": "be147d201bc97d3456ada4b08806ca6aa6b133fedb80d1b96f7e3aca2083a764",
+  "sourceDuration": 44.2890625,
+  "annotation": "Background noises (noise/free-sound/ANNOTATIONS)",
+  "licenseStatement": "The MUSAN noise/free-sound/LICENSE file states that all selected recordings were marked as Public Domain on Free Sound.",
+  "licenseFile": "LICENSES/MUSAN-free-sound.txt",
+  "clipFile": "musan-background-noise.wav",
+  "startSeconds": 2,
+  "durationSeconds": 10,
+  "sampleRate": 16000,
+  "channels": 1,
+  "transformation": "Sample-exact excerpt; no amplitude or frequency changes.",
+  "clipSha256": "d46d07a6dae132bdc5fdbeb445f961cee49937395a43e17351afa5a77309a945"
+}

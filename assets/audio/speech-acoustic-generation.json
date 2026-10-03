@@ -1,0 +1,87 @@
+{
+  "generatedAt": "2026-10-03T09:49:46.012646+00:00",
+  "method": "FFmpeg convolution reverb and shelving equalization",
+  "inputText": "The morning train leaves at nine, and the evening train leaves at six.",
+  "source": {
+    "file": "volume-input.wav",
+    "sha256": "27aa4395b8a22a6834224eeb13e899804fb56152d6004913ceadea9f9bf6c490",
+    "duration": 3.984375,
+    "provenance": "Controlled synthetic speech; see volume-generation.json."
+  },
+  "sampleRate": 24000,
+  "reverberation": {
+    "input": "speech-reverb-input.wav",
+    "output": "volume-input.wav",
+    "inputDuration": 5.484333333333334,
+    "outputDuration": 3.984375,
+    "construction": "The wet input is synthesized from the original dry recording. The displayed output is that original dry recording, not a dereverberation-model prediction.",
+    "impulseResponse": "speech-room-impulse.wav",
+    "randomSeed": 20261003,
+    "tailSeconds": 1.5,
+    "decayEnvelopeRT60Seconds": 1.2,
+    "directGain": 0.9,
+    "diffuseTailL2Norm": 0.8,
+    "earlyReflectionsSecondsGain": [
+      [
+        0.017,
+        0.34
+      ],
+      [
+        0.031,
+        0.29
+      ],
+      [
+        0.047,
+        -0.26
+      ],
+      [
+        0.073,
+        0.2
+      ],
+      [
+        0.107,
+        -0.16
+      ],
+      [
+        0.149,
+        0.11
+      ]
+    ],
+    "filter": "[0:a]apad=pad_len=35999[padded];[padded][1:a]afir=irnorm=-1:dry=1:wet=1:irfmt=mono:precision=double,atrim=end_sample=131624[out]"
+  },
+  "equalization": {
+    "input": "volume-input.wav",
+    "output": "speech-eq-bright.wav",
+    "inputDuration": 3.984375,
+    "outputDuration": 3.984375,
+    "lowShelf": {
+      "frequencyHz": 350,
+      "gainDb": -9,
+      "q": 0.707
+    },
+    "highShelf": {
+      "frequencyHz": 2200,
+      "gainDb": 7,
+      "q": 0.707
+    },
+    "filter": "bass=g=-9:f=350:t=q:w=0.707:r=f64,treble=g=7:f=2200:t=q:w=0.707:r=f64"
+  },
+  "checks": {
+    "sourceUnchanged": true,
+    "dryOutputIsOriginalInput": true,
+    "eqSampleCountUnchanged": true,
+    "reverbConvolutionMaxError": 1.5260934175474403e-05,
+    "reverbTailNonzeroSamples": 26046,
+    "eqLowBandGainDb_80_300Hz": -9.549916752721682,
+    "eqHighBandGainDb_3000_8000Hz": 7.209379938589234,
+    "reverbPeak": 0.55224609375,
+    "eqPeak": 0.365631103515625,
+    "noClipping": true
+  },
+  "sha256": {
+    "volume-input.wav": "27aa4395b8a22a6834224eeb13e899804fb56152d6004913ceadea9f9bf6c490",
+    "speech-room-impulse.wav": "a7579531df36efbe9c33c315c814d5635111dbfc87cc2a6731bb99888f2dd15a",
+    "speech-reverb-input.wav": "6b3cafc5846bd3d441205e7b5c03dbfb6ec2d5239632f0d161cbbd9ed2854032",
+    "speech-eq-bright.wav": "297df80cd7a59b0c7725d3a3580b6b3445784a673efcd59148f322b2d5cb6294"
+  }
+}

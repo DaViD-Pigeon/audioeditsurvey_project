@@ -1,0 +1,66 @@
+{
+  "generated": "2026-10-02T08:02:21.879589+00:00",
+  "method": "FFmpeg linear amplitude gains; sample-exact split at 3 seconds",
+  "examples": [
+    {
+      "domain": "Music",
+      "sourceExampleId": "auk-lyric",
+      "inputAudio": "https://auk-project.github.io/assets/audio-norm/vocaledit/vocaledit-en-2-input.wav",
+      "sourceUrl": "https://auk-project.github.io/#demos",
+      "sourceSha256": "86b17d8cb34ca40c5feb8e2ff61fe793887f779c72a7742c8cac662243341275",
+      "sampleRate": 44100,
+      "channels": 1,
+      "frames": 333664,
+      "duration": 7.566077097505669,
+      "gainChangeAt": 3,
+      "gainChangeSample": 132300,
+      "filters": {
+        "music-volume-plus25.wav": "volume=1.25:precision=double",
+        "music-volume-from3s-50.wav": "[0:a]asplit=2[first][rest];[first]atrim=end_sample=132300,asetpts=PTS-STARTPTS[head];[rest]atrim=start_sample=132300,asetpts=PTS-STARTPTS,volume=0.5:precision=double[tail];[head][tail]concat=n=2:v=0:a=1[out]"
+      },
+      "checks": {
+        "globalGain": 1.25,
+        "tailGain": 0.5,
+        "first3SecondsBitExact": true,
+        "globalMaxErrorPCM": 0.5,
+        "tailMaxErrorPCM": 0.5,
+        "peakSample": 14039,
+        "sameFrameCount": true
+      },
+      "sha256": {
+        "music-volume-plus25.wav": "4a3ef7a79af220898a315cd4ae93a86346e526e7bea9995bcc99862eeed83c00",
+        "music-volume-from3s-50.wav": "075d9239ae829d1fc04b94334f75e4f9fd99725d3b5ea74effa7fffaea975bbe"
+      }
+    },
+    {
+      "domain": "Audio",
+      "sourceExampleId": "omni-add",
+      "inputAudio": "https://zeyuet.github.io/Audio-Omni/samples/add/22/input.wav",
+      "sourceUrl": "https://zeyuet.github.io/Audio-Omni/#Editing",
+      "sourceSha256": "48e43e07fd21b7a0afc10611ae523527c922f00a5e314a27ecf09e84f04cabe9",
+      "sampleRate": 44100,
+      "channels": 1,
+      "frames": 441000,
+      "duration": 10.0,
+      "gainChangeAt": 3,
+      "gainChangeSample": 132300,
+      "filters": {
+        "audio-volume-plus25.wav": "volume=1.25:precision=double",
+        "audio-volume-from3s-50.wav": "[0:a]asplit=2[first][rest];[first]atrim=end_sample=132300,asetpts=PTS-STARTPTS[head];[rest]atrim=start_sample=132300,asetpts=PTS-STARTPTS,volume=0.5:precision=double[tail];[head][tail]concat=n=2:v=0:a=1[out]"
+      },
+      "checks": {
+        "globalGain": 1.25,
+        "tailGain": 0.5,
+        "first3SecondsBitExact": true,
+        "globalMaxErrorPCM": 0.5,
+        "tailMaxErrorPCM": 0.5,
+        "peakSample": 22782,
+        "sameFrameCount": true
+      },
+      "sha256": {
+        "audio-volume-plus25.wav": "8b51e42190db5d21e594b6aa1399f659c50fb8fdcdb271d31414db3112dc0227",
+        "audio-volume-from3s-50.wav": "521b84b372b93a6eddc4e761e04699fd951e978196b2a6760e79c62d04d6b26b"
+      }
+    }
+  ]
+}

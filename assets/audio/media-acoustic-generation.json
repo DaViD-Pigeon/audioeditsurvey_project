@@ -1,0 +1,184 @@
+{
+  "generatedAt": "2026-10-03T10:51:34.380259+00:00",
+  "method": "FFmpeg convolution reverb and shelving equalization",
+  "examples": [
+    {
+      "domain": "Music",
+      "sourceExampleId": "auk-lyric",
+      "source": {
+        "url": "https://auk-project.github.io/assets/audio-norm/vocaledit/vocaledit-en-2-input.wav",
+        "page": "https://auk-project.github.io/#demos",
+        "sha256": "86b17d8cb34ca40c5feb8e2ff61fe793887f779c72a7742c8cac662243341275",
+        "duration": 7.566077097505669
+      },
+      "sampleRate": 44100,
+      "channels": 1,
+      "reverberation": {
+        "input": "music-reverb-input.wav",
+        "output": "https://auk-project.github.io/assets/audio-norm/vocaledit/vocaledit-en-2-input.wav",
+        "inputDuration": 9.066054421768708,
+        "outputDuration": 7.566077097505669,
+        "construction": "Room reverberation is added to the existing recording for the input. The displayed output is the unmodified original, not a dereverberation-model prediction. Any ambience already present in the original is retained.",
+        "impulseResponse": "media-room-impulse-44100.wav",
+        "randomSeed": 20261003,
+        "tailSeconds": 1.5,
+        "decayEnvelopeRT60Seconds": 1.2,
+        "directGain": 0.9,
+        "diffuseTailL2Norm": 0.8,
+        "earlyReflectionsSecondsGain": [
+          [
+            0.017,
+            0.34
+          ],
+          [
+            0.031,
+            0.29
+          ],
+          [
+            0.047,
+            -0.26
+          ],
+          [
+            0.073,
+            0.2
+          ],
+          [
+            0.107,
+            -0.16
+          ],
+          [
+            0.149,
+            0.11
+          ]
+        ],
+        "filter": "[0:a]apad=pad_len=66149[padded];[padded][1:a]afir=irnorm=-1:dry=1:wet=1:irfmt=mono:precision=double,atrim=end_sample=399813[out]",
+        "headroomGain": 1.0,
+        "encodingFilter": "volume=1:precision=double"
+      },
+      "equalization": {
+        "input": "https://auk-project.github.io/assets/audio-norm/vocaledit/vocaledit-en-2-input.wav",
+        "output": "music-eq-bright.wav",
+        "inputDuration": 7.566077097505669,
+        "outputDuration": 7.566077097505669,
+        "lowShelf": {
+          "frequencyHz": 350,
+          "gainDb": -9,
+          "q": 0.707
+        },
+        "highShelf": {
+          "frequencyHz": 2200,
+          "gainDb": 7,
+          "q": 0.707
+        },
+        "filter": "bass=g=-9:f=350:t=q:w=0.707:r=f64,treble=g=7:f=2200:t=q:w=0.707:r=f64"
+      },
+      "checks": {
+        "sourceUnchanged": true,
+        "dryOutputIsOriginalInput": true,
+        "eqSampleCountUnchanged": true,
+        "reverbConvolutionMaxError": 1.52643383420914e-05,
+        "reverbTailNonzeroSamples": 62272,
+        "eqLowBandGainDb_80_300Hz": -8.099650363905509,
+        "eqHighBandGainDb_3000_8000Hz": 7.31898866269412,
+        "reverbFloatPeakBeforeHeadroomGain": 0.8303586587186134,
+        "reverbFloatPeak": 0.8303586587186134,
+        "eqFloatPeak": 0.663784165637425,
+        "noClipping": true
+      },
+      "sha256": {
+        "media-room-impulse-44100.wav": "682b6fdfa0d68e20d1dd38504d42b57a396c4caadd9d783d1673049cd1e4b675",
+        "music-reverb-input.wav": "adc62064a280f56a71ee70514286257a5e3a212e4d407dad243c1623d9efb7ba",
+        "music-eq-bright.wav": "2e6f6f3884777670d1afddf221035bfa4d5754ccce436a2d19d64ffa12d4b887"
+      }
+    },
+    {
+      "domain": "Audio",
+      "sourceExampleId": "omni-add",
+      "source": {
+        "url": "https://zeyuet.github.io/Audio-Omni/samples/add/22/input.wav",
+        "page": "https://zeyuet.github.io/Audio-Omni/#Editing",
+        "sha256": "48e43e07fd21b7a0afc10611ae523527c922f00a5e314a27ecf09e84f04cabe9",
+        "duration": 10.0
+      },
+      "sampleRate": 44100,
+      "channels": 1,
+      "reverberation": {
+        "input": "audio-reverb-input.wav",
+        "output": "https://zeyuet.github.io/Audio-Omni/samples/add/22/input.wav",
+        "inputDuration": 11.499977324263039,
+        "outputDuration": 10.0,
+        "construction": "Room reverberation is added to the existing recording for the input. The displayed output is the unmodified original, not a dereverberation-model prediction. Any ambience already present in the original is retained.",
+        "impulseResponse": "media-room-impulse-44100.wav",
+        "randomSeed": 20261003,
+        "tailSeconds": 1.5,
+        "decayEnvelopeRT60Seconds": 1.2,
+        "directGain": 0.9,
+        "diffuseTailL2Norm": 0.8,
+        "earlyReflectionsSecondsGain": [
+          [
+            0.017,
+            0.34
+          ],
+          [
+            0.031,
+            0.29
+          ],
+          [
+            0.047,
+            -0.26
+          ],
+          [
+            0.073,
+            0.2
+          ],
+          [
+            0.107,
+            -0.16
+          ],
+          [
+            0.149,
+            0.11
+          ]
+        ],
+        "filter": "[0:a]apad=pad_len=66149[padded];[padded][1:a]afir=irnorm=-1:dry=1:wet=1:irfmt=mono:precision=double,atrim=end_sample=507149[out]",
+        "headroomGain": 0.9390924672181524,
+        "encodingFilter": "volume=0.93909246721815243:precision=double"
+      },
+      "equalization": {
+        "input": "https://zeyuet.github.io/Audio-Omni/samples/add/22/input.wav",
+        "output": "audio-eq-bright.wav",
+        "inputDuration": 10.0,
+        "outputDuration": 10.0,
+        "lowShelf": {
+          "frequencyHz": 350,
+          "gainDb": -9,
+          "q": 0.707
+        },
+        "highShelf": {
+          "frequencyHz": 2200,
+          "gainDb": 7,
+          "q": 0.707
+        },
+        "filter": "bass=g=-9:f=350:t=q:w=0.707:r=f64,treble=g=7:f=2200:t=q:w=0.707:r=f64"
+      },
+      "checks": {
+        "sourceUnchanged": true,
+        "dryOutputIsOriginalInput": true,
+        "eqSampleCountUnchanged": true,
+        "reverbConvolutionMaxError": 1.5265112875920833e-05,
+        "reverbTailNonzeroSamples": 59712,
+        "eqLowBandGainDb_80_300Hz": -9.148681829454587,
+        "eqHighBandGainDb_3000_8000Hz": 7.341002316006718,
+        "reverbFloatPeakBeforeHeadroomGain": 1.0116149720742182,
+        "reverbFloatPeak": 0.95,
+        "eqFloatPeak": 0.669118726958862,
+        "noClipping": true
+      },
+      "sha256": {
+        "media-room-impulse-44100.wav": "682b6fdfa0d68e20d1dd38504d42b57a396c4caadd9d783d1673049cd1e4b675",
+        "audio-reverb-input.wav": "572b0e27b061915707621c6e84c01abaece0316737e240eaae17fbc9f1804e3b",
+        "audio-eq-bright.wav": "48fee2b01daf3136b2522513f515762371aad0a58d043d2ceab4b73eeefc2962"
+      }
+    }
+  ]
+}
